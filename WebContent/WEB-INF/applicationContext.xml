@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="adminBO" class="com.grupo3.actions.LoginBO">
+		<property name="msg" value="Hola"></property>
+	</bean>
+
+	<bean id="loginAction" class="com.grupo3.actions.LoginAction">
+		<property name="adminBO" ref="adminBO" />
+	</bean>
+
+
+	<bean id="customAuthenticationSuccessHandler"
+		class="com.grupo3.securityconf.RoleBasedAuthenticationSuccessHandler">
+	</bean>
+	
+	<bean id="patientDTO" class="com.grupo3.dtos.PatientDTO">	
+	</bean>
+	
+	
+	<bean id="adminAction" class="com.grupo3.actions.AdminAction">
+		<property name="patientDTO" ref="patientDTO"></property>
+	</bean>
+	
+</beans> 
