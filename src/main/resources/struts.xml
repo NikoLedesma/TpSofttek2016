@@ -16,18 +16,14 @@
 
 
 
-		<action name="admin" class="example.AdminAction" method="execute">
-			<result name="success">/views/admin.jsp</result>
-		</action>
+<!-- 		<action name="admin" class="example.AdminAction" method="execute"> -->
+<!-- 			<result name="success">/views/admin.jsp</result> -->
+<!-- 		</action> -->
 		<!-- Este action no se maneja, es decir que no hay ninguna clase Action 
 			que tenga el metodo que maneje la accion -->
 		<action name="login">
 			<result>/views/login.jsp</result>
 		</action>
-
-		<!-- <action name=""> -->
-		<!-- <result>/views/login.jsp</result> -->
-		<!-- </action> -->
 
 		<action name="admin">
 			<result>/views/pacientes.jsp</result>
@@ -41,7 +37,7 @@
 
 	<!-- TpGrupo3Softtek/admin/xxxxx -->
 	<package name="admin" extends="struts-default" namespace="/admin">
-		<action name="addPatient" class="com.grupo3.actions.AdminAction"
+		<action name="addPatient" class="com.grupo3.action.AdminAction"
 			method="addPatientAction">
 			<result name="addPatient">/views/xxx.jsp</result>
 		</action>
@@ -49,7 +45,7 @@
 
 
 	<!-- TpGrupo3Softtek/user/xxxxx -->
-	<package name="user" extends="struts-default" namespace="/admin">
+	<package name="user" extends="struts-default" namespace="/user">
 	</package>
 
 

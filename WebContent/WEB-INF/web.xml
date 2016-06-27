@@ -3,8 +3,9 @@
   <display-name>TpGrupo3Softtek</display-name>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/spring-security.xml /WEB-INF/applicationContext.xml</param-value>
+    <param-value>/WEB-INF/conf/spring/spring-security.xml /WEB-INF/conf/spring/applicationContext.xml </param-value>
   </context-param>
+  <!-- /WEB-INF/conf/spring/spring-database.xml -->
   <filter>
     <filter-name>springSecurityFilterChain</filter-name>
     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

@@ -1,0 +1,90 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<http auto-config="true">
+		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" /><!-- 
+			debe ir?/admin** -->
+
+		<intercept-url pattern="/user/**" access="ROLE_USER" /><!--should 
+			we change to: /user**? -->
+
+	<access-denied-handler error-page="/views/403.jsp" />
+<!-- 		<access-denied-handler error-page="403" /> -->
+		
+		<!-- login-page="/index"  era el original -->
+		
+		<form-login login-page="/login" authentication-failure-url="/login?error"
+			authentication-success-handler-ref="customAuthenticationSuccessHandler"
+			username-parameter="username" password-parameter="password" />
+		<logout logout-success-url="/login?logout" />
+
+	</http>
+
+
+
+
+
+	<!-- <http auto-config="true"> -->
+	<!-- <intercept-url pattern="/admin/**" access="ROLE_ADMIN" /> -->
+
+	<!-- <access-denied-handler error-page="/WEB-INF/Content/403.jsp" /> -->
+
+	<!-- <form-login login-page="/index" default-target-url="/admin" -->
+	<!-- authentication-failure-url="/login?error" username-parameter="username" -->
+	<!-- password-parameter="password" /> -->
+	<!-- <logout logout-success-url="/login?logout" /> -->
+
+	<!-- </http> -->
+
+
+	<!-- <http auto-config="true"> -->
+
+	<!-- <intercept-url pattern="/user/**" access="ROLE_USER" /> -->
+	<!-- <access-denied-handler error-page="/WEB-INF/Content/403.jsp" /> -->
+	<!-- <form-login login-page="/index" default-target-url="/user" -->
+	<!-- authentication-failure-url="/login?error" username-parameter="username" -->
+	<!-- password-parameter="password" /> -->
+	<!-- <logout logout-success-url="/login?logout" /> -->
+
+	<!-- </http> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<authentication-manager erase-credentials="false">
+		<authentication-provider>
+			<user-service>
+				<user name="admin" password="admin" authorities="ROLE_ADMIN" />
+				<user name="user" password="user" authorities="ROLE_USER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+	
+	
+	
+	
+	
+	
+	<beans:bean id="customAuthenticationSuccessHandler"
+		class="com.grupo3.securityconf.RoleBasedAuthenticationSuccessHandler">
+	</beans:bean>
+	
+	
+	
+	
+</beans:beans>

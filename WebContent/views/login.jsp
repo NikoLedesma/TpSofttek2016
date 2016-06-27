@@ -12,5 +12,6 @@
             <s:password name="password" label="Password"/>
             <s:submit value="Login"/>
         </s:form>
+         
     </body>
 </html>
