@@ -3,7 +3,7 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-			<!--URL: TpGrupo3Softtek/xxxxx -->
+	<!--URL: TpGrupo3Softtek/xxxxx -->
 	<package name="default" extends="struts-default" namespace="/">
 		<!-- El action es lo que esta en el action de la pagina .jsp -->
 		<!-- El class es la clase que va a tener el metodo q trata a ese action -->
@@ -13,12 +13,9 @@
 			que va a depender del contenido del metodo, eso se trata a traves de los 
 			results, el name debe matchear con lo que devuelve el metodo , si matchea 
 			va a buscar la pagina .jsp o .html, lo que esta en la url no cambia -->
-
-
-
-<!-- 		<action name="admin" class="example.AdminAction" method="execute"> -->
-<!-- 			<result name="success">/views/admin.jsp</result> -->
-<!-- 		</action> -->
+		<!-- <action name="admin" class="example.AdminAction" method="execute"> -->
+		<!-- <result name="success">/views/admin.jsp</result> -->
+		<!-- </action> -->
 		<!-- Este action no se maneja, es decir que no hay ninguna clase Action 
 			que tenga el metodo que maneje la accion -->
 		<action name="login">
@@ -26,11 +23,11 @@
 		</action>
 
 		<action name="admin">
-			<result>/views/pacientes.jsp</result>
+			<result>/views/admin.jsp</result>
 		</action>
 
 		<action name="user">
-			<result>/views/turnos.jsp</result>
+			<result>/views/user.jsp</result>
 		</action>
 
 	</package>
@@ -46,6 +43,17 @@
 
 	<!-- TpGrupo3Softtek/user/xxxxx -->
 	<package name="user" extends="struts-default" namespace="/user">
+	
+		<action name="addPatient" class="com.grupo3.action.UserAction"
+			method="addPatientAction">
+			<result name="addPatient">/views/patientAdd.jsp</result>
+		</action>
+		
+		<action name="editPatient" class="com.grupo3.action.UserAction"
+			method="editPatientAction">
+			<result name="editPatient">/views/patientEdit.jsp</result>
+		</action>
+		
 	</package>
 
 

@@ -7,12 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
-<!-- <!-- Latest compiled and minified CSS --> -->
+ <!-- Latest compiled and minified CSS --> 
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
-<!-- <!-- Optional theme --> -->
+<!-- <!-- Optional theme --> 
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"/> -->
 
-<!-- <!-- Latest compiled and minified JavaScript --> -->
+<!-- <!-- Latest compiled and minified JavaScript -->
 <%-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" > --%>
 
 <link rel="stylesheet" type="text/css"
@@ -25,10 +25,9 @@
 </head>
 <body>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#example').DataTable();
-			alert("hola");
-		});
+// 		$(document).ready(function() {
+// 			$('#example').DataTable();
+// 		});
 	</script>
 
 	<h1>HELLO</h1>
@@ -36,56 +35,35 @@
 	<s:property value="patientDTO.lastName" />
 	<br>
 
-	<h6>option 1</h6>
-	<s:iterator value="list" var="user">
-
-		<s:property value="#user.id" />
-
-		<s:property value="#user.FirstName" />
-
-		<s:property value="#user.lastName" />
-		<br>
-	</s:iterator>
 
 
-	<h6>option 2</h6>
-	<s:iterator value="list">
-
-		<s:property value="id" />
-
-		<s:property value="firstName" />
-
-		<s:property value="lastName" />
-		<br>
-	</s:iterator>
-
-	<table id="example" class="display" cellspacing="0" width="100%">
-		<thead>
-			<tr>
-				<th>id</th>
-				<th>firstName</th>
-				<th>lastName</th>
-			</tr>
-		</thead>
-		<tfoot>
-			<tr>
-				<th>id</th>
-				<th>firstName</th>
-				<th>lastName</th>
-			</tr>
-		</tfoot>
-		<tbody>
+<!-- 	<table id="example" class="display" cellspacing="0" width="100%"> -->
+<!-- 		<thead> -->
+<!-- 			<tr> -->
+<!-- 				<th>id</th> -->
+<!-- 				<th>firstName</th> -->
+<!-- 				<th>lastName</th> -->
+<!-- 			</tr> -->
+<!-- 		</thead> -->
+<!-- 		<tfoot> -->
+<!-- 			<tr> -->
+<!-- 				<th>id</th> -->
+<!-- 				<th>firstName</th> -->
+<!-- 				<th>lastName</th> -->
+<!-- 			</tr> -->
+<!-- 		</tfoot> -->
+<!-- 		<tbody> -->
 
 
-			<s:iterator value="list" var="user">
-				<tr>
-					<td><s:property value="#user.id" /></td>
-					<td><s:property value="#user.FirstName" /></td>
-					<td><s:property value="#user.lastName" /></td>
-				</tr>
-			</s:iterator>
-		</tbody>
-	</table>
+<%-- 			<s:iterator value="list" var="user"> --%>
+<!-- 				<tr> -->
+<%-- 					<td><s:property value="#user.id" /></td> --%>
+<%-- 					<td><s:property value="#user.FirstName" /></td> --%>
+<%-- 					<td><s:property value="#user.lastName" /></td> --%>
+<!-- 				</tr> -->
+<%-- 			</s:iterator> --%>
+<!-- 		</tbody> -->
+<!-- 	</table> -->
 
 <div class="row"> 
  

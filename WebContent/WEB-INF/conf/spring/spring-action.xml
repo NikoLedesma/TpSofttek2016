@@ -10,6 +10,12 @@
 	<beans:bean id="adminAction" class="com.grupo3.action.AdminAction">
 		<beans:property name="patientDTO" ref="patientDTO" />
 		<beans:property name="patientService" ref="patientService" />
+
 	</beans:bean>
+
+	<beans:bean id="userAction" class="com.grupo3.action.UserAction">
+		<beans:property name="patientService" ref="patientService" />
+	</beans:bean>
+
 
 </beans:beans> 
