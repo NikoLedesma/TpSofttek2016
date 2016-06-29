@@ -21,7 +21,7 @@ public class Patient {
 	private String lastName;
 
 	
-	
+	/*Accessors*/
 	public int getId() {
 		return id;
 	}

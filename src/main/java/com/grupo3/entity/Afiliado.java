@@ -1,36 +1,89 @@
 package com.grupo3.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity(name = "Afiliado")
 public class Afiliado {
+
 	@Id
 	@Column(name = "Id_Afiliado")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-
+	
+	@Column(name = "Nombre_Apellido")
 	private String nombreApellido;
+	
+	@Column(name = "Tipo_Doc")
 	private String tipoDoc;
+	
+	@Column(name = "Numero_Doc")
 	private String numeroDoc;
+	
+	@Column(name = "Direccion")
 	private String direccion;
+	
+	@Column(name = "Telefono")
 	private String telefono;
+	
+	@Column(name = "Mail")
 	private String mail;
+	
+	@Column(name = "Fecha_Nac")
 	private Date fechaNacimiento;
+	
+	@Column(name = "Sexo")
 	private char sexo;
+	
+	@Column(name = "Estado_Civil")
 	private String estadoCivil;
-	private String plan;
+	
+	@JoinColumn(name = "ID_Plan")
+	@ManyToOne
+	private Plan plan;
+	
+	@Column(name = "Id_Persona_ACargo")
 	private List<Afiliado> personaACargo;
+
+	@Column(name = "Fecha_Baja")	
 	private Date fechaBaja;
 	
 	
+	/*Constructores*/
 	
+	public Afiliado(){}
+	
+	public Afiliado(int id, String nombreApellido, String tipoDoc,
+			String numeroDoc, String direccion, String telefono, String mail,
+			Date fechaNacimiento, char sexo, String estadoCivil, Plan plan,
+			List<Afiliado> personaACargo, Date fechaBaja) {
+		personaACargo = new ArrayList();
+		this.id = id;
+		this.nombreApellido = nombreApellido;
+		this.tipoDoc = tipoDoc;
+		this.numeroDoc = numeroDoc;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.mail = mail;
+		this.fechaNacimiento = fechaNacimiento;
+		this.sexo = sexo;
+		this.estadoCivil = estadoCivil;
+		this.plan = plan;
+		this.personaACargo = personaACargo;
+		this.fechaBaja = fechaBaja;
+	}
+
+	/*Getters y setters*/	
 	public int getId() {
 		return id;
 	}
@@ -111,11 +164,11 @@ public class Afiliado {
 		this.estadoCivil = estadoCivil;
 	}
 
-	public String getPlan() {
+	public Plan getPlan() {
 		return plan;
 	}
 
-	public void setPlan(String plan) {
+	public void setPlan(Plan plan) {
 		this.plan = plan;
 	}
 
