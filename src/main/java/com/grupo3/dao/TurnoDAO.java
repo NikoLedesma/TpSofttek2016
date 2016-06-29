@@ -7,8 +7,8 @@ import com.grupo3.entity.Turno;
 public interface TurnoDAO {
 	public void saveTurno(Turno turno);
 
-	public void updatePatient(Turno turno);
+	public void updateTurno(Turno turno);
 
-	public void deletePatient(Turno turno);
+	public void deleteTurno(Turno turno);
 
 }

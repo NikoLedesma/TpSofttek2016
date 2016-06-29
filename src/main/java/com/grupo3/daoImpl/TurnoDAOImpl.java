@@ -20,4 +20,14 @@ public class TurnoDAOImpl implements TurnoDAO {
 		
 	}
 
+	public void updateTurno(Turno turno) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteTurno(Turno turno) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

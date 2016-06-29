@@ -9,8 +9,8 @@ import org.apache.struts2.dispatcher.mapper.ActionMapping;
 
 import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.entity.Turno;
-import com.grupo3.service.TurnoBO;
-import com.grupo3.service.TurnoBOImpl;
+import com.grupo3.service.TurnoService;
+import com.grupo3.serviceImpl.TurnoServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class TurnoAction extends ActionSupport{
@@ -18,7 +18,7 @@ public class TurnoAction extends ActionSupport{
 	private static final long serialVersionUID = 2L;
 	
 	private TurnoDTO turnoDto;
-	private TurnoBO turnoBO;
+	private TurnoService turnoBO;
 	
 	public TurnoDTO getTurnoDto() {
 		return turnoDto;
@@ -28,19 +28,20 @@ public class TurnoAction extends ActionSupport{
 		this.turnoDto = turnoDto;
 	}
 
-	public TurnoBO getTurnoBO() {
+	public TurnoService getTurnoBO() {
 		return turnoBO;
 	}
 
-	public void setTurnoBO(TurnoBO turnoBO) {
+	public void setTurnoBO(TurnoService turnoBO) {
 		this.turnoBO = turnoBO;
 	}
 
 	public String execute() 
 			       {
 			
-			
-					
+			// Para Descomentar despues este metodo de abajo si no va a sangrar el codigo 
+			//	el codigo por ahora porque no esta declarado en el turnoDAO (idAfiliado)
+		/*			
 		List<Turno> list = turnoBO.findAllTurnos(turnoDto.idAfiliado);
 				/*	
 				dynaCustomerListForm.set("customerList", list);

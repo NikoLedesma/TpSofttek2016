@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.grupo3.entity.Turno;
 
-public interface TurnoBO {
+public interface TurnoService {
 
 	List<Turno> findAllTurnos(int idAfiliado);
 

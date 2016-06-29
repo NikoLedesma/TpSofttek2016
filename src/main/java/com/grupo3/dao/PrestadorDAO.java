@@ -4,10 +4,10 @@ import com.grupo3.entity.Prestador;
 
 public interface PrestadorDAO {
 	
-	public void saveTurno(Prestador prestador);
+	public void savePrestador(Prestador prestador);
 
-	public void updatePatient(Prestador prestador);
+	public void updatePrestador(Prestador prestador);
 
-	public void deletePatient(Prestador prestador);
+	public void deletePrestador(Prestador prestador);
 
 }

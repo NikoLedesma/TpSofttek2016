@@ -1,10 +1,11 @@
-package com.grupo3.service;
+package com.grupo3.serviceImpl;
 
 import java.util.List;
 
 import com.grupo3.entity.Turno;
+import com.grupo3.service.TurnoService;
 
-public class TurnoBOImpl implements TurnoBO {
+public class TurnoServiceImpl implements TurnoService {
 
 
 
