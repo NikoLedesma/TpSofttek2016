@@ -20,18 +20,35 @@ public class TurnoAction extends ActionSupport{
 	private TurnoDTO turnoDto;
 	private TurnoBO turnoBO;
 	
+	public TurnoDTO getTurnoDto() {
+		return turnoDto;
+	}
+
+	public void setTurnoDto(TurnoDTO turnoDto) {
+		this.turnoDto = turnoDto;
+	}
+
+	public TurnoBO getTurnoBO() {
+		return turnoBO;
+	}
+
+	public void setTurnoBO(TurnoBO turnoBO) {
+		this.turnoBO = turnoBO;
+	}
+
 	public String execute() 
 			       {
 			
 			
 					
-				List<Turno> list = turnoBO.findAllTurnos(turnoDto.idAfiliado);
+		List<Turno> list = turnoBO.findAllTurnos(turnoDto.idAfiliado);
 				/*	
 				dynaCustomerListForm.set("customerList", list);
 				        
 				return mapping.findForward("success");
 				  */
-				return "SUCCESS";
-			  }
+		return "SUCCESS";
+		
+			       }
 	
 }
