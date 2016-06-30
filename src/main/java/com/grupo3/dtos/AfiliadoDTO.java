@@ -29,9 +29,18 @@ public class AfiliadoDTO {
 
 	private Plan plan;
 
-	private List<Afiliado> personaACargo;
+	private Afiliado personaResponsable;
 
 	private Date fechaBaja;
+
+	/*Accessors*/
+	public Afiliado getPersonaResponsable() {
+		return personaResponsable;
+	}
+
+	public void setPersonaResponsable(Afiliado personaResponsable) {
+		this.personaResponsable = personaResponsable;
+	}
 
 	public int getId() {
 		return id;
@@ -119,14 +128,6 @@ public class AfiliadoDTO {
 
 	public void setPlan(Plan plan) {
 		this.plan = plan;
-	}
-
-	public List<Afiliado> getPersonaACargo() {
-		return personaACargo;
-	}
-
-	public void setPersonaACargo(List<Afiliado> personaACargo) {
-		this.personaACargo = personaACargo;
 	}
 
 	public Date getFechaBaja() {

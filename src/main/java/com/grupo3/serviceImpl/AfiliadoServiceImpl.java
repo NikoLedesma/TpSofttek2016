@@ -1,5 +1,6 @@
 package com.grupo3.serviceImpl;
 
+
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -7,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.grupo3.dao.AfiliadoDAO;
+import com.grupo3.dtos.AfiliadoDTO;
 import com.grupo3.entity.Afiliado;
 import com.grupo3.service.AfiliadoService;
 
@@ -16,25 +18,26 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 	private AfiliadoDAO afiliadoDAO;
 
 	@Transactional
-	public void saveAfiliado(Afiliado afiliado) {
+	public void saveAfiliado(AfiliadoDTO afiliadoDTO) {
 		// TODO Auto-generated method stub
+		Afiliado afiliado = new Afiliado(afiliadoDTO);
 		afiliadoDAO.saveAfiliado(afiliado);
 	}
 
 	@Transactional
-	public void updateAfiliado(Afiliado afiliado) {
+	public void updateAfiliado(AfiliadoDTO afiliadoDTO) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Transactional
-	public void deleteAfiliado(Afiliado afiliado) {
+	public void deleteAfiliado(AfiliadoDTO afiliadoDTO) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Transactional
-	public List<Afiliado> getAfiliadoByFirstName(String nombreApellido) {
+	public List<AfiliadoDTO> getAfiliadoByFirstName(String nombreApellido) {
 		// TODO Auto-generated method stub
 		return null;
 	}

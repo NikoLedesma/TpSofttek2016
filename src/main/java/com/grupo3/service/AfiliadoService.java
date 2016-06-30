@@ -1,17 +1,18 @@
 package com.grupo3.service;
 
-import com.grupo3.entity.Afiliado;
 
 import java.util.List;
+
+import com.grupo3.dtos.AfiliadoDTO;
 public interface AfiliadoService {
 	
-       public void saveAfiliado(Afiliado afiliado);
+       public void saveAfiliado(AfiliadoDTO afiliadoDTO);
 
-		public void updateAfiliado(Afiliado afiliado);
+		public void updateAfiliado(AfiliadoDTO afiliadoDTO);
 
-		public void deleteAfiliado(Afiliado afiliado);
+		public void deleteAfiliado(AfiliadoDTO afiliadoDTO);
 
-		public List <Afiliado> getAfiliadoByFirstName(String nombreApellido);
+		public List <AfiliadoDTO> getAfiliadoByFirstName(String nombreApellido);
 	
 
 }

@@ -30,9 +30,7 @@ public class AfiliadoAction extends ActionSupport {
 	
 	public String guardarAfiliado(){
 		Afiliado afiliado=new Afiliado();
-		afiliado.setNombreApellido(afiliadoDTO.getNombreApellido());
-		afiliado.setTipoDoc(afiliadoDTO.getTipoDoc());
-		this.afiliadoService.saveAfiliado(afiliado);
+		this.afiliadoService.saveAfiliado(afiliadoDTO);
 		return "saveAfiliado";
 	}
 }

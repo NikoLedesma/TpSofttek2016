@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.grupo3.dtos.AfiliadoDTO;
+
 @Entity(name = "Afiliado")
 public class Afiliado {
 
@@ -83,23 +85,20 @@ public class Afiliado {
 	
 	public Afiliado(){}
 	
-	public Afiliado(int id, String nombreApellido, String tipoDoc,
-			String numeroDoc, String direccion, String telefono, String mail,
-			Date fechaNacimiento, char sexo, String estadoCivil, Plan plan,
-			Afiliado personaResponsable, Date fechaBaja) {
-		this.id = id;
-		this.nombreApellido = nombreApellido;
-		this.tipoDoc = tipoDoc;
-		this.numeroDoc = numeroDoc;
-		this.direccion = direccion;
-		this.telefono = telefono;
-		this.mail = mail;
-		this.fechaNacimiento = fechaNacimiento;
-		this.sexo = sexo;
-		this.estadoCivil = estadoCivil;
-//		this.plan = plan;
-		this.personaResponsable = personaResponsable;
-		this.fechaBaja = fechaBaja;
+	public Afiliado(AfiliadoDTO afiliadoDTO) {
+		this.id = afiliadoDTO.getId();
+		this.nombreApellido = afiliadoDTO.getNombreApellido();
+		this.tipoDoc = afiliadoDTO.getTipoDoc();
+		this.numeroDoc = afiliadoDTO.getNumeroDoc();
+		this.direccion = afiliadoDTO.getDireccion();
+		this.telefono = afiliadoDTO.getTelefono();
+		this.mail = afiliadoDTO.getMail();
+		this.fechaNacimiento = afiliadoDTO.getFechaNacimiento();
+		this.sexo = afiliadoDTO.getSexo();
+		this.estadoCivil = afiliadoDTO.getEstadoCivil();
+//		this.plan = afiliadoDTO.getPlan();
+		this.personaResponsable = afiliadoDTO.getPersonaResponsable();
+		this.fechaBaja = afiliadoDTO.getFechaBaja();
 	}
 
 	public Afiliado getPersonaACargo() {
