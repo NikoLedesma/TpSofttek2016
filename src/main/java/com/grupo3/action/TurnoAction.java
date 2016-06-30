@@ -20,6 +20,7 @@ public class TurnoAction extends ActionSupport{
 	private TurnoDTO turnoDto;
 	private TurnoService turnoBO;
 	
+	
 	public TurnoDTO getTurnoDto() {
 		return turnoDto;
 	}
@@ -36,20 +37,22 @@ public class TurnoAction extends ActionSupport{
 		this.turnoBO = turnoBO;
 	}
 
-	public String execute() 
-			       {
-			
-			// Para Descomentar despues este metodo de abajo si no va a sangrar el codigo 
-			//	el codigo por ahora porque no esta declarado en el turnoDAO (idAfiliado)
-				
-		List<Turno> list = turnoBO.findAllTurnos(turnoDto.getIdAfiliado());
-		
-			/*	dynaCustomerListForm.set("customerList", list);
-				        
-				return mapping.findForward("success");
-			*/
+	public String findAllTurnos() 
+			    
+	{
+		List<Turno> turnos = turnoBO.findAllTurnos(turnoDto);
+		turnoDto.setTurnos(turnos);
 		return "SUCCESS";
+					       }
+	
+	public String addTurn(){
 		
-			       }
+		
+		
+		
+		
+		
+		return "SUCCESS";
+	}
 	
 }

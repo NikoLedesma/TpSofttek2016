@@ -13,4 +13,10 @@
 			ref="hibernate4AnnotatedSessionFactory"></beans:property>
 	</beans:bean>
 	
+	<beans:bean id="TurnoDAO" class="com.grupo3.daoImpl.TurnoDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory"></beans:property>
+	</beans:bean>
+	
+	
 </beans:beans> 

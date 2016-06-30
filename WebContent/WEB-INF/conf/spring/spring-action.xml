@@ -16,6 +16,11 @@
 	<beans:bean id="userAction" class="com.grupo3.action.UserAction">
 		<beans:property name="patientService" ref="patientService" />
 	</beans:bean>
+	
+	<beans:bean id="turnAction" class="com.grupo3.action.TurnoAction">
+		<beans:property name="TurnoService" ref="TurnoService"/>
+		<beans:property name="TurnoDTO" ref="TurnoDTO"/>
+	</beans:bean>
 
 
 </beans:beans> 

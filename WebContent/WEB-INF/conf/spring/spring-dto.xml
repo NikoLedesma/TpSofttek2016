@@ -10,5 +10,9 @@
 
 	<beans:bean id="patientDTO" class="com.grupo3.dtos.PatientDTO">
 	</beans:bean>
+	
+	<beans:bean id="TurnoDTO" class="com.grupo3.dtos.TurnoDTO"/>
+	
+	
 
 </beans:beans> 

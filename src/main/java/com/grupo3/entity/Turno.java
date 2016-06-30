@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.grupo3.dtos.TurnoDTO;
+import com.grupo3.dtos.TurnoDTO;
+
 @Entity(name = "Turno")
 public class Turno {
 	@Id
@@ -116,6 +119,20 @@ public class Turno {
 
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
+	}
+
+	public void setValores(TurnoDTO turno) {
+		this.codigoPractica = turno.getPracticeNumber();
+		this.disponible = true;
+		this.fechaInicio = turno.getHoraDeInicio();
+		this.fechaLlegada = turno.getHoraDeLlegada();
+		this.observaciones = turno.getObservaciones();
+		this.idAfiliado = turno.getIdAfiliado();
+		this.idPrestador = turno.getIdProfesional();
+		this.importe = turno.getImporte();
+		
+		
+		
 	}
 	
 
