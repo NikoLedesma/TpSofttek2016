@@ -17,41 +17,50 @@ public class TurnoAction extends ActionSupport{
 
 	private static final long serialVersionUID = 2L;
 	
-	private TurnoDTO turnoDto;
-	private TurnoService turnoBO;
+	private TurnoDTO turnoDTO;
+	private TurnoService turnoService;
 	
 	
-	public TurnoDTO getTurnoDto() {
-		return turnoDto;
+
+	public TurnoDTO getTurnoDTO() {
+		return turnoDTO;
 	}
 
-	public void setTurnoDto(TurnoDTO turnoDto) {
-		this.turnoDto = turnoDto;
+	public void setTurnoDTO(TurnoDTO turnoDTO) {
+		this.turnoDTO = turnoDTO;
 	}
 
-	public TurnoService getTurnoBO() {
-		return turnoBO;
+
+
+	public TurnoService getTurnoService() {
+		return turnoService;
 	}
 
-	public void setTurnoBO(TurnoService turnoBO) {
-		this.turnoBO = turnoBO;
+	public void setTurnoService(TurnoService turnoService) {
+		this.turnoService = turnoService;
 	}
 
 	public String findAllTurnos() 
 			    
 	{
-		List<Turno> turnos = turnoBO.findAllTurnos(turnoDto);
-		turnoDto.setTurnos(turnos);
+		List<Turno> turnos = turnoService.findAllTurnos(turnoDTO);
+		turnoDTO.setTurnos(turnos);
 		return "SUCCESS";
 					       }
 	
 	public String addTurn(){
 		
-		
-		
-		
-		
-		
+		turnoService.addTurn(turnoDTO);
+		return "SUCCESS";
+	}
+	
+	public String deleteTurn(){
+		turnoService.deleteTurn(turnoDTO);
+		return "SUCCESS";
+	}
+	
+	public String updateTurn(){
+		turnoService.updateTurn(turnoDTO);
 		return "SUCCESS";
 	}
 	

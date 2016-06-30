@@ -12,8 +12,9 @@
 		<beans:property name="patientDAO" ref="patientDAO"></beans:property>
 	</beans:bean>
 	
-	<beans:bean id="TurnoService" class="com.grupo3.serviceImpl.TurnoServiceImpl">
-		<beans:property name="TurnoService" ref="TurnoService"></beans:property>
+	<beans:bean id="turnoService" class="com.grupo3.serviceImpl.TurnoServiceImpl">
+		<beans:property name="turnoDAO" ref="turnoDAO"></beans:property>
+		
 	</beans:bean>
 	
 	
