@@ -54,8 +54,10 @@ alert("Volver a la pagina anterior");
 
 
 	<input type="submit" value="agregar afiliado">
-
+	
 	</form>
+	
+	<form action="turnos" value="PedirTurno"></form>
 	
 	
 </body>
