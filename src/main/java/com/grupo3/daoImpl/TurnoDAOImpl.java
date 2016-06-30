@@ -22,6 +22,18 @@ public class TurnoDAOImpl implements TurnoDAO {
 
 
 
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+
+
 	public void updateTurno(TurnoDTO turno) {
 		// TODO Auto-generated method stub
 		

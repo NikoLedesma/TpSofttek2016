@@ -55,6 +55,21 @@
 		</action>
 		
 	</package>
+	
+	
+		<!-- TpGrupo3Softtek/user/xxxxx -->
+	<package name="userA" extends="struts-default" namespace="/user/addPatient">
+	
+		<action name="save" class="com.grupo3.action.AfiliadoAction"
+			method="guardarAfiliado">
+			<result name="saveAfiliado">/views/patientAdd.jsp</result>
+		</action>
+
+	</package>
+	
+	
+	
+	
 
 
 

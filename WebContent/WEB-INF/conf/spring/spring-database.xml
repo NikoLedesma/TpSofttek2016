@@ -9,8 +9,10 @@
 
 
 
-	<beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		 <beans:property name="location" value="/WEB-INF/properties/database.properties"/>
+	<beans:bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<beans:property name="location"
+			value="/WEB-INF/properties/database.properties" />
 	</beans:bean>
 
 
@@ -40,6 +42,8 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<beans:value>com.grupo3.entity.Patient</beans:value>
+				<beans:value>com.grupo3.entity.Afiliado</beans:value>
+
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -47,7 +51,7 @@
 				<beans:prop key="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect
 				</beans:prop>
 				<beans:prop key="hibernate.show_sql">true</beans:prop>
- 				<beans:prop key="hibernate.hbm2ddl.auto">create</beans:prop>  <!--esto te borra y te crea de nuevo la tabla-->
+				<beans:prop key="hibernate.hbm2ddl.auto">create</beans:prop>  <!--esto te borra y te crea de nuevo la tabla -->
 			</beans:props>
 		</beans:property>
 	</beans:bean>

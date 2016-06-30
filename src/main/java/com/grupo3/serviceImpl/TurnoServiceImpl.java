@@ -10,20 +10,20 @@ import com.grupo3.service.TurnoService;
 
 public class TurnoServiceImpl implements TurnoService {
 	
-	private TurnoDAOImpl turnDAO;
+	private TurnoDAO turnoDAO;
 
-	public TurnoDAO getTurnDAO() {
-		return turnDAO;
+	public TurnoDAO getTurnoDAO() {
+		return turnoDAO;
 	}
 
-	public void setTurnDAO(TurnoDAOImpl turnDAO) {
-		this.turnDAO = turnDAO;
+	public void setTurnoDAO(TurnoDAO turnDAO) {
+		this.turnoDAO = turnDAO;
 	}
 
 
 
 	public List<Turno> findAllTurnos(TurnoDTO t) {
-		List<Turno> turnos = turnDAO.findAllTurns(t);
+		List<Turno> turnos = turnoDAO.findAllTurns(t);
 		return turnos;
 		
 	}
@@ -32,21 +32,21 @@ public class TurnoServiceImpl implements TurnoService {
 		
 		Turno t = new Turno();
 		t.setValores(turno);
-		turnDAO.updateTurno(turno);
+		turnoDAO.updateTurno(t);
 
 	}
 
 	public void deleteTurn(TurnoDTO turno) {
 		Turno t = new Turno();
 		t.setValores(turno);
-		turnDAO.deleteTurno(t);
+		turnoDAO.deleteTurno(t);
 		
 	}
 
 	public void addTurn(TurnoDTO turno) {
 		Turno t = new Turno();
 		t.setValores(turno);
-		turnDAO.saveTurno(t);
+		turnoDAO.saveTurno(t);
 		
 	}
 

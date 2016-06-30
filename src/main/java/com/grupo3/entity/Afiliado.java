@@ -1,17 +1,16 @@
 package com.grupo3.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity(name = "Afiliado")
 public class Afiliado {
@@ -48,12 +47,33 @@ public class Afiliado {
 	@Column(name = "Estado_Civil")
 	private String estadoCivil;
 	
-	@JoinColumn(name = "ID_Plan")
+//	@JoinColumn(name = "ID_Plan")
+//	@ManyToOne
+//	private Plan plan;
 	@ManyToOne
-	private Plan plan;
+	@JoinColumn(name = "Id_Persona_ACargo")
+	private Afiliado personaResponsable;
+
+	@OneToMany(mappedBy="personaResponsable")
+	List<Afiliado> afiliadosACargo;
 	
-	@Column(name = "Id_Persona_ACargo")
-	private List<Afiliado> personaACargo;
+	
+	
+	public Afiliado getPersonaResponsable() {
+		return personaResponsable;
+	}
+
+	public void setPersonaResponsable(Afiliado personaResponsable) {
+		this.personaResponsable = personaResponsable;
+	}
+
+	public List<Afiliado> getAfiliadosACargo() {
+		return afiliadosACargo;
+	}
+
+	public void setAfiliadosACargo(List<Afiliado> afiliadosACargo) {
+		this.afiliadosACargo = afiliadosACargo;
+	}
 
 	@Column(name = "Fecha_Baja")	
 	private Date fechaBaja;
@@ -66,8 +86,7 @@ public class Afiliado {
 	public Afiliado(int id, String nombreApellido, String tipoDoc,
 			String numeroDoc, String direccion, String telefono, String mail,
 			Date fechaNacimiento, char sexo, String estadoCivil, Plan plan,
-			List<Afiliado> personaACargo, Date fechaBaja) {
-		personaACargo = new ArrayList();
+			Afiliado personaResponsable, Date fechaBaja) {
 		this.id = id;
 		this.nombreApellido = nombreApellido;
 		this.tipoDoc = tipoDoc;
@@ -78,9 +97,17 @@ public class Afiliado {
 		this.fechaNacimiento = fechaNacimiento;
 		this.sexo = sexo;
 		this.estadoCivil = estadoCivil;
-		this.plan = plan;
-		this.personaACargo = personaACargo;
+//		this.plan = plan;
+		this.personaResponsable = personaResponsable;
 		this.fechaBaja = fechaBaja;
+	}
+
+	public Afiliado getPersonaACargo() {
+		return personaResponsable;
+	}
+
+	public void setPersonaACargo(Afiliado personaACargo) {
+		this.personaResponsable = personaACargo;
 	}
 
 	/*Getters y setters*/	
@@ -164,22 +191,15 @@ public class Afiliado {
 		this.estadoCivil = estadoCivil;
 	}
 
-	public Plan getPlan() {
-		return plan;
-	}
+//	public Plan getPlan() {
+//		return plan;
+//	}
+//
+//	public void setPlan(Plan plan) {
+//		this.plan = plan;
+//	}
 
-	public void setPlan(Plan plan) {
-		this.plan = plan;
-	}
-
-	public List<Afiliado> getPersonaACargo() {
-		return personaACargo;
-	}
-
-	public void setPersonaACargo(List<Afiliado> personaACargo) {
-		this.personaACargo = personaACargo;
-	}
-
+	
 	public Date getFechaBaja() {
 		return fechaBaja;
 	}
