@@ -250,7 +250,11 @@
 <script type="text/javascript">
 		//se define el evento para el btnMinus
 		$("#btnMinus").click(function() {
-			alert("Delete an patient");
+			//TODO: cambiar a borrar
+			//alert("Delete an patient");
+			var url= 'user/addTurno';
+			 window.location.href =url;
+			 return false;
 		});
 		//se define el evento para el btnPlus
 

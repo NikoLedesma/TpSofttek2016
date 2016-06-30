@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
 
 import com.grupo3.dtos.TurnoDTO;
+import com.grupo3.entity.Afiliado;
 import com.grupo3.entity.Turno;
 import com.grupo3.service.TurnoService;
 import com.grupo3.serviceImpl.TurnoServiceImpl;
@@ -48,19 +49,23 @@ public class TurnoAction extends ActionSupport{
 		return "SUCCESS";
 					       }
 	
-	public String addTurn(){
+	public String addTurno(){
+		Turno turno=new Turno();
+		turno.setImporte(turnoDTO.getImporte());  
+		turno.setObservaciones(turnoDTO.getObservaciones());
+		this.turnoService.addTurno(turnoDTO);
 		
-		turnoService.addTurn(turnoDTO);
+		// turnoService.addTurn(turnoDTO);
 		return "SUCCESS";
 	}
 	
 	public String deleteTurn(){
-		turnoService.deleteTurn(turnoDTO);
+		turnoService.deleteTurno(turnoDTO);
 		return "SUCCESS";
 	}
 	
 	public String updateTurn(){
-		turnoService.updateTurn(turnoDTO);
+		turnoService.updateTurno(turnoDTO);
 		return "SUCCESS";
 	}
 	

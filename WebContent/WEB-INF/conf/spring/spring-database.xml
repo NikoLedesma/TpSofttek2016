@@ -43,7 +43,7 @@
 			<beans:list>
 				<beans:value>com.grupo3.entity.Patient</beans:value>
 				<beans:value>com.grupo3.entity.Afiliado</beans:value>
-
+				<beans:value>com.grupo3.entity.Turno</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">

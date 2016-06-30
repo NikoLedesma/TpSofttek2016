@@ -20,10 +20,10 @@ public class Turno {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@JoinColumn(name = "Afiliados")
-	@ManyToOne
-	private int idAfiliado;
-	
+//	@JoinColumn(name = "Afiliados")
+//	@ManyToOne
+//	private int idAfiliado;
+//	
 	@Column
 	private Date fechaInicio;
 	
@@ -57,13 +57,13 @@ public class Turno {
 		this.id = id;
 	}
 
-	public int getIdAfiliado() {
-		return idAfiliado;
-	}
-
-	public void setIdAfiliado(int idAfiliado) {
-		this.idAfiliado = idAfiliado;
-	}
+//	public int getIdAfiliado() {
+//		return idAfiliado;
+//	}
+//
+//	public void setIdAfiliado(int idAfiliado) {
+//		this.idAfiliado = idAfiliado;
+//	}
 
 	public Date getFechaInicio() {
 		return fechaInicio;
@@ -127,7 +127,7 @@ public class Turno {
 		this.fechaInicio = turno.getHoraDeInicio();
 		this.fechaLlegada = turno.getHoraDeLlegada();
 		this.observaciones = turno.getObservaciones();
-		this.idAfiliado = turno.getIdAfiliado();
+//		this.idAfiliado = turno.getIdAfiliado();
 		this.idPrestador = turno.getIdProfesional();
 		this.importe = turno.getImporte();
 		

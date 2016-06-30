@@ -28,22 +28,22 @@ public class TurnoServiceImpl implements TurnoService {
 		
 	}
 
-	public void updateTurn(TurnoDTO turno) {
+	public void updateTurno(TurnoDTO turno) {
 		
 		Turno t = new Turno();
 		t.setValores(turno);
 		turnoDAO.updateTurno(t);
-
 	}
+	
 
-	public void deleteTurn(TurnoDTO turno) {
+	public void deleteTurno(TurnoDTO turno) {
 		Turno t = new Turno();
 		t.setValores(turno);
 		turnoDAO.deleteTurno(t);
 		
 	}
 
-	public void addTurn(TurnoDTO turno) {
+	public void addTurno(TurnoDTO turno) {
 		Turno t = new Turno();
 		t.setValores(turno);
 		turnoDAO.saveTurno(t);

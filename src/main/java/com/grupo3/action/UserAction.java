@@ -25,7 +25,10 @@ public class UserAction extends ActionSupport {
 		//patientService.savePatient(Patient);
 		return "editPatient";
 	}
-	
+	public String addTurnoAction (){
+		
+	return "addTurno";	
+	}
 	
 	public PatientService getPatientService() {
 		return patientService;

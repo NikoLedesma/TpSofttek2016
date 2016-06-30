@@ -54,6 +54,10 @@
 			<result name="editPatient">/views/patientEdit.jsp</result>
 		</action>
 		
+		<action name="addTurno" class="com.grupo3.action.UserAction"
+			method="addTurnoAction">
+			<result name="addTurno">/views/turnoAdd.jsp</result>
+		</action>
 	</package>
 	
 	
@@ -71,7 +75,7 @@
 		</action>
 		
 		<action name="saveTurno" class="com.grupo3.action.TurnoAction"
-		method="addTurn">
+		method="addTurno">
 			<result name="SUCCESS">/views/turnoAdd.jsp</result>
 		</action>
 
