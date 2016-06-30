@@ -41,13 +41,13 @@ public class TurnoAction extends ActionSupport{
 			
 			// Para Descomentar despues este metodo de abajo si no va a sangrar el codigo 
 			//	el codigo por ahora porque no esta declarado en el turnoDAO (idAfiliado)
-		/*			
-		List<Turno> list = turnoBO.findAllTurnos(turnoDto.idAfiliado);
-				/*	
-				dynaCustomerListForm.set("customerList", list);
+				
+		List<Turno> list = turnoBO.findAllTurnos(turnoDto.getIdAfiliado());
+		
+			/*	dynaCustomerListForm.set("customerList", list);
 				        
 				return mapping.findForward("success");
-				  */
+			*/
 		return "SUCCESS";
 		
 			       }
