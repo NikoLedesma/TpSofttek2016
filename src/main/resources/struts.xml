@@ -69,19 +69,17 @@
 			<result name="saveAfiliado">/views/patientAdd.jsp</result>
 		</action>
 		
-		
-		<action name="turnos">
-			<result>/views/turnoAdd.jsp</result>
-		</action>
-		
+	</package>
+	
+	<package name="userB" extends="struts-default" namespace="/user/addTurno">
+	
+	
 		<action name="saveTurno" class="com.grupo3.action.TurnoAction"
 		method="addTurno">
 			<result name="SUCCESS">/views/turnoAdd.jsp</result>
 		</action>
-
+	
 	</package>
-	
-	
 	
 	
 

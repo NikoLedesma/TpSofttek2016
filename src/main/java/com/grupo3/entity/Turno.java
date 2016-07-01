@@ -33,7 +33,7 @@ public class Turno {
 	@JoinColumn(name = "Id_Prestador")
 	private int idPrestador;
 	
-	@JoinColumn(name = "Codgo_Practica")
+	@JoinColumn(name = "Codigo_Practica")
 	private int codigoPractica;
 	
 	@Column(name = "Importe")

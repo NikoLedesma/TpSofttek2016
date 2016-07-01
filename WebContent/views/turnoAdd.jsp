@@ -7,7 +7,7 @@
 <title>Crear turno</title>
 </head>
 <body>
-	<form action="addTurno" onsubmit="myFunction()">
+	<form action="addTurno/saveTurno" onsubmit="myFunction()">
 
 
 		comentarios<input type="text" name="turnoDTO.observaciones"><br>
