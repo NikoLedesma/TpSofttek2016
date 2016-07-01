@@ -11,8 +11,8 @@
 		
 		Fecha de Inicio:<input type="text" name="turnoDTO.fechaInicio"><br>
 		Fecha de llegada:<input type="text" name="turnoDTO.fechaLlegada"><br>
-		Prestador:<input type="text" name="turnoDTO.prestadores"><br>
-		Practica:<input type="text" name="turnoDTO.practica"><br>
+		Prestador:<input type="text" name="turnoDTO.idPrestador"><br>
+		Practica:<input type="text" name="turnoDTO.codigoPractica"><br>
 		Importe:<input type="text" name="turnoDTO.importe"><br>
 		Comentarios:<input type="text" name="turnoDTO.observaciones"><br>
 		

@@ -122,7 +122,7 @@ public class Turno {
 	}
 
 	public void setValores(TurnoDTO turno) {
-		this.codigoPractica = turno.getPracticeNumber();
+		this.codigoPractica = turno.getCodigoPractica();
 		this.disponible = true;
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada = turno.getFechaLlegada();

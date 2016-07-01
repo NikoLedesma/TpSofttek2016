@@ -17,7 +17,7 @@ public class TurnoDTO  {
 	private String observaciones;
 	private int plan;
 	private float importe;
-	private int practiceNumber;
+	private int codigoPractica;
 
 	
 	/* Accessors*/
@@ -69,11 +69,12 @@ public class TurnoDTO  {
 	public void setImporte(float importe) {
 		this.importe = importe;
 	}
-	public int getPracticeNumber() {
-		return practiceNumber;
+	public int getCodigoPractica() {
+		return codigoPractica;
 	}
-	public void setPracticeNumber(int practiceNumber) {
-		this.practiceNumber = practiceNumber;
+	public void setCodigoPractica(int codigoPractica) {
+		this.codigoPractica = codigoPractica;
 	}
+	
 
 }
