@@ -39,13 +39,12 @@ alert("Volver a la pagina anterior");
 
 		nombre y apellido:<input type="text" name="afiliadoDTO.nombreApellido">
 		<br> tipo de documento:<input type="text" name="afiliadoDTO.tipoDoc">
-		<br> numero de documento:<input type="text"
-			name="afiliadoDTO.numeroDoc"> <br> direccion:<input
-			type="text" name="afiliadoDTO.direccion"> <br> telefono:<input
-			type="text" name="afiliadoDTO.telefono"> <br> mail:<input
-			type="text" name="afiliadoDTO.mail"> <br> fecha de
-		nacimiento:<input type="text" name="afiliadoDTO.fechaNacimiento">
-		<br> sexo:<input type="text" name="afiliadoDTO.sexo"> <br>
+		<br> numero de documento:<input type="text"name="afiliadoDTO.numeroDoc"> 
+		<br> direccion:<input type="text" name="afiliadoDTO.direccion">
+		<br> telefono:<input type="text" name="afiliadoDTO.telefono"> 
+		<br> mail:<input type="text" name="afiliadoDTO.mail">
+		<br> fecha de nacimiento:<input type="text" name="afiliadoDTO.fechaNacimiento">
+		<br> sexo:<input type="radio" name="afiliadoDTO.sexo" value="M"> M <input type="radio" name="afiliadoDTO.sexo" value="F"> F<br>
 
 		estado civil:<input type="text" name="afiliadoDTO.estadoCivil">
 		<br>

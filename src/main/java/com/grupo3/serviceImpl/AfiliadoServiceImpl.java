@@ -19,7 +19,6 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 
 	@Transactional
 	public void saveAfiliado(AfiliadoDTO afiliadoDTO) {
-		// TODO Auto-generated method stub
 		Afiliado afiliado = new Afiliado(afiliadoDTO);
 		afiliadoDAO.saveAfiliado(afiliado);
 	}

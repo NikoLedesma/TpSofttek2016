@@ -13,10 +13,6 @@
 		comentarios<input type="text" name="turnoDTO.observaciones"><br>
 		importe:<input type="text" name="turnoDTO.importe"><br>
 
-
-
-
-
 	<input type="submit" value="agregar turno">
 	
 	</form>

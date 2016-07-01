@@ -50,12 +50,8 @@ public class TurnoAction extends ActionSupport{
 					       }
 	
 	public String addTurno(){
-		Turno turno=new Turno();
-		turno.setImporte(turnoDTO.getImporte());  
-		turno.setObservaciones(turnoDTO.getObservaciones());
 		this.turnoService.addTurno(turnoDTO);
 		
-		// turnoService.addTurn(turnoDTO);
 		return "SUCCESS";
 	}
 	

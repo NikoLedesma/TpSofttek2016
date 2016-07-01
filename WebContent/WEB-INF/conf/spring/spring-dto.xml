@@ -12,9 +12,9 @@
 	</beans:bean>
 	
 	<beans:bean id="turnoDTO" class="com.grupo3.dtos.TurnoDTO">
-
 	</beans:bean>
 	
+
 	
 
 </beans:beans> 
