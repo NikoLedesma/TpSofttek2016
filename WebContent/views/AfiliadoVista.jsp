@@ -4,17 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Lista de Afiliado</title>
 </head>
 <body>
 
-<h2>Displayed Successfully.</h2>
+<h2>La lista de los Afiliado</h2>
 <table border="1">
     <tr>
-        <th>Username</th>
-        <th>Password</th>
+        <th>Nombre&Apellido</th>
+        <th>Tipo</th>
+        <th>Numero Documento</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Mail</th>
+        <th>Fecha De Nacimiento</th>
+        
+        
     </tr>
-    <s:iterator>
+    <s:iterator value="list" Var= "i">
         <tr>
             <td><s:property value="users"/></td>
             <td><s:property value="passwords"/></td>

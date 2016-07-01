@@ -13,5 +13,5 @@ public interface AfiliadoDAO {
 
 	public void deleteAfiliado(Afiliado afiliado);
 	
-	public List <Afiliado> getAfiliadoByFirstName(String nombreApellido);
+	public List <Afiliado> getAfiliado(Afiliado afiliado);
 }

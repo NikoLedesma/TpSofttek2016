@@ -1,6 +1,7 @@
 package com.grupo3.serviceImpl;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -36,12 +37,6 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 	}
 
 	@Transactional
-	public List<AfiliadoDTO> getAfiliadoByFirstName(String nombreApellido) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Transactional
 	public AfiliadoDAO getAfiliadoDAO() {
 		return afiliadoDAO;
 	}
@@ -49,5 +44,12 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 	@Transactional
 	public void setAfiliadoDAO(AfiliadoDAO afiliadoDAO) {
 		this.afiliadoDAO = afiliadoDAO;
+	}
+	@Transactional
+	public ArrayList<AfiliadoDTO> getAfiliados(AfiliadoDTO afiliadoDTO) {
+		// TODO Auto-generated method stub
+		Afiliado afiliado = new Afiliado (afiliadoDTO);
+		this.afiliadoDAO.getAfiliado(afiliado);
+		return null;
 	}
 }
