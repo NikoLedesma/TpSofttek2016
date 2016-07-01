@@ -46,7 +46,18 @@ alert("Volver a la pagina anterior");
 		<br> fecha de nacimiento:<input type="text" name="afiliadoDTO.fechaNacimiento">
 		<br> sexo:<input type="radio" name="afiliadoDTO.sexo" value="M"> M <input type="radio" name="afiliadoDTO.sexo" value="F"> F<br>
 
-		estado civil:<input type="text" name="afiliadoDTO.estadoCivil">
+		estado civil:<select  name="afiliadoDTO.estadoCivil">
+			<option value ="viudo/a">Viudo\a</option>
+			<option value="casado/a">Casado\a</option>
+			<option value="soltero/a">Soltero\a</option>
+			<option value="concubinato" >Concubinato</option>
+			<option value="Divorciado">Divorciado\a</option>
+		
+		</select>
+		
+		
+		
+		
 		<br>
 
 
