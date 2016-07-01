@@ -8,13 +8,17 @@
 </head>
 <body>
 	<form action="addTurno/saveTurno" onsubmit="myFunction()">
-
-
-		comentarios<input type="text" name="turnoDTO.observaciones"><br>
-		importe:<input type="text" name="turnoDTO.importe"><br>
-
-	<input type="submit" value="agregar turno">
+		
+		Fecha de Inicio:<input type="text" name="turnoDTO.fechaInicio"><br>
+		Fecha de llegada:<input type="text" name="turnoDTO.fechaLlegada"><br>
+		Prestador:<input type="text" name="turnoDTO.prestadores"><br>
+		Practica:<input type="text" name="turnoDTO.practica"><br>
+		Importe:<input type="text" name="turnoDTO.importe"><br>
+		Comentarios:<input type="text" name="turnoDTO.observaciones"><br>
+		
+		
 	
+	<button type="submit">Agregar Turno</button>
 	</form>
 	
 </body>

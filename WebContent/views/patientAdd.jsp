@@ -25,7 +25,7 @@
 
 </head>
 <body>
-	<h1>Create patient</h1>	
+	<h1> Agregar Paciente</h1>	
 		<script type="text/javascript">
 
 			function myFunction(){
@@ -37,16 +37,16 @@ alert("Volver a la pagina anterior");
 	<form action="addPatient/save" onsubmit="myFunction()">
 
 
-		nombre y apellido:<input type="text" name="afiliadoDTO.nombreApellido">
-		<br> tipo de documento:<input type="text" name="afiliadoDTO.tipoDoc">
-		<br> numero de documento:<input type="text"name="afiliadoDTO.numeroDoc"> 
-		<br> direccion:<input type="text" name="afiliadoDTO.direccion">
-		<br> telefono:<input type="text" name="afiliadoDTO.telefono"> 
-		<br> mail:<input type="text" name="afiliadoDTO.mail">
-		<br> fecha de nacimiento:<input type="text" name="afiliadoDTO.fechaNacimiento">
-		<br> sexo:<input type="radio" name="afiliadoDTO.sexo" value="M"> M <input type="radio" name="afiliadoDTO.sexo" value="F"> F<br>
+		Nombre Apellido:<input type="text" name="afiliadoDTO.nombreApellido">
+		<br> Tipo Doc:<input type="text" name="afiliadoDTO.tipoDoc">
+		<br> Numero de Documento:<input type="text"name="afiliadoDTO.numeroDoc"> 
+		<br> Direccion:<input type="text" name="afiliadoDTO.direccion">
+		<br> Telefono:<input type="text" name="afiliadoDTO.telefono"> 
+		<br> Mail:<input type="text" name="afiliadoDTO.mail">
+		<br> Fecha de Nacimiento:<input type="text" name="afiliadoDTO.fechaNacimiento">
+		<br> Sexo:<input type="radio" name="afiliadoDTO.sexo" value="M"> M <input type="radio" name="afiliadoDTO.sexo" value="F"> F<br>
 
-		estado civil:<select  name="afiliadoDTO.estadoCivil">
+		Estado Civil:<select  name="afiliadoDTO.estadoCivil">
 			<option value ="viudo/a">Viudo\a</option>
 			<option value="casado/a">Casado\a</option>
 			<option value="soltero/a">Soltero\a</option>
@@ -63,11 +63,11 @@ alert("Volver a la pagina anterior");
 
 
 
-	<input type="submit" value="agregar afiliado">
+	<input type="submit" value="Agregar">
 	
 	</form>
 	
-	<form action="turnos" value="PedirTurno"></form>
+	
 	
 	
 </body>

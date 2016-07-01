@@ -24,7 +24,7 @@
     <s:iterator value="list" Var= "i">
         <tr>
             <td><s:property value="users"/></td>
-            <td><s:property value="passwords"/></td>
+           
         </tr>
     </s:iterator> 
 </table>

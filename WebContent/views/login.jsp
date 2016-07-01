@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <h1 style="background-color: lime;">Struts2 - Spring Security Demo Softtek 2016</h1> 
+        <h1 style="background-color: lime;">Softtek 2016 Academia Grupo3</h1> 
         <s:if test="%{#parameters.error != null}">
             <div style="color: red">Invalid User</div>
         </s:if>
