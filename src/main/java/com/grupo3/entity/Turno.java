@@ -124,11 +124,11 @@ public class Turno {
 	public void setValores(TurnoDTO turno) {
 		this.codigoPractica = turno.getPracticeNumber();
 		this.disponible = true;
-		this.fechaInicio = turno.getHoraDeInicio();
-		this.fechaLlegada = turno.getHoraDeLlegada();
+		this.fechaInicio = turno.getFechaInicio();
+		this.fechaLlegada = turno.getFechaLlegada();
 		this.observaciones = turno.getObservaciones();
 //		this.idAfiliado = turno.getIdAfiliado();
-		this.idPrestador = turno.getIdProfesional();
+		this.idPrestador = turno.getIdPrestador();
 		this.importe = turno.getImporte();
 		
 		

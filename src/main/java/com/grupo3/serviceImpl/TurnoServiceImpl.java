@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.grupo3.dao.TurnoDAO;
-import com.grupo3.daoImpl.TurnoDAOImpl;
 import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.entity.Turno;
 import com.grupo3.service.TurnoService;
@@ -26,9 +25,11 @@ public class TurnoServiceImpl implements TurnoService {
 
 
 	@Transactional
-	public List<Turno> findAllTurnos(TurnoDTO t) {
+	public List<TurnoDTO> findAllTurnos(TurnoDTO t) {
+		//TODO: Castear turnos a dto
 		List<Turno> turnos = turnoDAO.findAllTurns(t);
-		return turnos;
+		
+		return null;
 		
 	}
 	@Transactional
