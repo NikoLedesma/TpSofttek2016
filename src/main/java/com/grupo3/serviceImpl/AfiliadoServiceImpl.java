@@ -2,6 +2,7 @@ package com.grupo3.serviceImpl;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -51,5 +52,16 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 		Afiliado afiliado = new Afiliado (afiliadoDTO);
 		this.afiliadoDAO.getAfiliado(afiliado);
 		return null;
+	}
+
+	public List<AfiliadoDTO> AfiliadoADTO(List<Afiliado> afiliados) {
+		
+		List<AfiliadoDTO> afiliadosDTOS = new LinkedList<AfiliadoDTO>();
+		for(Afiliado a: afiliados){
+			afiliadosDTOS.add(new AfiliadoDTO(a));
+		}
+		
+		
+		return afiliadosDTOS;
 	}
 }

@@ -33,6 +33,27 @@ public class AfiliadoDTO {
 
 	private Date fechaBaja;
 
+	
+	public AfiliadoDTO(){};
+	
+	public AfiliadoDTO(Afiliado afiliado){
+		this.direccion=afiliado.getDireccion();
+		this.fechaBaja = afiliado.getFechaBaja();
+		this.estadoCivil=afiliado.getEstadoCivil();
+		this.fechaNacimiento = afiliado.getFechaNacimiento();
+		this.id=afiliado.getId();
+		this.mail=afiliado.getMail();
+		this.numeroDoc=afiliado.getNumeroDoc();
+		this.nombreApellido=afiliado.getNombreApellido();
+		this.personaResponsable=afiliado.getPersonaResponsable();
+		this.telefono=afiliado.getTelefono();
+		//this.plan=afiliado.getPlan();
+		this.sexo=afiliado.getSexo();
+		this.tipoDoc=afiliado.getTipoDoc();
+	}
+	
+	
+	
 	/*Accessors*/
 	public Afiliado getPersonaResponsable() {
 		return personaResponsable;
