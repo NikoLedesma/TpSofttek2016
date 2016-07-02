@@ -17,7 +17,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript"
 	src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<!-- <link rel="stylesheet" type="text/css" href="views/css/turnos.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/TpGrupo3Softtekviews/css/turnos.css"> 
 <link rel="stylesheet" type="text/css"
 	href="<s:url value="views/css/turnos.css"/>">
 <script
@@ -41,6 +41,8 @@
 
 
 
+	<h1 class="loginUser">Hello ${pageContext.request.userPrincipal.name}</h1>
+	<a href="j_spring_security_logout">Logout</a>
 	<div class="content">
 
 		<div class="contentTable">
@@ -282,8 +284,6 @@
 
 
 
-	<h1>11Hello ${pageContext.request.userPrincipal.name}</h1>
-	<a href="j_spring_security_logout">Logout</a>
 
 </body>
 </html>

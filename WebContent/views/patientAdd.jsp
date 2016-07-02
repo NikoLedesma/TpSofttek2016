@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/TpGrupo3Softtek/views/css/patientAdd.css"/>
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -23,8 +23,8 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
-</head>
 <body>
+<div id="contenedor">
 	<h1> Agregar Paciente</h1>	
 		<script type="text/javascript">
 
@@ -35,18 +35,26 @@ alert("Volver a la pagina anterior");
 		</script>
 
 	<form action="addPatient/save" onsubmit="myFunction()">
-
-
-		Nombre Apellido:<input type="text" name="afiliadoDTO.nombreApellido">
-		<br> Tipo Doc:<input type="text" name="afiliadoDTO.tipoDoc">
-		<br> Numero de Documento:<input type="text"name="afiliadoDTO.numeroDoc"> 
-		<br> Direccion:<input type="text" name="afiliadoDTO.direccion">
-		<br> Telefono:<input type="text" name="afiliadoDTO.telefono"> 
-		<br> Mail:<input type="text" name="afiliadoDTO.mail">
-		<br> Fecha de Nacimiento:<input type="text" name="afiliadoDTO.fechaNacimiento">
-		<br> Sexo:<input type="radio" name="afiliadoDTO.sexo" value="M"> M <input type="radio" name="afiliadoDTO.sexo" value="F"> F<br>
-
-		Estado Civil:<select  name="afiliadoDTO.estadoCivil">
+  		
+  		<label>Nombre Apellido</label>
+		<input type="text" name="afiliadoDTO.nombreApellido" placeholder="Nombre Apellido"required>
+		<label>Tipo Doc</label>
+		<input type="text" name="afiliadoDTO.tipoDoc" placeholder="Dni/Pasaporte"required>
+		<label>Numero De Documento</label>
+		<input type="text"name="afiliadoDTO.numeroDoc"placeholder="33784567" required> 
+		<label>Direccion</label>
+		<input type="text" name="afiliadoDTO.direccion" placeholder="Belgrano 100"required>
+		<label>Telefono</label>
+		<input type="text" name="afiliadoDTO.telefono" placeholder="11-22222222"required>
+         <label>Correo</label>
+		<input type="mail" name="afiliadoDTO.mail" placeholder="juanAlbertoPerez@mail.com"required>
+		<label>Fecha De Nacimiento</label>
+		<input type="date" name="afiliadoDTO.fechaNacimiento" placeholder="30 Febrero 12"required>
+		<label>Sexo</label>
+		<input type="checkbox" name="afiliadoDTO.sexo" value="M"> Hombre 
+		<input type="checkbox" name="afiliadoDTO.sexo" value="F"> Mujer<br>
+        <label>Estado Civil</label>
+	       <select  name="afiliadoDTO.estadoCivil">
 			<option value ="viudo/a">Viudo\a</option>
 			<option value="casado/a">Casado\a</option>
 			<option value="soltero/a">Soltero\a</option>
@@ -54,21 +62,12 @@ alert("Volver a la pagina anterior");
 			<option value="Divorciado">Divorciado\a</option>
 		
 		</select>
-		
-		
-		
-		
-		<br>
-
-
-
-
-	<input type="submit" value="Agregar">
+		<input type="submit" value="Agregar">
 	
 	</form>
 	
 	
 	
-	
+	</div>
 </body>
 </html>

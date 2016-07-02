@@ -1,4 +1,4 @@
- .content{
+ content{
 margin-left:10%;
 width: 80%;
   /*  border-radius: 25px;*/
@@ -7,7 +7,7 @@ border: 0.2vw solid;
 float:left  
 }
 
-.contentTable{
+contentTable{
 	margin-top: 2%;
 width: 90%;
 height: 100%;
@@ -17,7 +17,7 @@ float: left;
 
 }
 
-.contentIcon{
+contentIcon{
 
 margin-top: 92px;
 width: 10%;
@@ -28,6 +28,8 @@ background-color: pink;
 li:hover{
 	background-color: lightgrey;
 }
-h1{
-	  clear:left;
+loginUser{
+    float:right;
+	position:fixed;
+	  clear:right;
 }
