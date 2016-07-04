@@ -49,9 +49,13 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 	@Transactional
 	public ArrayList<AfiliadoDTO> getAfiliados(AfiliadoDTO afiliadoDTO) {
 		// TODO Auto-generated method stub
+		List<AfiliadoDTO> afiliadosDTOS = new ArrayList<AfiliadoDTO>();
 		Afiliado afiliado = new Afiliado (afiliadoDTO);
-		this.afiliadoDAO.getAfiliado(afiliado);
-		return null;
+		List<Afiliado> afiliados = this.afiliadoDAO.getAfiliado(afiliado);
+		for(Afiliado a: afiliados){
+			afiliadosDTOS.add(new AfiliadoDTO(a));
+		}
+		return (ArrayList<AfiliadoDTO>) afiliadosDTOS;
 	}
 
 	public List<AfiliadoDTO> AfiliadoADTO(List<Afiliado> afiliados) {
@@ -60,8 +64,6 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 		for(Afiliado a: afiliados){
 			afiliadosDTOS.add(new AfiliadoDTO(a));
 		}
-		
-		
 		return afiliadosDTOS;
 	}
 }

@@ -27,13 +27,10 @@ public class AfiliadoAction extends ActionSupport {
 	
 	public String getAllAfiliado(){
 		listAfiliadoDTO = afiliadoService.getAfiliados(afiliadoDTO);
-		for (AfiliadoDTO a : listAfiliadoDTO) {
-			System.out.println(a.getNombreApellido());
-			System.out.println(a.getId());
-		  }
+
 		return "success";
 		}
-
+	
 	// Getters y Setters
 	
 
