@@ -36,10 +36,10 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 			if(afiliado.getNombreApellido() != null){
 				c.add(Restrictions.eq("nombreApellido",afiliado.getNombreApellido()));
 			}
-			if(afiliado.getNombreApellido() != null){
+			if(afiliado.getNumeroDoc() != null){
 				c.add(Restrictions.eq("numeroDoc",afiliado.getNumeroDoc()));
 			}
-			if(afiliado.getNombreApellido() != null){
+			if(afiliado.getId() != 0){
 				c.add(Restrictions.eq("id",afiliado.getId()));
 			}
 //			if(afiliado.getNombreApellido() != null){
