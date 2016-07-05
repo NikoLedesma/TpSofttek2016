@@ -43,45 +43,44 @@
 
 	<!-- TpGrupo3Softtek/user/xxxxx -->
 	<package name="user" extends="struts-default" namespace="/user">
-	
+
 		<action name="addPatient" class="com.grupo3.action.UserAction"
 			method="addPatientAction">
 			<result name="addPatient">/views/patientAdd.jsp</result>
 		</action>
-		
+
 		<action name="editPatient" class="com.grupo3.action.UserAction"
 			method="editPatientAction">
 			<result name="editPatient">/views/patientEdit.jsp</result>
 		</action>
-		
+
 		<action name="addTurno" class="com.grupo3.action.UserAction"
 			method="addTurnoAction">
 			<result name="addTurno">/views/turnoAdd.jsp</result>
 		</action>
 	</package>
-	
-	
-		<!-- TpGrupo3Softtek/user/xxxxx -->
+
+
+	<!-- TpGrupo3Softtek/user/xxxxx -->
 	<package name="userA" extends="struts-default" namespace="/user/addPatient">
-	
+
 		<action name="save" class="com.grupo3.action.AfiliadoAction"
 			method="guardarAfiliado">
 			<result name="saveAfiliado">/views/patientAdd.jsp</result>
 		</action>
-		
+
 	</package>
-	
+
 	<package name="userB" extends="struts-default" namespace="/user/addTurno">
-	
-	
+
+
 		<action name="saveTurno" class="com.grupo3.action.TurnoAction"
-		method="addTurno">
+			method="addTurno">
 			<result name="SUCCESS">/views/turnoAdd.jsp</result>
 		</action>
-	
+
 	</package>
-	
-	
+
 
 
 
@@ -91,6 +90,6 @@
 
 	<!-- TURN'S BEANS -->
 
-	
+
 
 </struts>

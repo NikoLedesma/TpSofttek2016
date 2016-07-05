@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
- <!-- Latest compiled and minified CSS --> 
+<!-- Latest compiled and minified CSS -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
-<!-- <!-- Optional theme --> 
+<!-- <!-- Optional theme -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"/> -->
 
 <!-- <!-- Latest compiled and minified JavaScript -->
@@ -37,40 +37,40 @@
 
 
 
-<!-- 	<table id="example" class="display" cellspacing="0" width="100%"> -->
-<!-- 		<thead> -->
-<!-- 			<tr> -->
-<!-- 				<th>id</th> -->
-<!-- 				<th>firstName</th> -->
-<!-- 				<th>lastName</th> -->
-<!-- 			</tr> -->
-<!-- 		</thead> -->
-<!-- 		<tfoot> -->
-<!-- 			<tr> -->
-<!-- 				<th>id</th> -->
-<!-- 				<th>firstName</th> -->
-<!-- 				<th>lastName</th> -->
-<!-- 			</tr> -->
-<!-- 		</tfoot> -->
-<!-- 		<tbody> -->
+	<!-- 	<table id="example" class="display" cellspacing="0" width="100%"> -->
+	<!-- 		<thead> -->
+	<!-- 			<tr> -->
+	<!-- 				<th>id</th> -->
+	<!-- 				<th>firstName</th> -->
+	<!-- 				<th>lastName</th> -->
+	<!-- 			</tr> -->
+	<!-- 		</thead> -->
+	<!-- 		<tfoot> -->
+	<!-- 			<tr> -->
+	<!-- 				<th>id</th> -->
+	<!-- 				<th>firstName</th> -->
+	<!-- 				<th>lastName</th> -->
+	<!-- 			</tr> -->
+	<!-- 		</tfoot> -->
+	<!-- 		<tbody> -->
 
 
-<%-- 			<s:iterator value="list" var="user"> --%>
-<!-- 				<tr> -->
-<%-- 					<td><s:property value="#user.id" /></td> --%>
-<%-- 					<td><s:property value="#user.FirstName" /></td> --%>
-<%-- 					<td><s:property value="#user.lastName" /></td> --%>
-<!-- 				</tr> -->
-<%-- 			</s:iterator> --%>
-<!-- 		</tbody> -->
-<!-- 	</table> -->
+	<%-- 			<s:iterator value="list" var="user"> --%>
+	<!-- 				<tr> -->
+	<%-- 					<td><s:property value="#user.id" /></td> --%>
+	<%-- 					<td><s:property value="#user.FirstName" /></td> --%>
+	<%-- 					<td><s:property value="#user.lastName" /></td> --%>
+	<!-- 				</tr> -->
+	<%-- 			</s:iterator> --%>
+	<!-- 		</tbody> -->
+	<!-- 	</table> -->
 
-<div class="row"> 
- 
- <div class="col-sm-8" style="background-color: green">.col-sm-8</div>
-  <div class="col-sm-4" style="background-color: pink">.col-sm-4</div>
+	<div class="row">
 
-</div>
+		<div class="col-sm-8" style="background-color: green">.col-sm-8</div>
+		<div class="col-sm-4" style="background-color: pink">.col-sm-4</div>
+
+	</div>
 
 
 </body>

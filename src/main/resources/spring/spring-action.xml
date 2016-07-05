@@ -7,14 +7,22 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
+	<beans:bean id="adminAction" class="com.grupo3.action.AdminAction">
+		<beans:property name="patientService" ref="patientService" />
 
-	<beans:bean id="patientDTO" class="com.grupo3.dtos.PatientDTO">
 	</beans:bean>
-	
-	<beans:bean id="turnoDTO" class="com.grupo3.dtos.TurnoDTO">
-	</beans:bean>
-	
 
-	
+	<beans:bean id="userAction" class="com.grupo3.action.UserAction">
+		<beans:property name="patientService" ref="patientService" />
+	</beans:bean>
+
+	<beans:bean id="turnoAction" class="com.grupo3.action.TurnoAction">
+		<beans:property name="turnoService" ref="turnoService" />
+	</beans:bean>
+
+	<beans:bean id="afiliadoAction" class="com.grupo3.action.AfiliadoAction">
+		<beans:property name="afiliadoService" ref="afiliadoService" />
+	</beans:bean>
+
 
 </beans:beans> 

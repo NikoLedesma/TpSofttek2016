@@ -11,12 +11,12 @@
 	<beans:bean id="patientService" class="com.grupo3.serviceImpl.PatientServiceImpl">
 		<beans:property name="patientDAO" ref="patientDAO"></beans:property>
 	</beans:bean>
-	
+
 	<beans:bean id="turnoService" class="com.grupo3.serviceImpl.TurnoServiceImpl">
 		<beans:property name="turnoDAO" ref="turnoDAO"></beans:property>
-		
+
 	</beans:bean>
-	
+
 
 	<beans:bean id="afiliadoService" class="com.grupo3.serviceImpl.AfiliadoServiceImpl">
 		<beans:property name="afiliadoDAO" ref="afiliadoDAO"></beans:property>

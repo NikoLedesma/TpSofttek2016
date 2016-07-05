@@ -12,11 +12,11 @@
 		<intercept-url pattern="/user/**" access="ROLE_USER" /><!--should 
 			we change to: /user**? -->
 
-	<access-denied-handler error-page="/views/403.jsp" />
-<!-- 		<access-denied-handler error-page="403" /> -->
-		
-		<!-- login-page="/index"  era el original -->
-		
+		<access-denied-handler error-page="/views/403.jsp" />
+		<!-- <access-denied-handler error-page="403" /> -->
+
+		<!-- login-page="/index" era el original -->
+
 		<form-login login-page="/login" authentication-failure-url="/login?error"
 			authentication-success-handler-ref="customAuthenticationSuccessHandler"
 			username-parameter="username" password-parameter="password" />
@@ -71,21 +71,21 @@
 			<user-service>
 				<user name="admin" password="admin" authorities="ROLE_ADMIN" />
 				<user name="user" password="user" authorities="ROLE_USER" />
-				
+
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	<beans:bean id="customAuthenticationSuccessHandler"
 		class="com.grupo3.securityconf.RoleBasedAuthenticationSuccessHandler">
 	</beans:bean>
-	
-	
-	
-	
+
+
+
+
 </beans:beans>

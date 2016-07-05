@@ -87,14 +87,20 @@
 		</dependency>
 
 
+		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+
 		<!-- Spring plugin struts -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
 			<version>2.3.16</version>
 		</dependency>
-
-
 
 		<!-- spring utilities -->
 		<!-- AOP -->
@@ -175,9 +181,9 @@
 		<!-- Por ejemplo en mi caso debo colocarlo en: -->
 		<!--C:\Users\NicolásE\.m2\repository\com\microsoft\sqlserver\sqljdbc4\4.0\sqljdbc4-4.0.jar -->
 		<dependency>
-		<groupId>com.microsoft.sqlserver</groupId>
-		<artifactId>sqljdbc4</artifactId>
-		<version>4.0</version>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>sqljdbc4</artifactId>
+			<version>4.0</version>
 		</dependency>
 
 		<dependency>
@@ -193,7 +199,7 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -223,24 +229,15 @@
 		</dependency>
 
 
-<dependency>
-    <groupId>org.jboss.jbossts</groupId>
-    <artifactId>jbossjta</artifactId>
-    <version>4.16.4.Final</version>
-</dependency>
+		<dependency>
+			<groupId>org.jboss.jbossts</groupId>
+			<artifactId>jbossjta</artifactId>
+			<version>4.16.4.Final</version>
+		</dependency>
 	</dependencies>
 
-	<build>
-		<!-- <sourceDirectory>src</sourceDirectory> -->
-		<plugins>
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<warSourceDirectory>WebContent</warSourceDirectory>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<!-- <build> <sourceDirectory>src</sourceDirectory> <plugins> <plugin> <artifactId>maven-war-plugin</artifactId> 
+		<version>2.4</version> <configuration> <warSourceDirectory>WEB-INF</warSourceDirectory> 
+		<failOnMissingWebXml>false</failOnMissingWebXml> </configuration> </plugin> 
+		</plugins> </build> -->
 </project>

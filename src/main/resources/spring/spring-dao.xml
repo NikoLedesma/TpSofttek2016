@@ -7,24 +7,22 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	<beans:bean id="adminAction" class="com.grupo3.action.AdminAction">
-		<beans:property name="patientDTO" ref="patientDTO" />
-		<beans:property name="patientService" ref="patientService" />
 
-	</beans:bean>
-
-	<beans:bean id="userAction" class="com.grupo3.action.UserAction">
-		<beans:property name="patientService" ref="patientService" />
-	</beans:bean>
-	
-	<beans:bean id="turnoAction" class="com.grupo3.action.TurnoAction">
-		<beans:property name="turnoService" ref="turnoService"/>
-		<beans:property name="turnoDTO" ref="turnoDTO"/>
+	<beans:bean id="patientDAO" class="com.grupo3.daoImpl.PatientDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory"></beans:property>
 	</beans:bean>
 
-	<beans:bean id="afiliadoAction" class="com.grupo3.action.AfiliadoAction">
-		<beans:property name="afiliadoService" ref="afiliadoService" />
+	<beans:bean id="turnoDAO" class="com.grupo3.daoImpl.TurnoDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory"></beans:property>
 	</beans:bean>
-	
+
+
+
+	<beans:bean id="afiliadoDAO" class="com.grupo3.daoImpl.AfiliadoDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory"></beans:property>
+	</beans:bean>
 
 </beans:beans> 

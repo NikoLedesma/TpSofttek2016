@@ -44,17 +44,17 @@
 
 	</table>
 
-<!-- 	<br> -->
-<!-- 	<form action="addPerson" method="get"> -->
-<!-- 		<br> name:<input type="text" name="name"><br> -->
-<!-- 		lastName:<input type="text" name="lastName"><br> <input type="submit"> -->
-<!-- 	</form> -->
+	<!-- 	<br> -->
+	<!-- 	<form action="addPerson" method="get"> -->
+	<!-- 		<br> name:<input type="text" name="name"><br> -->
+	<!-- 		lastName:<input type="text" name="lastName"><br> <input type="submit"> -->
+	<!-- 	</form> -->
 
-        <s:form action="admin/addPatient" method="get">
-            <s:textfield name="patientDTO.name" label="name" />
-            <s:textfield name="patientDTO.lastName" label="lastName" />
-            <s:submit value="save??" />
-        </s:form>
+	<s:form action="admin/addPatient" method="get">
+		<s:textfield name="patientDTO.name" label="name" />
+		<s:textfield name="patientDTO.lastName" label="lastName" />
+		<s:submit value="save??" />
+	</s:form>
 
 
 	<h1>Hello ${pageContext.request.userPrincipal.name}</h1>
