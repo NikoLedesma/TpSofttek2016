@@ -263,12 +263,16 @@
 				type:"POST",
 				data :{'lastName':'Ledesma'},
 				success:function(data){
-				alert(data.lastName);
-				$.each(data.persons, function(key, value) {					
+// 				alert(data[0].id);
+// 				alert(data[0].nombreApellido);
+				/*$.each(data.persons, function(key, value) {					
 					var xx=[key,value];
-					$('#example').dataTable().fnAddData(xx);					
 					//	alert("id:"+key+"  "+"value:"+value);
-			        });
+			        });*/
+				   $.each(data, function(index) {					   
+						var xx=[data[index].id,data[index].nombreApellido];
+						$('#example').dataTable().fnAddData(xx);					
+					    });   	        
 				},
 				error:function(){
 					alert("error");

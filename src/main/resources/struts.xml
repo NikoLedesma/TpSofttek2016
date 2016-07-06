@@ -63,8 +63,9 @@
 			<result type="json">
 				<param name="excludeNullProperties">true</param>
 				<param name="noCache">true</param>
-<!-- 				  <param name="root">merchandise</param> -->
-  				<param name="excludeProperties">afiliadoService,afiliadoDTO,listAfiliadoDTO</param>
+  				<param name="root">persons</param>
+<!--   				<param name="includeProperties">persons</param>  				 -->
+<!--   				<param name="excludeProperties">afiliadoService,listAfiliadoDTO</param> -->
 				
 			</result>
 		</action>		
