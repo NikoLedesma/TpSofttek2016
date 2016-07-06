@@ -2,8 +2,10 @@ package com.grupo3.daoImpl;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.SharedSessionContract;
 
 import com.grupo3.dao.TurnoDAO;
 import com.grupo3.dtos.TurnoDTO;
@@ -44,9 +46,12 @@ public class TurnoDAOImpl implements TurnoDAO {
 		
 	}
 
-	public List<Turno> findAllTurns(TurnoDTO t) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Turno> findAllTurns(int id) {
+		Session s = sessionFactory.getCurrentSession();
+		Query query= s.createQuery("from Turnos where Id_Afiliado = :id");
+		query.setParameter("id", id);
+		List<Turno> turnos = query.list();
+		return turnos;
 	}
 
 

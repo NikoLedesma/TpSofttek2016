@@ -25,19 +25,19 @@ public class TurnoServiceImpl implements TurnoService {
 
 
 	@Transactional
-	public List<TurnoDTO> findAllTurnos(TurnoDTO t) {
+	public List<TurnoDTO> findAllTurnos(TurnoDTO turnoDTO) {
 		//TODO: Castear turnos a dto
-		List<Turno> turnos = turnoDAO.findAllTurns(t);
+		List<Turno> turnos = turnoDAO.findAllTurns(turnoDTO.getIdAfiliado());
 		
 		return null;
 		
 	}
 	@Transactional
-	public void updateTurno(TurnoDTO turno) {
+	public void updateTurno(TurnoDTO turnoDTO) {
 		
-		Turno t = new Turno();
-		t.setValores(turno);
-		turnoDAO.updateTurno(t);
+		Turno turno = new Turno();
+		turno.setValores(turnoDTO);
+		turnoDAO.updateTurno(turno);
 	}
 	
 	@Transactional
@@ -48,10 +48,10 @@ public class TurnoServiceImpl implements TurnoService {
 		
 	}
 	@Transactional
-	public void addTurno(TurnoDTO turno) {
-		Turno t = new Turno();
-		t.setValores(turno);
-		turnoDAO.saveTurno(t);
+	public void addTurno(TurnoDTO turnoDTO) {
+		Turno turno = new Turno();
+		turno.setValores(turnoDTO);
+		turnoDAO.saveTurno(turno);
 		
 	}
 

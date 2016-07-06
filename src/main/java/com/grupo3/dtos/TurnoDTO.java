@@ -20,6 +20,18 @@ public class TurnoDTO  {
 	private int codigoPractica;
 
 	
+	public TurnoDTO(Turno turno){
+//		this.idAfiliado = turno.getIdAfiliado();
+		this.idPrestador = turno.getIdPrestador();
+		this.fechaInicio = turno.getFechaInicio();
+		this.fechaLlegada= turno.getFechaLlegada();
+		this.nroTurn = turno.getId();
+		this.observaciones = turno.getObservaciones();
+//		this.plan=turno.getPlan();
+		this.importe=turno.getImporte();
+		this.codigoPractica=turno.getCodigoPractica();
+	}
+	
 	/* Accessors*/
 	public int getIdAfiliado() {
 		return idAfiliado;

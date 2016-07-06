@@ -12,6 +12,6 @@ public interface TurnoDAO {
 
 	public void deleteTurno(Turno turno);
 	
-	public List<Turno> findAllTurns(TurnoDTO turno);
+	public List<Turno> findAllTurns(int id);
 
 }
