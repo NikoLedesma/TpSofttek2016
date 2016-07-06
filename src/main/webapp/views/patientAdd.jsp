@@ -27,13 +27,14 @@
 		<h1>Agregar Paciente</h1>
 
 		<script type="text/javascript">
-			function myFunction() {
-				var fecha = $("#fechaAux").val();
-				alert($("#fechaAux").val());
-				var arr = fecha.split("-");
-				$("#fecha").val(arr[2] + "/" + arr[1] + "/" + arr[0]);
-				alert("Volver a la pagina anterior" + $("#fecha").val());
-			}
+// 			function myFunction() {
+// 				var fecha = $("#fechaAux").val();
+// 				alert(fecha);
+// 				alert($("#fechaAux").val());
+// 				var arr = fecha.split("-");
+// 				$("#fecha").val(arr[2] + "/" + arr[1] + "/" + arr[0]);
+// 				alert("Volver a la pagina anterior" + $("#fecha").val());
+// 			}
 		</script>
 
 		<form action="addPatient/save" onsubmit="myFunction()">
@@ -50,9 +51,11 @@
 				name="afiliadoDTO.telefono" placeholder="11-22222222" required>
 			<label>Correo</label> <input type="mail" name="afiliadoDTO.mail"
 				placeholder="juanAlbertoPerez@mail.com" required> <label>Fecha
-				De Nacimiento</label> <input id="fechaAux" type="date"
-				placeholder="02/04/2014" required> <label>Sexo</label> <input
-				id="fecha" type="hidden" name="afiliadoDTO.fechaNacimiento">
+				De Nacimiento</label> 
+				
+<!-- 				<input id="fechaAux" type="date" placeholder="02/04/2014" required> <label>Sexo</label>  -->
+				
+				<input id="fecha" type="text" name="afiliadoDTO.fechaNacimiento" placeholder="02/04/2014">
 
 
 			<input type="radio" name="afiliadoDTO.sexo" value="M" checked>
