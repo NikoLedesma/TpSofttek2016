@@ -26,8 +26,12 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	}
 
 	public void saveAfiliado(Afiliado afiliado) {
+		try {	
 		sessionFactory.getCurrentSession().save(afiliado);
-		
+		}
+		catch(HibernateException e){
+			logger.error("Sucedio una excepción:", e);
+		}
 	}
 	
 
@@ -57,7 +61,7 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	}
 
 	public void updateAfiliado(Afiliado afiliado) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().update(afiliado);
 		
 	}
 
@@ -65,26 +69,5 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 		// TODO Auto-generated method stub
 		
 	}
-
-	public List<Afiliado> getAfiliadoById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<Afiliado> getAfiliadoByPlan(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<Afiliado> getAfiliadoByDocumento(String tipo, String numero) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<Afiliado> getAfiliadoByFirstName(String nombreApellido) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 }

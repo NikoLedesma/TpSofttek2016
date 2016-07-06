@@ -41,8 +41,12 @@
 
 			<label>Nombre Apellido</label> <input type="text"
 				name="afiliadoDTO.nombreApellido" placeholder="Nombre Apellido"
-				required> <label>Tipo Doc</label> <input type="text"
-				name="afiliadoDTO.tipoDoc" placeholder="Dni/Pasaporte" required>
+				required> <label>Tipo Doc</label>  <select
+				name="afiliadoDTO.tipoDoc">
+				<option selected>-----Seleccione Documento------</option>
+				<option value="viudo/a">DNI</option>
+				<option value="casado/a">PASS</option>
+				<option value="soltero/a">CUIL</option>
 			<label>Numero De Documento</label> <input type="text"
 				name="afiliadoDTO.numeroDoc" placeholder="33784567" required>
 			<label>Direccion</label> <input type="text"
@@ -68,7 +72,14 @@
 				<option value="soltero/a">Soltero\a</option>
 				<option value="concubinato">Concubinato</option>
 				<option value="Divorciado">Divorciado\a</option>
-
+				
+<!-- 				<label>Plan</label>  <select
+				name="afiliadoDTO.plan">
+				<option selected>-----Seleccione Plan------</option>
+				<option value="viudo/a">201</option>
+				<option value="casado/a">301</option>
+				<option value="soltero/a">401</option>
+				<option value="soltero/a">501</option> -->
 			</select> <input type="submit" value="Agregar">
 
 		</form>
