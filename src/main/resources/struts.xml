@@ -42,7 +42,7 @@
 
 
 	<!-- TpGrupo3Softtek/user/xxxxx -->
-	<package name="user" extends="struts-default" namespace="/user">
+	<package name="user" extends="struts-default,json-default" namespace="/user">
 
 		<action name="addPatient" class="com.grupo3.action.UserAction"
 			method="addPatientAction">
@@ -58,6 +58,16 @@
 			method="addTurnoAction">
 			<result name="addTurno">/views/turnoAdd.jsp</result>
 		</action>
+			
+		<action name="ajaxRQS" class="com.grupo3.action.AfiliadoAction" method="getAllAfiliado"> 
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+<!-- 				  <param name="root">merchandise</param> -->
+  				<param name="excludeProperties">afiliadoService,afiliadoDTO,listAfiliadoDTO</param>
+				
+			</result>
+		</action>		
 	</package>
 
 
@@ -72,8 +82,6 @@
 	</package>
 
 	<package name="userB" extends="struts-default" namespace="/user/addTurno">
-
-
 		<action name="saveTurno" class="com.grupo3.action.TurnoAction"
 			method="addTurno">
 			<result name="SUCCESS">/views/turnoAdd.jsp</result>
@@ -82,7 +90,14 @@
 	</package>
 
 
+
+
+
+
+
+
 	<!-- TURN'S BEANS -->
+
 
 
 </struts>
