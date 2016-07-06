@@ -2,6 +2,8 @@ package com.grupo3.daoImpl;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,6 +15,7 @@ import com.grupo3.entity.Turno;
 
 public class TurnoDAOImpl implements TurnoDAO {
 
+	private static Logger logger = Logger.getLogger(TurnoDAOImpl.class);
 	private SessionFactory sessionFactory;
 	
 	
@@ -47,11 +50,16 @@ public class TurnoDAOImpl implements TurnoDAO {
 	}
 
 	public List<Turno> findAllTurns(int id) {
+		try {
 		Session s = sessionFactory.getCurrentSession();
 		Query query= s.createQuery("from Turnos where Id_Afiliado = :id");
 		query.setParameter("id", id);
 		List<Turno> turnos = query.list();
 		return turnos;
+		}catch (HibernateException e){
+			logger.error("Sucedio una excepción:", e);
+			return null;
+		}
 	}
 
 

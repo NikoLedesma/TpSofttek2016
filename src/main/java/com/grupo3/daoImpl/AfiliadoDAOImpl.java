@@ -2,7 +2,9 @@ package com.grupo3.daoImpl;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -12,6 +14,7 @@ import com.grupo3.entity.Afiliado;
 
 public class AfiliadoDAOImpl implements AfiliadoDAO{
 
+	private static Logger logger = Logger.getLogger(AfiliadoDAOImpl.class);
 	SessionFactory sessionFactory;
 	
 	public SessionFactory getSessionFactory() {
@@ -29,8 +32,8 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	
 
 	public List<Afiliado> getAfiliado(Afiliado afiliado) {
-		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
+		List<Afiliado> afiliados = null;
 		try {
 			Criteria c = s.createCriteria(Afiliado.class);
 			if(afiliado.getNombreApellido() != null){
@@ -45,14 +48,12 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 //			if(afiliado.getNombreApellido() != null){
 //				c.add(Restrictions.eq("plan",afiliado.getPlan()));
 //			}
-			c.list();
-	//TODO: Cambiar a HibernateExeption
-		} catch (Exception e) {
-			
-		}finally{
-			s.close();
+			 afiliados = c.list();
+			 return afiliados;
+		} catch (HibernateException e) {
+			logger.error("Sucedio una excepción:", e);
+			return null;
 		}
-		return null;
 	}
 
 	public void updateAfiliado(Afiliado afiliado) {
