@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+	<context-root>/TpGrupo3Softtek</context-root>
+	<resource-ref>
+		<description>database connection</description>
+		<res-ref-name>jdbc/grupo3</res-ref-name>
+		<jndi-name>java:/jdbc/grupo3</jndi-name>
+	</resource-ref>
+</jboss-web>

@@ -28,7 +28,7 @@
 <script type="text/javascript"
 	src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="views/css/user.css">
+<link rel="stylesheet" type="text/css" href="<s:url value="views/css/user.css"/>">
 
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

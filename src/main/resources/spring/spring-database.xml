@@ -5,7 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd"
+		xmlns:p="http://www.springframework.org/schema/p">
 
 
 
@@ -16,13 +17,14 @@
 	</beans:bean>
 
 
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
-		<beans:property name="driverClassName" value="${jdbc.driverClassName}" />
-		<beans:property name="url" value="${jdbc.url}" />
-		<beans:property name="username" value="${jdbc.username}" />
-		<beans:property name="password" value="${jdbc.password}" />
-	</beans:bean>
+
+  <beans:bean
+  		id="dataSource"
+  		class="org.springframework.jndi.JndiObjectFactoryBean"
+  		p:jndiName="jdbc/grupo3"
+  		p:expectedType="javax.sql.DataSource"
+  		p:resourceRef="true" />
+
 
 	<beans:bean id="hibernate4AnnotatedSessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -46,13 +48,12 @@
 
 	<context:component-scan base-package="com.grupo3" />
 
-	<tx:annotation-driven transaction-manager="transactionManager" />
+<!-- 	<tx:annotation-driven transaction-manager="transactionManager" /> -->
 
-	<beans:bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<beans:property name="sessionFactory"
-			ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
+	<beans:bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+
 
 	<beans:import resource="spring-dao.xml" />
 

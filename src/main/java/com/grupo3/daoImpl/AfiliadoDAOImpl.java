@@ -3,6 +3,7 @@ package com.grupo3.daoImpl;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.apache.taglibs.bsf.scriptlet;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -26,17 +27,23 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	}
 
 	public void saveAfiliado(Afiliado afiliado) {
+		Session openSession=null;
 		try {	
-		sessionFactory.getCurrentSession().save(afiliado);
+		 openSession = sessionFactory.openSession();
+		openSession.save(afiliado);
 		}
 		catch(HibernateException e){
 			logger.error("Sucedio una excepción:", e);
+		}finally{
+			if(openSession.isOpen()){
+				openSession.close();
+			}
 		}
 	}
 	
 
 	public List<Afiliado> getAfiliado(Afiliado afiliado) {
-		Session s = sessionFactory.getCurrentSession();
+		Session s = sessionFactory.openSession();
 		List<Afiliado> afiliados = null;
 		try {
 			Criteria c = s.createCriteria(Afiliado.class);
@@ -58,7 +65,13 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 		} catch (HibernateException e) {
 			logger.error("Sucedio una excepción:", e);
 			return null;
+		}finally{
+			if(s.isOpen()){
+				s.close();
+			}
+
 		}
+		
 	}
 
 	public void updateAfiliado(Afiliado afiliado) {
