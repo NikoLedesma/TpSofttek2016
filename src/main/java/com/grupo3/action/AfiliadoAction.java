@@ -16,54 +16,17 @@ public class AfiliadoAction extends ActionSupport {
 
 	AfiliadoService afiliadoService;
 	AfiliadoDTO afiliadoDTO;
-	private ArrayList<AfiliadoDTO> listAfiliadoDTO;
+	private ArrayList<AfiliadoDTO> listAfiliadoDTO=new ArrayList<AfiliadoDTO>();
+	private String lastName;
 
-	// Methods
 	public String guardarAfiliado() {
 		this.afiliadoService.saveAfiliado(afiliadoDTO);
 		return "saveAfiliado";
 	}
 
-	private String lastName;
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	List<AfiliadoDTO> persons = new ArrayList<AfiliadoDTO>();
-
-	public List<AfiliadoDTO> getPersons() {
-		return persons;
-	}
-
-	public void setPersons(List<AfiliadoDTO> persons) {
-		this.persons = persons;
-	}
-
 	public String getAllAfiliado() {
-		
-		AfiliadoDTO afiliadoDTO = new AfiliadoDTO();
-		afiliadoDTO.setId(0);
-		afiliadoDTO.setNombreApellido("ivan");
-		AfiliadoDTO afiliadoDTO1 = new AfiliadoDTO();
-		afiliadoDTO1.setId(1);
-		afiliadoDTO1.setNombreApellido("carlos");
-		AfiliadoDTO afiliadoDTO2 = new AfiliadoDTO();
-		afiliadoDTO2.setId(2);
-		afiliadoDTO2.setNombreApellido("betoveen");
-		AfiliadoDTO afiliadoDTO3 = new AfiliadoDTO();
-		afiliadoDTO3.setId(3);
-		afiliadoDTO3.setNombreApellido("yo");
-		persons.add(afiliadoDTO);
-		persons.add(afiliadoDTO1);
-		persons.add(afiliadoDTO2);
-		persons.add(afiliadoDTO3);
-
-		System.out.println(lastName);
+		listAfiliadoDTO=afiliadoService.getAfiliados(afiliadoDTO);
+		System.out.println(afiliadoDTO.getNombreApellido());
 		return "success";
 	}
 
@@ -95,6 +58,14 @@ public class AfiliadoAction extends ActionSupport {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 }
