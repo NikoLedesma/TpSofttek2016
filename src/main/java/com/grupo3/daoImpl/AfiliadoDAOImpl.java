@@ -27,21 +27,22 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	}
 
 	public void saveAfiliado(Afiliado afiliado) {
-		Session openSession=null;
+		Session s=null;
 		try {	
-		 openSession = sessionFactory.openSession();
-		openSession.save(afiliado);
+		 s = sessionFactory.openSession();
+		s.save(afiliado);
 		}
 		catch(HibernateException e){
 			logger.error("Sucedio una excepción:", e);
 		}finally{
-			if(openSession.isOpen()){
-				openSession.close();
+			if(s.isOpen()){
+				s.close();
 			}
 		}
 	}
 	
 
+	@SuppressWarnings("unchecked")
 	public List<Afiliado> getAfiliado(Afiliado afiliado) {
 		Session s = sessionFactory.openSession();
 		List<Afiliado> afiliados = null;
@@ -75,12 +76,17 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	}
 
 	public void updateAfiliado(Afiliado afiliado) {
+		Session s = sessionFactory.openSession();
 		try {
 		sessionFactory.getCurrentSession().update(afiliado);
 		} catch (HibernateException e) {
 			logger.error("Sucedio una excepción:", e);
 		}
-		
+		finally{
+			if(s.isOpen()){
+				s.close();
+			}
+		}
 	}
 
 	public void deleteAfiliado(Afiliado afiliado) {
