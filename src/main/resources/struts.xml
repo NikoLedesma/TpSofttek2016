@@ -77,7 +77,7 @@
 
 		<action name="save" class="com.grupo3.action.AfiliadoAction"
 			method="guardarAfiliado">
-			<result name="saveAfiliado">/views/patientAdd.jsp</result>
+			<result name="saveAfiliado" type="redirect">/user</result><!-- Me redirecciona -->
 		</action>
 
 	</package>

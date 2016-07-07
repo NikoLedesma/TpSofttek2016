@@ -37,16 +37,16 @@
 // 			}
 		</script>
 
-		<form action="addPatient/save" onsubmit="myFunction()">
+		<form action="addPatient/save" onsubmit="myFunction()" method="post">
 
 			<label>Nombre Apellido</label> <input type="text"
 				name="afiliadoDTO.nombreApellido" placeholder="Nombre Apellido"
 				required> <label>Tipo Doc</label>  <select
 				name="afiliadoDTO.tipoDoc">
 				<option selected>-----Seleccione Documento------</option>
-				<option value="viudo/a">DNI</option>
-				<option value="casado/a">PASS</option>
-				<option value="soltero/a">CUIL</option>
+				<option value="DNI">DNI</option>
+				<option value="PASS">PASS</option>
+				<option value="CUIL">CUIL</option>
 			<label>Numero De Documento</label> <input type="text"
 				name="afiliadoDTO.numeroDoc" placeholder="33784567" required>
 			<label>Direccion</label> <input type="text"
