@@ -2,6 +2,7 @@ package com.grupo3.serviceImpl;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,13 +28,16 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 
 	@Transactional
 	public void updateAfiliado(AfiliadoDTO afiliadoDTO) {
-		// TODO Auto-generated method stub
+		Afiliado afiliado = new Afiliado(afiliadoDTO);
+		afiliadoDAO.updateAfiliado(afiliado);
 
 	}
 
 	@Transactional
 	public void deleteAfiliado(AfiliadoDTO afiliadoDTO) {
-		// TODO Auto-generated method stub
+		Afiliado afiliado = new Afiliado(afiliadoDTO);
+		afiliado.setFechaBaja(new Date());
+		afiliadoDAO.updateAfiliado(afiliado);
 
 	}
 

@@ -62,7 +62,11 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	}
 
 	public void updateAfiliado(Afiliado afiliado) {
+		try {
 		sessionFactory.getCurrentSession().update(afiliado);
+		} catch (HibernateException e) {
+			logger.error("Sucedio una excepción:", e);
+		}
 		
 	}
 
