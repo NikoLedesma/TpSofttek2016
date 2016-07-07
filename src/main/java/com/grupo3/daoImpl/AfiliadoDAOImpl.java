@@ -40,6 +40,7 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 		List<Afiliado> afiliados = null;
 		try {
 			Criteria c = s.createCriteria(Afiliado.class);
+			c.add(Restrictions.isNull("fechaBaja"));
 			if(afiliado.getNombreApellido() != null){
 				c.add(Restrictions.eq("nombreApellido",afiliado.getNombreApellido()));
 			}
