@@ -7,10 +7,10 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.SharedSessionContract;
 
 import com.grupo3.dao.TurnoDAO;
 import com.grupo3.dtos.TurnoDTO;
+import com.grupo3.entity.Afiliado;
 import com.grupo3.entity.Turno;
 
 public class TurnoDAOImpl implements TurnoDAO {
@@ -61,12 +61,12 @@ public class TurnoDAOImpl implements TurnoDAO {
 
 	}
 
-	public List<Turno> findAllTurns(int id) {
+	public List<Turno> findAllTurns(Afiliado afiliado) {
 		Session s = null;
 		try {
 			s = sessionFactory.openSession();
 			Query query = s.createQuery("from Turnos where Id_Afiliado = :id");
-			query.setParameter("id", id);
+			query.setParameter("id", afiliado.getId());
 			List<Turno> turnos = query.list();
 			return turnos;
 		} catch (HibernateException e) {

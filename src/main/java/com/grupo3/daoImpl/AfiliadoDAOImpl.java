@@ -50,17 +50,19 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 			Criteria c = s.createCriteria(Afiliado.class);
 			c.add(Restrictions.isNull("fechaBaja"));
 			if(afiliado.getNombreApellido() != null){
-				c.add(Restrictions.eq("nombreApellido",afiliado.getNombreApellido()));
+				c.add(Restrictions.like("nombreApellido",afiliado.getNombreApellido()));
 			}
 			if(afiliado.getNumeroDoc() != null){
-				c.add(Restrictions.eq("numeroDoc",afiliado.getNumeroDoc()));
+				c.add(Restrictions.like("numeroDoc",afiliado.getNumeroDoc()));
 			}
 			if(afiliado.getId() != 0){
-				c.add(Restrictions.eq("id",afiliado.getId()));
+				c.add(Restrictions.like("id",afiliado.getId()));
 			}
+			
 //			if(afiliado.getNombreApellido() != null){
-//				c.add(Restrictions.eq("plan",afiliado.getPlan()));
+//				c.add(Restrictions.like("plan",afiliado.getPlan()));
 //			}
+			
 			 afiliados = c.list();
 			 return afiliados;
 		} catch (HibernateException e) {

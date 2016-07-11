@@ -1,49 +1,51 @@
 package com.grupo3.dtos;
 
 import java.util.Date;
-import java.util.List;
 
+import com.grupo3.entity.Afiliado;
+import com.grupo3.entity.Practica;
+import com.grupo3.entity.Prestador;
 import com.grupo3.entity.Turno;
 
 
 public class TurnoDTO  {
 	
 	
-	private int idAfiliado;
-	private int idPrestador;
+	private Afiliado afiliado;
+	private Prestador prestador;
 	private Date  fechaInicio;
 	private Date fechaLlegada;
 	private int nroTurn; 
 	private String observaciones;
 	private int plan;
 	private float importe;
-	private int codigoPractica;
+	private Practica practica;
 
 	
 	public TurnoDTO(Turno turno){
-//		this.idAfiliado = turno.getIdAfiliado();
-		this.idPrestador = turno.getIdPrestador();
+//		this.idAfiliado = turno.getAfiliado();
+		this.prestador = turno.getPrestador();
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada= turno.getFechaLlegada();
 		this.nroTurn = turno.getId();
 		this.observaciones = turno.getObservaciones();
 //		this.plan=turno.getPlan();
 		this.importe=turno.getImporte();
-		this.codigoPractica=turno.getCodigoPractica();
+		this.practica=turno.getPractica();
 	}
 	
 	/* Accessors*/
-	public int getIdAfiliado() {
-		return idAfiliado;
+	public Afiliado getAfiliado() {
+		return afiliado;
 	}
-	public void setIdAfiliado(int idAfiliado) {
-		this.idAfiliado = idAfiliado;
+	public void setAfiliado(Afiliado afiliado) {
+		this.afiliado = afiliado;
 	}
-	public int getIdPrestador() {
-		return idPrestador;
+	public Prestador getPrestador() {
+		return prestador;
 	}
-	public void setIdPrestador(int idPrestador) {
-		this.idPrestador = idPrestador;
+	public void setPrestador(Prestador prestador) {
+		this.prestador =prestador;
 	}
 	public Date getFechaInicio() {
 		return fechaInicio;
@@ -81,11 +83,11 @@ public class TurnoDTO  {
 	public void setImporte(float importe) {
 		this.importe = importe;
 	}
-	public int getCodigoPractica() {
-		return codigoPractica;
+	public Practica getPractica() {
+		return practica;
 	}
-	public void setCodigoPractica(int codigoPractica) {
-		this.codigoPractica = codigoPractica;
+	public void setCodigoPractica(Practica practica) {
+		this.practica = practica;
 	}
 	
 

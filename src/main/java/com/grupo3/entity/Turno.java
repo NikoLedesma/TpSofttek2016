@@ -22,7 +22,7 @@ public class Turno {
 	
 //	@JoinColumn(name = "Afiliados")
 //	@ManyToOne
-//	private int idAfiliado;
+//	private Afiliado afiliado;
 //	
 	@Column
 	private Date fechaInicio;
@@ -30,11 +30,11 @@ public class Turno {
 	@Column
 	private Date fechaLlegada;
 	
-	@JoinColumn(name = "Id_Prestador")
-	private int idPrestador;
+	@JoinColumn(name = "Prestadores")
+	private Prestador prestador;
 	
-	@JoinColumn(name = "Codigo_Practica")
-	private int codigoPractica;
+	@JoinColumn(name = "Practicas")
+	private Practica practica;
 	
 	@Column(name = "Importe")
 	private float importe;
@@ -57,12 +57,12 @@ public class Turno {
 		this.id = id;
 	}
 
-//	public int getIdAfiliado() {
-//		return idAfiliado;
+//	public int getAfiliado() {
+//		return afiliado;
 //	}
 //
-//	public void setIdAfiliado(int idAfiliado) {
-//		this.idAfiliado = idAfiliado;
+//	public void setAfiliado(Afiliado afiliado) {
+//		this.afiliado = afiliado;
 //	}
 
 	public Date getFechaInicio() {
@@ -81,20 +81,20 @@ public class Turno {
 		this.fechaLlegada = fechaLlegada;
 	}
 
-	public int getIdPrestador() {
-		return idPrestador;
+	public Prestador getPrestador() {
+		return prestador;
 	}
 
-	public void setIdPrestador(int idPrestador) {
-		this.idPrestador = idPrestador;
+	public void setPrestador(Prestador Prestador) {
+		this.prestador = prestador;
 	}
 
-	public int getCodigoPractica() {
-		return codigoPractica;
+	public Practica getPractica() {
+		return practica;
 	}
 
-	public void setCodigoPractica(int codigoPractica) {
-		this.codigoPractica = codigoPractica;
+	public void setPractica(Practica practica) {
+		this.practica = practica;
 	}
 
 	public float getImporte() {
@@ -121,14 +121,18 @@ public class Turno {
 		this.disponible = disponible;
 	}
 
-	public void setValores(TurnoDTO turno) {
-		this.codigoPractica = turno.getCodigoPractica();
+	/* Constructores */
+	public Turno(){
+	}
+
+	public Turno(TurnoDTO turno) {
+		this.practica = turno.getPractica();
 		this.disponible = true;
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada = turno.getFechaLlegada();
 		this.observaciones = turno.getObservaciones();
-//		this.idAfiliado = turno.getIdAfiliado();
-		this.idPrestador = turno.getIdPrestador();
+//		this.afiliado = turno.getAfiliado();
+		this.prestador = turno.getPrestador();
 		this.importe = turno.getImporte();
 		
 		

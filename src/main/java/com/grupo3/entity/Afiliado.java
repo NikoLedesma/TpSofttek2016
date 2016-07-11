@@ -3,8 +3,10 @@ package com.grupo3.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -56,7 +58,7 @@ public class Afiliado {
 	@JoinColumn(name = "Id_Persona_ACargo")
 	private Afiliado personaResponsable;
 
-	@OneToMany(mappedBy="personaResponsable")
+	@OneToMany(mappedBy="personaResponsable",cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	List<Afiliado> afiliadosACargo;
 	
 	
