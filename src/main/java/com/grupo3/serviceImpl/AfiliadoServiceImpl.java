@@ -36,7 +36,7 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 
 	@Transactional
 	public void deleteAfiliado(AfiliadoDTO afiliadoDTO) {
-		Afiliado afiliado = new Afiliado(afiliadoDTO);
+		Afiliado afiliado = afiliadoDAO.getAfiliadoById(afiliadoDTO.getId());
 		afiliado.setFechaBaja(new Date());
 		afiliadoDAO.updateAfiliado(afiliado);
 
