@@ -30,11 +30,11 @@ public class Turno {
 	@Column
 	private Date fechaLlegada;
 	
-	@JoinColumn(name = "Prestadores")
-	private Prestador prestador;
+//	@JoinColumn(name = "Prestadores")
+//	private Prestador prestador;
 	
-	@JoinColumn(name = "Practicas")
-	private Practica practica;
+//	@JoinColumn(name = "Practicas")
+//	private Practica practica;
 	
 	@Column(name = "Importe")
 	private float importe;
@@ -81,21 +81,21 @@ public class Turno {
 		this.fechaLlegada = fechaLlegada;
 	}
 
-	public Prestador getPrestador() {
-		return prestador;
-	}
-
-	public void setPrestador(Prestador Prestador) {
-		this.prestador = prestador;
-	}
-
-	public Practica getPractica() {
-		return practica;
-	}
-
-	public void setPractica(Practica practica) {
-		this.practica = practica;
-	}
+//	public Prestador getPrestador() {
+//		return prestador;
+//	}
+//
+//	public void setPrestador(Prestador Prestador) {
+//		this.prestador = prestador;
+//	}
+//
+//	public Practica getPractica() {
+//		return practica;
+//	}
+//
+//	public void setPractica(Practica practica) {
+//		this.practica = practica;
+//	}
 
 	public float getImporte() {
 		return importe;
@@ -126,13 +126,13 @@ public class Turno {
 	}
 
 	public Turno(TurnoDTO turno) {
-		this.practica = turno.getPractica();
+//		this.practica = turno.getPractica();
 		this.disponible = true;
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada = turno.getFechaLlegada();
 		this.observaciones = turno.getObservaciones();
 //		this.afiliado = turno.getAfiliado();
-		this.prestador = turno.getPrestador();
+//		this.prestador = turno.getPrestador();
 		this.importe = turno.getImporte();
 		
 		

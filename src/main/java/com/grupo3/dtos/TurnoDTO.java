@@ -24,14 +24,14 @@ public class TurnoDTO  {
 	
 	public TurnoDTO(Turno turno){
 //		this.idAfiliado = turno.getAfiliado();
-		this.prestador = turno.getPrestador();
+//		this.prestador = turno.getPrestador();
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada= turno.getFechaLlegada();
 		this.nroTurn = turno.getId();
 		this.observaciones = turno.getObservaciones();
 //		this.plan=turno.getPlan();
 		this.importe=turno.getImporte();
-		this.practica=turno.getPractica();
+//		this.practica=turno.getPractica();
 	}
 	
 	/* Accessors*/
