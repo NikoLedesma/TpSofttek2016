@@ -8,6 +8,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
 import com.grupo3.dao.AfiliadoDAO;
@@ -50,13 +51,13 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 			Criteria c = s.createCriteria(Afiliado.class);
 			c.add(Restrictions.isNull("fechaBaja"));
 			if(afiliado.getNombreApellido() != null){
-				c.add(Restrictions.like("nombreApellido",afiliado.getNombreApellido()));
+				c.add(Restrictions.ilike("nombreApellido","%"+afiliado.getNombreApellido()+"%"));
 			}
 			if(afiliado.getNumeroDoc() != null){
-				c.add(Restrictions.like("numeroDoc",afiliado.getNumeroDoc()));
+				c.add(Restrictions.ilike("numeroDoc",afiliado.getNumeroDoc()+"%"));
 			}
 			if(afiliado.getId() != 0){
-				c.add(Restrictions.like("id",afiliado.getId()));
+				c.add(Restrictions.eq("id",afiliado.getId()));
 			}
 			
 //			if(afiliado.getNombreApellido() != null){
