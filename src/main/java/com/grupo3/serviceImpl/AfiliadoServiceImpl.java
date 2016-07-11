@@ -28,7 +28,7 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 
 	@Transactional
 	public void updateAfiliado(AfiliadoDTO afiliadoDTO) {
-		Afiliado afiliado = new Afiliado(afiliadoDTO);
+		Afiliado afiliado = afiliadoDAO.getAfiliadoUpdate(afiliadoDTO);
 		afiliadoDAO.updateAfiliado(afiliado);
 
 	}

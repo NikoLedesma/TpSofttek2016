@@ -38,6 +38,12 @@
 
 <body>
 
+
+
+
+
+
+
 	<h1>Pacientes</h1>
 
 	<h1 class="loginUser">Hello
@@ -98,6 +104,84 @@
 			</ul>
 		</div>
 	</div>
+	
+	
+	
+	
+	
+	
+	<div id="contentTurnos">
+	<h1 align="center">Turnos</h1>
+
+	<div  class="content">
+
+		<div class="contentTable">
+			<table id="exampleTurnos" class="display" cellspacing="0" width="100%">
+				        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+            </tr>
+        </tbody>
+			</table>
+		</div>
+
+		<div class="contentIcon">
+			<ul class="list-group">
+				<li id="btnMinusTurno" class="list-group-item"><span
+					class="glyphicon glyphicon-minus-sign" ></span></li>
+				<li id="btnPlusTurno" class="list-group-item"><span
+					class="glyphicon glyphicon-plus-sign" ></span></li>
+				<li id="btnEditTurno" class="list-group-item"><span
+					class="glyphicon glyphicon-edit"></span></li>
+					
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+	
+	
+	
+<form id="target" action="user/editPatient"  style="display:none" method="post">
+	<input id="id" 				type="hidden" name="afiliadoDTO.id" value="21185">
+	<input id="nombreApellido"	type="hidden" name="afiliadoDTO.nombreApellido" value="Nicolás Ledesma">
+	<input id="tipoDoc"			type="hidden" name="afiliadoDTO.tipoDoc" value="DNI">
+	<input id="numeroDoc"		type="hidden" name="afiliadoDTO.numeroDoc" value="34232855">
+	<input id="direccion"		type="hidden" name="afiliadoDTO.direccion" value="Av. Gral. Las Heras 2320">
+	<input id="telefono"		type="hidden" name="afiliadoDTO.telefono" value="4655-4323">
+	<input id="mail"			type="hidden" name="afiliadoDTO.mail" value="nikito@fbi.com">
+	<input id="fechaNacimiento"	type="hidden" name="afiliadoDTO.fechaNacimiento" value="02/02/1995">	
+	<input id="sexo"			type="hidden" name="afiliadoDTO.sexo" value="M">	
+	<input id="estadoCivil"		type="hidden" name="afiliadoDTO.estadoCivil" value="casado/a">	
+</form>
+	
+	
 
 	<script type="text/javascript" src="views/js/user.js"></script>
 

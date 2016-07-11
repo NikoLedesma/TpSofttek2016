@@ -53,6 +53,8 @@
 			method="editPatientAction">
 			<result name="editPatient">/views/patientEdit.jsp</result>
 		</action>
+		
+		
 
 		<action name="addTurno" class="com.grupo3.action.UserAction"
 			method="addTurnoAction">
@@ -81,6 +83,17 @@
 		</action>
 
 	</package>
+
+
+<package name="afiliadoA" extends="struts-default" namespace="/user/editPatient">
+		<action name="update" class="com.grupo3.action.AfiliadoAction"
+			method="actualizarAfiliado">
+			<result name="updateAfiliado" type="redirect">/user</result><!-- Me redirecciona -->
+		</action>
+
+	</package>
+
+
 
 	<package name="userB" extends="struts-default" namespace="/user/addTurno">
 		<action name="saveTurno" class="com.grupo3.action.TurnoAction"

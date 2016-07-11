@@ -21,7 +21,7 @@ public class Afiliado {
 
 	@Id
 	@Column(name = "Id_Afiliado")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name = "Nombre_Apellido")

@@ -1,6 +1,18 @@
 /**
  * 
  */
+
+	var tableTurnos;
+		$(document).ready(function() {
+			tableTurnos =	$('#exampleTurnos').DataTable({
+				"lengthChange" : false,
+		        select:true,
+		        keys: true
+			});			
+			$("#contentTurnos").hide();
+		});
+
+
 var table;
 $(document).ready(function() {
 	table = $('#example').DataTable({
@@ -10,8 +22,26 @@ $(document).ready(function() {
 	});
 
 	table.off("select").on("select", function(e, dt, type, indexes) {
-		console.log(e, dt, type, indexes);
-	});
+        console.log( e, dt, type, indexes );//el indexes indica el indice de la fila seleccionada
+        var rowData = table.rows( indexes ).data().toArray();
+       var json= JSON.stringify( rowData )
+        person={
+        		name:rowData[0][0],
+        		position:rowData[0][1],	
+        		office:rowData[0][2],
+        		age:rowData[0][3],
+        		date:rowData[0][4],
+        		salary:rowData[0][5]
+        }	
+        console.log( e, dt, type, indexes );
+		console.log(person.name,person.position,person.office,person.age,person.date,person.salary);//muestra el turno
+		$("#contentTurnos").show();
+        alert("selecciono");
+	}).on( 'deselect', function ( e, dt, type, indexes ) {
+        var rowData = table.rows( indexes ).data().toArray();
+        $("#contentTurnos").hide();
+        alert("deselecciono")
+    } );
 	/* para usar cuando deselecciona */
 	// table.off("select").on( "deselect", function( e, dt, type, indexes ) {
 	// alert("holaa");
@@ -60,8 +90,18 @@ $("#btnEdit").click(function() {
 	var url = 'user/editPatient';
 	console.log(arr.length + 'row(s) selected');
 	if (arr.length > 0) {
-		alert("name:" + arr[0][0] + "  position:" + arr[0][1]);
-		window.location.href = url;
+		//alert("name:" + arr[0][0] + "  position:" + arr[0][1]);
+		//window.location.href = url;
+		alert(arr[0][0]+arr[0][1]+arr[0][2]+arr[0][3]);
+		$("#id").val(arr[0][0]);
+		$("#nombreApellido").val(arr[0][1]);
+		$("#tipoDoc").val(arr[0][2]);
+		$("#numeroDoc").val(arr[0][3]);
+		$("#direccion").val(arr[0][4]);
+		$("#telefono").val(arr[0][5]);
+		$("#mail").val(arr[0][6]);
+		$("#fechaNacimiento").val(arr[0][7]);
+		$( "#target" ).submit();		
 	} else {
 		alert("se necesita seleccionar algun afiliado");
 	}
@@ -100,3 +140,46 @@ $("#btnAjax").click(
 				}
 			});
 		});
+
+
+
+
+
+
+$("#btnMinusTurno").click(function() {
+	//TODO: cambiar a borrar
+	alert("Delete el turno");
+//		var url= 'user/addTurno';
+//		 window.location.href =url;
+//		 return false;
+});
+//se define el evento para el btnPlus
+
+$("#btnPlusTurno").click(function() {
+	var arr=	table.rows('.selected').data();//me devuelve el array con todos los seleccionados
+	  var url = 'user/addTurno?idAfiliado='+arr[0][3];
+	   window.location.href =url;
+	   return false;
+	//alert("clickeaste +");
+});
+//se define el evento para el btnEdit
+
+$("#btnEditTurno").click(function() {
+	
+	var arr=	tableTurnos.rows('.selected').data();//me devuelve el array con todos los seleccionados
+	var url = 'user/editTurno?id=';
+	console.log(arr.length+'row(s) selected');
+	if(arr.length>0){
+		url=url+arr[0][0];
+		window.location.href =url;
+	}
+	
+	else{
+		alert("se necesita seleccionar algun turno para modificar");
+	}
+	   return false;
+});
+
+
+
+

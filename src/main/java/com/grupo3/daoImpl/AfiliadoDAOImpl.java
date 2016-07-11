@@ -12,6 +12,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
 import com.grupo3.dao.AfiliadoDAO;
+import com.grupo3.dtos.AfiliadoDTO;
 import com.grupo3.entity.Afiliado;
 
 public class AfiliadoDAOImpl implements AfiliadoDAO{
@@ -28,9 +29,9 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	}
 
 	public void saveAfiliado(Afiliado afiliado) {
-		Session s=null;
+		Session s = sessionFactory.openSession();
 		try {	
-		 s = sessionFactory.openSession();
+		 
 		s.save(afiliado);
 		}
 		catch(HibernateException e){
@@ -81,9 +82,11 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	public void updateAfiliado(Afiliado afiliado) {
 		Session s = sessionFactory.openSession();
 		try {
-		sessionFactory.getCurrentSession().update(afiliado);
+		s.saveOrUpdate(afiliado);
 		} catch (HibernateException e) {
-			logger.error("Sucedio una excepción:", e);
+			//logger.debug("Sucedio una excepción:", e);
+			System.out.println("Sucedio una excepción:"+e);
+		
 		}
 		finally{
 			if(s.isOpen()){
@@ -95,6 +98,28 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	public void deleteAfiliado(Afiliado afiliado) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public Afiliado getAfiliadoUpdate(AfiliadoDTO afiliadoDTO) {
+		Session s = sessionFactory.openSession();
+		Afiliado afiliado=null;
+		try {
+        afiliado=(Afiliado)s.get(Afiliado.class, afiliadoDTO.getId());
+        afiliado.setDireccion(afiliadoDTO.getDireccion());
+        afiliado.setEstadoCivil(afiliadoDTO.getEstadoCivil());
+        afiliado.setMail(afiliadoDTO.getMail());
+        afiliado.setTelefono(afiliadoDTO.getTelefono());    
+		} catch (HibernateException e) {
+			//logger.debug("Sucedio una excepción:", e);
+			System.out.println("Sucedio una excepción:"+e);
+		
+		}
+		finally{
+			if(s.isOpen()){
+				s.close();
+			}
+		}
+		return afiliado;
 	}
 
 }

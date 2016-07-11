@@ -23,6 +23,14 @@ public class AfiliadoAction extends ActionSupport {
 		this.afiliadoService.saveAfiliado(afiliadoDTO);
 		return "saveAfiliado";
 	}
+	
+	
+	public String actualizarAfiliado() {
+		System.out.println(afiliadoDTO.getMail());
+		this.afiliadoService.updateAfiliado(afiliadoDTO);
+		return "updateAfiliado";
+	}
+	
 
 	public String getAllAfiliado() {
 		listAfiliadoDTO=afiliadoService.getAfiliados(afiliadoDTO);
