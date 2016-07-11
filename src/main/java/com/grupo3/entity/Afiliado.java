@@ -209,4 +209,13 @@ public class Afiliado {
 		this.fechaBaja = fechaBaja;
 	}
 
+	public void setCambios(AfiliadoDTO afiliadoDTO) {
+
+        this.setDireccion(afiliadoDTO.getDireccion());
+        this.setEstadoCivil(afiliadoDTO.getEstadoCivil());
+        this.setMail(afiliadoDTO.getMail());
+        this.setTelefono(afiliadoDTO.getTelefono()); 
+		
+	}
+
 }

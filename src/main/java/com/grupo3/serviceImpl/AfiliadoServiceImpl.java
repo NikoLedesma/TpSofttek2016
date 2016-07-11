@@ -28,7 +28,8 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 
 	@Transactional
 	public void updateAfiliado(AfiliadoDTO afiliadoDTO) {
-		Afiliado afiliado = afiliadoDAO.getAfiliadoUpdate(afiliadoDTO);
+		Afiliado afiliado = afiliadoDAO.getAfiliadoById(afiliadoDTO.getId());
+		afiliado.setCambios(afiliadoDTO);
 		afiliadoDAO.updateAfiliado(afiliado);
 
 	}
@@ -52,7 +53,6 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 	}
 	@Transactional
 	public ArrayList<AfiliadoDTO> getAfiliados(AfiliadoDTO afiliadoDTO) {
-		// TODO Auto-generated method stub
 		List<AfiliadoDTO> afiliadosDTOS = new ArrayList<AfiliadoDTO>();
 		Afiliado afiliado = new Afiliado (afiliadoDTO);
 		List<Afiliado> afiliados = this.afiliadoDAO.getAfiliado(afiliado);

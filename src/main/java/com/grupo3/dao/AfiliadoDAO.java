@@ -16,5 +16,5 @@ public interface AfiliadoDAO {
 	
 	public List <Afiliado> getAfiliado(Afiliado afiliado);
 
-	public Afiliado getAfiliadoUpdate(AfiliadoDTO afiliadoDTO);
+	public Afiliado getAfiliadoById(int id);
 }

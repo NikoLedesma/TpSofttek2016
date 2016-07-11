@@ -3,16 +3,13 @@ package com.grupo3.daoImpl;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.apache.taglibs.bsf.scriptlet;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
 import com.grupo3.dao.AfiliadoDAO;
-import com.grupo3.dtos.AfiliadoDTO;
 import com.grupo3.entity.Afiliado;
 
 public class AfiliadoDAOImpl implements AfiliadoDAO{
@@ -82,11 +79,12 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	public void updateAfiliado(Afiliado afiliado) {
 		Session s = sessionFactory.openSession();
 		try {
-		s.saveOrUpdate(afiliado);
+		s.beginTransaction();
+		s.update(afiliado);
+		s.getTransaction().commit();
 		} catch (HibernateException e) {
-			//logger.debug("Sucedio una excepción:", e);
+			s.getTransaction().rollback();
 			System.out.println("Sucedio una excepción:"+e);
-		
 		}
 		finally{
 			if(s.isOpen()){
@@ -100,15 +98,12 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 		
 	}
 
-	public Afiliado getAfiliadoUpdate(AfiliadoDTO afiliadoDTO) {
+	public Afiliado getAfiliadoById(int id) {
 		Session s = sessionFactory.openSession();
 		Afiliado afiliado=null;
 		try {
-        afiliado=(Afiliado)s.get(Afiliado.class, afiliadoDTO.getId());
-        afiliado.setDireccion(afiliadoDTO.getDireccion());
-        afiliado.setEstadoCivil(afiliadoDTO.getEstadoCivil());
-        afiliado.setMail(afiliadoDTO.getMail());
-        afiliado.setTelefono(afiliadoDTO.getTelefono());    
+        afiliado=(Afiliado)s.get(Afiliado.class, id);
+    	return afiliado;
 		} catch (HibernateException e) {
 			//logger.debug("Sucedio una excepción:", e);
 			System.out.println("Sucedio una excepción:"+e);
