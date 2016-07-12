@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "Practica")
+@Entity(name = "Practicas")
 public class Practica {
 	@Id
 	@Column(name = "Codigo")

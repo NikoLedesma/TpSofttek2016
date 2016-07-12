@@ -18,7 +18,7 @@ import javax.transaction.Transactional;
 import com.grupo3.dtos.AfiliadoDTO;
 
 @Transactional
-@Entity(name = "Afiliado")
+@Entity(name = "Afiliados")
 public class Afiliado {
 
 	@Id

@@ -34,6 +34,10 @@
 				<beans:value>com.grupo3.entity.Patient</beans:value>
 				<beans:value>com.grupo3.entity.Afiliado</beans:value>
 				<beans:value>com.grupo3.entity.Turno</beans:value>
+				<beans:value>com.grupo3.entity.Plan</beans:value>
+				<beans:value>com.grupo3.entity.Practica</beans:value>
+				<beans:value>com.grupo3.entity.Prestador</beans:value>
+				
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">

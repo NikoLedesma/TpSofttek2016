@@ -83,8 +83,6 @@ $("#btnMinus").click(function() {
 	}
 	var r = confirm("Esta seguro que desea dar de baja el usuario?");
 	if(r == true){
-	//var url = 'user/bajaPatient?afiliadoDTO.id='+arr[0][0];
-	//window.location.href = url ;
 		
 		$.ajax({
 			url : "http://localhost:8080/TpGrupo3Softtek/user/bajaPatient",

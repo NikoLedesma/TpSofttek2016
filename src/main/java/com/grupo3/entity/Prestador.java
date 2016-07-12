@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "Prestador")
+@Entity(name = "Prestadores")
 public class Prestador {
 	@Id
 	@Column(name = "Id_Prestador")

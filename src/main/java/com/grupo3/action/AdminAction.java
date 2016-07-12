@@ -18,7 +18,7 @@ public class AdminAction extends ActionSupport {
 
 	private PatientService patientService;
 
-	PatientDTO patientDTO;
+	private PatientDTO patientDTO;
 
 	public String addPatientAction() {
 		//example: mostramos que el dto recibe segun lo q  pongamos en el formulario

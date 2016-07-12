@@ -13,28 +13,30 @@ import javax.persistence.ManyToOne;
 import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.dtos.TurnoDTO;
 
-@Entity(name = "Turno")
+@Entity(name = "Turnos")
 public class Turno {
 	@Id
 	@Column(name = "Id_Turno")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-//	@JoinColumn(name = "Afiliados")
-//	@ManyToOne
-//	private Afiliado afiliado;
-//	
+	@JoinColumn(name = "Afiliados")
+	@ManyToOne
+	private Afiliado afiliado;
+	
 	@Column
 	private Date fechaInicio;
 	
 	@Column
 	private Date fechaLlegada;
 	
-//	@JoinColumn(name = "Prestadores")
-//	private Prestador prestador;
+	@JoinColumn(name = "id_Prestador")
+	@ManyToOne
+	private Prestador prestador;
 	
-//	@JoinColumn(name = "Practicas")
-//	private Practica practica;
+	@JoinColumn(name = "Codigo_Practica")
+	@ManyToOne
+	private Practica practica;
 	
 	@Column(name = "Importe")
 	private float importe;
@@ -57,13 +59,13 @@ public class Turno {
 		this.id = id;
 	}
 
-//	public int getAfiliado() {
-//		return afiliado;
-//	}
-//
-//	public void setAfiliado(Afiliado afiliado) {
-//		this.afiliado = afiliado;
-//	}
+	public Afiliado getAfiliado() {
+		return afiliado;
+	}
+
+	public void setAfiliado(Afiliado afiliado) {
+		this.afiliado = afiliado;
+	}
 
 	public Date getFechaInicio() {
 		return fechaInicio;
@@ -81,21 +83,21 @@ public class Turno {
 		this.fechaLlegada = fechaLlegada;
 	}
 
-//	public Prestador getPrestador() {
-//		return prestador;
-//	}
-//
-//	public void setPrestador(Prestador Prestador) {
-//		this.prestador = prestador;
-//	}
-//
-//	public Practica getPractica() {
-//		return practica;
-//	}
-//
-//	public void setPractica(Practica practica) {
-//		this.practica = practica;
-//	}
+	public Prestador getPrestador() {
+		return prestador;
+	}
+
+	public void setPrestador(Prestador Prestador) {
+		this.prestador = prestador;
+	}
+
+	public Practica getPractica() {
+		return practica;
+	}
+
+	public void setPractica(Practica practica) {
+		this.practica = practica;
+	}
 
 	public float getImporte() {
 		return importe;
@@ -126,13 +128,13 @@ public class Turno {
 	}
 
 	public Turno(TurnoDTO turno) {
-//		this.practica = turno.getPractica();
+		this.practica = turno.getPractica();
 		this.disponible = true;
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada = turno.getFechaLlegada();
 		this.observaciones = turno.getObservaciones();
-//		this.afiliado = turno.getAfiliado();
-//		this.prestador = turno.getPrestador();
+		this.afiliado = turno.getAfiliado();
+		this.prestador = turno.getPrestador();
 		this.importe = turno.getImporte();
 		
 		

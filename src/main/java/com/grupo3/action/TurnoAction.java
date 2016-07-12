@@ -23,6 +23,14 @@ public class TurnoAction extends ActionSupport{
 	private List<TurnoDTO> turnosDTO;
 	
 
+	public List<TurnoDTO> getTurnosDTO() {
+		return turnosDTO;
+	}
+
+	public void setTurnosDTO(List<TurnoDTO> turnosDTO) {
+		this.turnosDTO = turnosDTO;
+	}
+
 	public TurnoDTO getTurnoDTO() {
 		return turnoDTO;
 	}
@@ -43,8 +51,7 @@ public class TurnoAction extends ActionSupport{
 
 	public String findAllTurnos() {
 			    
-//TODO: Hacer que esto se guarde bien
-//		turnosDTO = turnoService.findAllTurnos(turnoDTO);
+		turnosDTO = turnoService.findAllTurnos(turnoDTO);
 		return "SUCCESS";
 					       }
 	
