@@ -14,6 +14,7 @@
 
 	<beans:bean id="userAction" class="com.grupo3.action.UserAction">
 		<beans:property name="patientService" ref="patientService" />
+		<beans:property name="planDAO" ref="planDAO" />
 	</beans:bean>
 
 	<beans:bean id="turnoAction" class="com.grupo3.action.TurnoAction">
@@ -22,6 +23,7 @@
 
 	<beans:bean id="afiliadoAction" class="com.grupo3.action.AfiliadoAction">
 		<beans:property name="afiliadoService" ref="afiliadoService" />
+		
 	</beans:bean>
 
 

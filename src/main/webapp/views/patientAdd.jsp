@@ -63,8 +63,11 @@
 
 
 			<input type="radio" name="afiliadoDTO.sexo" value="M" checked>
-			Hombre <input type="radio" name="afiliadoDTO.sexo" value="F">
-			Mujer<br> <label>Estado Civil</label> <select
+			Hombre 
+			<input type="radio" name="afiliadoDTO.sexo" value="F">
+			Mujer<br> 
+			
+			<label>Estado Civil</label> <select
 				name="afiliadoDTO.estadoCivil">
 				<option selected>-----Seleccione el estado civil------</option>
 				<option value="viudo/a">Viudo\a</option>
@@ -73,13 +76,12 @@
 				<option value="concubinato">Concubinato</option>
 				<option value="Divorciado">Divorciado\a</option>
 				
-<!-- 				<label>Plan</label>  <select
-				name="afiliadoDTO.plan">
-				<option selected>-----Seleccione Plan------</option>
-				<option value="viudo/a">201</option>
-				<option value="casado/a">301</option>
-				<option value="soltero/a">401</option>
-				<option value="soltero/a">501</option> -->
+				<s:combobox label="Elija el plan del usuario" 
+				headerKey="-1" headerValue="Select Search Engines"
+				list="planesCombo" 
+				name="losPlanes" />
+
+
 			</select> <input type="submit" value="Agregar">
 
 		</form>

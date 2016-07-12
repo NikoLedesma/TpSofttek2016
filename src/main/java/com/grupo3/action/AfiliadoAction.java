@@ -1,12 +1,11 @@
 package com.grupo3.action;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
+import com.grupo3.dao.PlanDAO;
 import com.grupo3.dtos.AfiliadoDTO;
-import com.grupo3.entity.Afiliado;
+import com.grupo3.entity.Plan;
 import com.grupo3.service.AfiliadoService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,6 +17,10 @@ public class AfiliadoAction extends ActionSupport {
 	AfiliadoDTO afiliadoDTO;
 	private ArrayList<AfiliadoDTO> listAfiliadoDTO=new ArrayList<AfiliadoDTO>();
 	private String lastName;
+
+	public AfiliadoAction(){
+	}
+
 
 	public String guardarAfiliado() {
 		this.afiliadoService.saveAfiliado(afiliadoDTO);
@@ -75,5 +78,6 @@ public class AfiliadoAction extends ActionSupport {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 
 }

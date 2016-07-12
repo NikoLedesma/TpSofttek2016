@@ -18,7 +18,11 @@
 			ref="hibernate4AnnotatedSessionFactory"></beans:property>
 	</beans:bean>
 
-
+	<beans:bean id="planDAO" class="com.grupo3.daoImpl.PlanDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory"></beans:property>
+	</beans:bean>
+	
 
 	<beans:bean id="afiliadoDAO" class="com.grupo3.daoImpl.AfiliadoDAOImpl">
 		<beans:property name="sessionFactory"
