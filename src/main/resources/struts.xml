@@ -57,13 +57,22 @@
 
 		<action name="bajaPatient" class="com.grupo3.action.UserAction"
 			method="bajaPatientAction">
-			<result name="bajaPatient">/views/user.jsp</result>
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="root">afiliadoDTO</param>
+			</result>
 		</action>
+		
+		
+		
 
 		<action name="addTurno" class="com.grupo3.action.UserAction"
 			method="addTurnoAction">
 			<result name="addTurno">/views/turnoAdd.jsp</result>
 		</action>
+		
+		
 
 		<action name="ajaxRQS" class="com.grupo3.action.AfiliadoAction"
 			method="getAllAfiliado">

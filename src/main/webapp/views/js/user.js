@@ -83,9 +83,25 @@ $("#btnMinus").click(function() {
 	}
 	var r = confirm("Esta seguro que desea dar de baja el usuario?");
 	if(r == true){
-	var url = 'user/bajaPatient?afiliadoDTO.id='+arr[0][0];
-	window.location.href = url ;
-	 }
+	//var url = 'user/bajaPatient?afiliadoDTO.id='+arr[0][0];
+	//window.location.href = url ;
+		
+		$.ajax({
+			url : "http://localhost:8080/TpGrupo3Softtek/user/bajaPatient",
+			dataType : 'JSON',
+			type : "POST",
+			data : {
+				'afiliadoDTO.id' : arr[0][0]
+			},
+			success : function(data) {
+				alert("ok");
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+        table.row('.selected').remove().draw( false );   
+	}
 	return false;
 });
 

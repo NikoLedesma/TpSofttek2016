@@ -49,7 +49,7 @@ public class UserAction extends ActionSupport {
 	public String bajaPatientAction() {
 
 		afiliadoService.deleteAfiliado(afiliadoDTO);
-		return "bajaPatient";
+		return "success";
 	}
 	
 	public String addTurnoAction (){
