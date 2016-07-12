@@ -14,6 +14,7 @@
 
 
 var table;
+var tableTurnos;
 $(document).ready(function() {
 	table = $('#example').DataTable({
 		"lengthChange" : false,
@@ -36,9 +37,45 @@ $(document).ready(function() {
         console.log( e, dt, type, indexes );
 		console.log(person.name,person.position,person.office,person.age,person.date,person.salary);//muestra el turno
 		$("#contentTurnos").show();
-        alert("selecciono");
+		alert("selecciono");
+		//ACA va la consulta ajax
+		var y = table.rows('.selected').data();
+		$.ajax({
+			url : "http://localhost:8080/TpGrupo3Softtek/user/traerTurnos",
+			dataType : 'JSON',
+			type : "POST",
+			data : {
+				'turnoDTO.idAfiliado' : y[0][0]
+			},
+			success : function(data) {
+
+				$.each(data, function(index) {
+					var xx = [ data[index].nroTurn, y[0][1],
+					           data[index].idAfiliado,333];
+					$('#exampleTurnos').dataTable().fnAddData(xx);
+				});
+//			},
+//			error : function() {
+//				alert("error al cargar turnos");
+//			}
+			}
+		});
+		
+		
+		
+        
+        
+        
+        
+        
+        
+        
+        
+        
 	}).on( 'deselect', function ( e, dt, type, indexes ) {
+		
         var rowData = table.rows( indexes ).data().toArray();
+        
         $("#contentTurnos").hide();
         alert("deselecciono")
     } );
@@ -83,6 +120,7 @@ $("#btnMinus").click(function() {
 	}
 	var r = confirm("Esta seguro que desea dar de baja el usuario?");
 	if(r == true){
+	
 		
 		$.ajax({
 			url : "http://localhost:8080/TpGrupo3Softtek/user/bajaPatient",
@@ -206,6 +244,8 @@ $("#btnEditTurno").click(function() {
 	}
 	   return false;
 });
+
+
 
 
 

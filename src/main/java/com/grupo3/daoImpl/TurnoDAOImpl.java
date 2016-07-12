@@ -61,12 +61,12 @@ public class TurnoDAOImpl implements TurnoDAO {
 
 	}
 
-	public List<Turno> findAllTurns(Afiliado afiliado) {
+	public List<Turno> findAllTurns(int idAfiliado) {
 		Session s = null;
 		try {
 			s = sessionFactory.openSession();
 			Query query = s.createQuery("from Turnos where Id_Afiliado = :id");
-			query.setParameter("id", afiliado.getId());
+			query.setParameter("id",idAfiliado);
 			List<Turno> turnos = query.list();
 			return turnos;
 		} catch (HibernateException e) {

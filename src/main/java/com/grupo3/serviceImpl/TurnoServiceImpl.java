@@ -30,11 +30,11 @@ public class TurnoServiceImpl implements TurnoService {
 	@Transactional
 	public List<TurnoDTO> findAllTurnos(TurnoDTO turnoDTO) {
 		List<TurnoDTO> turnosDTOS = new ArrayList<TurnoDTO>();
-		List<Turno> turnos = turnoDAO.findAllTurns(turnoDTO.getAfiliado());
+		List<Turno> turnos = turnoDAO.findAllTurns(turnoDTO.getIdAfiliado());
 		for(Turno t: turnos){
 			turnosDTOS.add(new TurnoDTO(t));
 		}
-		return null;
+		return turnosDTOS;
 		
 	}
 	@Transactional

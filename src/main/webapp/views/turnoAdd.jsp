@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Crear Turno</h1>
-	<form action="addTurno/saveTurno" onsubmit="myFunction()">
+	<form action="addTurno/saveTurno" >
 
 		Fecha de Inicio:<input type="text" name="turnoDTO.fechaInicio"><br>
 		Fecha de llegada:<input type="text" name="turnoDTO.fechaLlegada"><br>

@@ -140,6 +140,11 @@ public class Turno {
 		
 		
 	}
+
+	public int getPlan() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 
 	

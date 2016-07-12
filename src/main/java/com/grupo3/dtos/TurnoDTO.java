@@ -12,6 +12,7 @@ public class TurnoDTO  {
 	
 	
 	private Afiliado afiliado;
+	private int idAfiliado;
 	private Prestador prestador;
 	private Date  fechaInicio;
 	private Date fechaLlegada;
@@ -23,15 +24,15 @@ public class TurnoDTO  {
 
 	
 	public TurnoDTO(Turno turno){
-//		this.idAfiliado = turno.getAfiliado();
-//		this.prestador = turno.getPrestador();
+		this.idAfiliado = turno.getAfiliado().getId();
+		this.prestador = turno.getPrestador();
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada= turno.getFechaLlegada();
 		this.nroTurn = turno.getId();
 		this.observaciones = turno.getObservaciones();
-//		this.plan=turno.getPlan();
+		this.plan=turno.getPlan();
 		this.importe=turno.getImporte();
-//		this.practica=turno.getPractica();
+		this.practica=turno.getPractica();
 	}
 	
 	/* Accessors*/
@@ -88,6 +89,14 @@ public class TurnoDTO  {
 	}
 	public void setCodigoPractica(Practica practica) {
 		this.practica = practica;
+	}
+
+	public int getIdAfiliado() {
+		return idAfiliado;
+	}
+
+	public void setIdAfiliado(int idAfiliado) {
+		this.idAfiliado = idAfiliado;
 	}
 	
 

@@ -85,6 +85,24 @@
 
 			</result>
 		</action>
+		
+		
+			<action name="saveTurno" class="com.grupo3.action.TurnoAction"
+			method="addTurno">
+			<result name="SUCCESS">/views/turnoAdd.jsp</result>
+		</action>
+		
+		
+			<action name="traerTurnos" class="com.grupo3.action.TurnoAction" method="findAllTurnos">
+			
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="root">turnosDTO</param>
+			
+			</result>
+			
+			</action>
 	</package>
 
 
