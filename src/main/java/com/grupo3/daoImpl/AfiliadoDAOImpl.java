@@ -48,10 +48,10 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 		try {
 			Criteria c = s.createCriteria(Afiliado.class);
 			c.add(Restrictions.isNull("fechaBaja"));
-			if(afiliado.getNombreApellido() != null){
+			if(!afiliado.getNombreApellido().equals("")){
 				c.add(Restrictions.ilike("nombreApellido","%"+afiliado.getNombreApellido()+"%"));
 			}
-			if(afiliado.getNumeroDoc() != null){
+			if(!afiliado.getNumeroDoc().equals("")){
 				c.add(Restrictions.ilike("numeroDoc",afiliado.getNumeroDoc()+"%"));
 			}
 			if(afiliado.getId() != 0){

@@ -137,8 +137,8 @@ $("#btnAjax").click(
 				data : {
 					'afiliadoDTO.nombreApellido' : $('#txtNombreYApp').val(),
 					'afiliadoDTO.numeroDoc' : $('#txtNumeroDoc').val(),
-					'afiliadoDTO.txtPlan' : $('#txtPlan').val(),
-					'afiliadoDTO.nombreApellido' : $('#txtNumeroUsuario').val()
+//					'afiliadoDTO.txtPlan' : $('#txtPlan').val(),
+					'afiliadoDTO.id' : $('#txtNumeroUsuario').val()
 				},
 				success : function(data) {
 
