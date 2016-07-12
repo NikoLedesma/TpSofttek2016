@@ -51,6 +51,9 @@
 	<a href="j_spring_security_logout">Logout</a>
 	<br> Nombre y apellido:
 	<input id="txtNombreYApp" placeholder="Ej:Juan Perez" />
+	<input id="txtNumeroDoc" placeholder="Ej:11111111" />
+	<input id="txtPlan" placeholder="Ej:210" />
+	<input id="txtNumeroUsuario" placeholder="Ej:1" />
 	<br>
 	<input id="btnMostrarSeleccionado" type="button"
 		value="mostrarSeleccionado" />

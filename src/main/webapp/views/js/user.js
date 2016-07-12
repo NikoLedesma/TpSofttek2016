@@ -81,7 +81,7 @@ $("#btnMinus").click(function() {
 	} else {
 		alert("se necesita seleccionar algun afiliado");
 	}
-	var r = confirm("Press a button!");
+	var r = confirm("Esta seguro que desea dar de baja el usuario?");
 	if(r == true){
 	var url = 'user/bajaPatient?afiliadoDTO.id='+arr[0][0];
 	window.location.href = url ;
@@ -135,7 +135,10 @@ $("#btnAjax").click(
 				dataType : 'JSON',
 				type : "POST",
 				data : {
-					'afiliadoDTO.nombreApellido' : $('#txtNombreYApp').val()
+					'afiliadoDTO.nombreApellido' : $('#txtNombreYApp').val(),
+					'afiliadoDTO.numeroDoc' : $('#txtNumeroDoc').val(),
+					'afiliadoDTO.txtPlan' : $('#txtPlan').val(),
+					'afiliadoDTO.nombreApellido' : $('#txtNumeroUsuario').val()
 				},
 				success : function(data) {
 
