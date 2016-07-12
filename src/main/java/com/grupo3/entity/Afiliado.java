@@ -13,9 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.transaction.Transactional;
 
 import com.grupo3.dtos.AfiliadoDTO;
 
+@Transactional
 @Entity(name = "Afiliado")
 public class Afiliado {
 

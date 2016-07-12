@@ -53,18 +53,13 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 	}
 	@Transactional
 	public ArrayList<AfiliadoDTO> getAfiliados(AfiliadoDTO afiliadoDTO) {
-		List<AfiliadoDTO> afiliadosDTOS = new ArrayList<AfiliadoDTO>();
 		Afiliado afiliado = new Afiliado (afiliadoDTO);
-		List<Afiliado> afiliados = this.afiliadoDAO.getAfiliado(afiliado);
-		for(Afiliado a: afiliados){
-			afiliadosDTOS.add(new AfiliadoDTO(a));
-		}
-		return (ArrayList<AfiliadoDTO>) afiliadosDTOS;
+		return this.AfiliadoADTO(this.afiliadoDAO.getAfiliado(afiliado));
 	}
 
-	public List<AfiliadoDTO> AfiliadoADTO(List<Afiliado> afiliados) {
+	public ArrayList<AfiliadoDTO> AfiliadoADTO(List<Afiliado> afiliados) {
 		
-		List<AfiliadoDTO> afiliadosDTOS = new LinkedList<AfiliadoDTO>();
+		ArrayList<AfiliadoDTO> afiliadosDTOS = new ArrayList<AfiliadoDTO>();
 		for(Afiliado a: afiliados){
 			afiliadosDTOS.add(new AfiliadoDTO(a));
 		}

@@ -42,7 +42,8 @@
 
 
 	<!-- TpGrupo3Softtek/user/xxxxx -->
-	<package name="user" extends="struts-default,json-default" namespace="/user">
+	<package name="user" extends="struts-default,json-default"
+		namespace="/user">
 
 		<action name="addPatient" class="com.grupo3.action.UserAction"
 			method="addPatientAction">
@@ -53,24 +54,28 @@
 			method="editPatientAction">
 			<result name="editPatient">/views/patientEdit.jsp</result>
 		</action>
-		
-		
+
+		<action name="bajaPatient" class="com.grupo3.action.UserAction"
+			method="bajaPatientAction">
+			<result name="bajaPatient">/views/user.jsp</result>
+		</action>
 
 		<action name="addTurno" class="com.grupo3.action.UserAction"
 			method="addTurnoAction">
 			<result name="addTurno">/views/turnoAdd.jsp</result>
 		</action>
-			
-		<action name="ajaxRQS" class="com.grupo3.action.AfiliadoAction" method="getAllAfiliado"> 
+
+		<action name="ajaxRQS" class="com.grupo3.action.AfiliadoAction"
+			method="getAllAfiliado">
 			<result type="json">
 				<param name="excludeNullProperties">true</param>
 				<param name="noCache">true</param>
-  				<param name="root">listAfiliadoDTO</param>
-<!--   				<param name="includeProperties">persons</param>  				 -->
-<!--   				<param name="excludeProperties">afiliadoService,listAfiliadoDTO</param> -->
-				
+				<param name="root">listAfiliadoDTO</param>
+				<!-- <param name="includeProperties">persons</param> -->
+				<!-- <param name="excludeProperties">afiliadoService,listAfiliadoDTO</param> -->
+
 			</result>
-		</action>		
+		</action>
 	</package>
 
 
@@ -85,7 +90,7 @@
 	</package>
 
 
-<package name="afiliadoA" extends="struts-default" namespace="/user/editPatient">
+	<package name="afiliadoA" extends="struts-default" namespace="/user/editPatient">
 		<action name="update" class="com.grupo3.action.AfiliadoAction"
 			method="actualizarAfiliado">
 			<result name="updateAfiliado" type="redirect">/user</result><!-- Me redirecciona -->

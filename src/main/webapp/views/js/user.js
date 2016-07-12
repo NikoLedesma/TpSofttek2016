@@ -74,8 +74,18 @@ $(document).ready(function() {
 $("#btnMinus").click(function() {
 	// TODO: cambiar a borrar
 	// alert("Delete an patient");
-	var url = 'user/addTurno';
-	window.location.href = url;
+	var arr = table.rows('.selected').data();
+	console.log(arr.length + 'row(s) selected');
+	if (arr.length > 0) {
+				
+	} else {
+		alert("se necesita seleccionar algun afiliado");
+	}
+	var r = confirm("Press a button!");
+	if(r == true){
+	var url = 'user/bajaPatient?afiliadoDTO.id='+arr[0][0];
+	window.location.href = url ;
+	 }
 	return false;
 });
 
