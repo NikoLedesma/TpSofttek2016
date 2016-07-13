@@ -27,11 +27,12 @@ public class AfiliadoDTO {
 
 	private String estadoCivil;
 
-	private Integer plan;
 
 	private Afiliado personaResponsable;
 
 	private Date fechaBaja;
+	
+	private Integer plan;
 
 	
 	public AfiliadoDTO(){};
@@ -45,11 +46,11 @@ public class AfiliadoDTO {
 		this.mail=afiliado.getMail();
 		this.numeroDoc=afiliado.getNumeroDoc();
 		this.nombreApellido=afiliado.getNombreApellido();
-		this.personaResponsable=afiliado.getPersonaResponsable();
+		//this.personaResponsable=afiliado.getPersonaResponsable();
 		this.telefono=afiliado.getTelefono();
-		this.plan=(Integer)afiliado.getIdPlan();
 		this.sexo=afiliado.getSexo();
 		this.tipoDoc=afiliado.getTipoDoc();
+		this.plan=(Integer)afiliado.getIdPlan();
 	}
 	
 	

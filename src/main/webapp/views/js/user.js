@@ -50,8 +50,8 @@ $(document).ready(function() {
 			success : function(data) {
 
 				$.each(data, function(index) {
-					var xx = [ data[index].nroTurn, y[0][1],
-					           data[index].idAfiliado,333];
+					var xx = [ data[index].nroTurn, data[index].afiliado.nombreApellido,
+					           data[index].afiliado.id,data[index].afiliado.plan.id];
 					$('#exampleTurnos').dataTable().fnAddData(xx);
 				});
 //			},

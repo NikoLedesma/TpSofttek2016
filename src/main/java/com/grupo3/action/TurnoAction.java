@@ -1,5 +1,6 @@
 package com.grupo3.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
 
+import com.grupo3.dtos.AfiliadoDTO;
 import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.entity.Afiliado;
 import com.grupo3.entity.Turno;
@@ -16,18 +18,22 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class TurnoAction extends ActionSupport{
 
-	private static final long serialVersionUID = 2L;
+
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5419318238961534643L;
 	private TurnoDTO turnoDTO;
 	private TurnoService turnoService;
-	private List<TurnoDTO> turnosDTO;
+	private ArrayList<TurnoDTO> turnosDTO=new ArrayList<TurnoDTO>();
 	
-
-	public List<TurnoDTO> getTurnosDTO() {
+	
+	public ArrayList<TurnoDTO> getTurnosDTO() {
 		return turnosDTO;
 	}
 
-	public void setTurnosDTO(List<TurnoDTO> turnosDTO) {
+	public void setTurnosDTO(ArrayList<TurnoDTO> turnosDTO) {
 		this.turnosDTO = turnosDTO;
 	}
 
@@ -51,8 +57,8 @@ public class TurnoAction extends ActionSupport{
 
 	public String findAllTurnos() {
 			    
-		turnosDTO = turnoService.findAllTurnos(turnoDTO);
-		return "SUCCESS";
+		turnosDTO = (ArrayList<TurnoDTO>) turnoService.findAllTurnos(turnoDTO);
+		return "success";
 					       }
 	
 	public String addTurno(){

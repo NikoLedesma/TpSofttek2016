@@ -13,43 +13,52 @@ public class TurnoDTO  {
 	
 	private Afiliado afiliado;
 	private int idAfiliado;
-	private Prestador prestador;
+	public Afiliado getAfiliado() {
+		return afiliado;
+	}
+
+	public void setAfiliado(Afiliado afiliado) {
+		this.afiliado = afiliado;
+	}
+
+	//private Prestador prestador;
 	private Date  fechaInicio;
 	private Date fechaLlegada;
 	private int nroTurn; 
 	private String observaciones;
 	private int plan;
 	private float importe;
-	private Practica practica;
+	//private Practica practica;
 
+	public TurnoDTO(){}
 	
 	public TurnoDTO(Turno turno){
-		this.idAfiliado = turno.getAfiliado().getId();
-		this.prestador = turno.getPrestador();
+		this.afiliado = turno.getAfiliado();
+		//this.prestador = turno.getPrestador();
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada= turno.getFechaLlegada();
 		this.nroTurn = turno.getId();
 		this.observaciones = turno.getObservaciones();
 		this.plan=turno.getPlan();
 		this.importe=turno.getImporte();
-		this.practica=turno.getPractica();
+		//this.practica=turno.getPractica();
 	}
 	
 	/* Accessors*/
-	public Afiliado getAfiliado() {
-		return afiliado;
-	}
-	public void setAfiliado(Afiliado afiliado) {
-		this.afiliado = afiliado;
-	}
-	public Prestador getPrestador() {
+//	public Afiliado getAfiliado() {
+//		return afiliado;
+//	}
+//	public void setAfiliado(Afiliado afiliado) {
+//		this.afiliado = afiliado;
+//	}
+	/*public Prestador getPrestador() {
 		return prestador;
 	}
 	public void setPrestador(Prestador prestador) {
 		this.prestador =prestador;
-	}
+	}*/
 	public Date getFechaInicio() {
-		return fechaInicio;
+		return fechaInicio ;
 	}
 	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
@@ -84,12 +93,12 @@ public class TurnoDTO  {
 	public void setImporte(float importe) {
 		this.importe = importe;
 	}
-	public Practica getPractica() {
+	/*public Practica getPractica() {
 		return practica;
 	}
 	public void setCodigoPractica(Practica practica) {
 		this.practica = practica;
-	}
+	}*/
 
 	public int getIdAfiliado() {
 		return idAfiliado;

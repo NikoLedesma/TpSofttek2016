@@ -94,12 +94,10 @@
 		
 		
 			<action name="traerTurnos" class="com.grupo3.action.TurnoAction" method="findAllTurnos">
-			
 			<result type="json">
 				<param name="excludeNullProperties">true</param>
 				<param name="noCache">true</param>
 				<param name="root">turnosDTO</param>
-			
 			</result>
 			
 			</action>

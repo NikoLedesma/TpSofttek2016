@@ -20,17 +20,17 @@ public class Turno {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@JoinColumn(name = "Afiliados")
+	@JoinColumn(name = "Id_Afiliado")
 	@ManyToOne
 	private Afiliado afiliado;
 	
-	@Column
+	@Column(name="Fecha_Inicio")
 	private Date fechaInicio;
 	
-	@Column
+	@Column(name="Fecha_Llegada")
 	private Date fechaLlegada;
 	
-	@JoinColumn(name = "id_Prestador")
+	@JoinColumn(name = "Id_Prestador")
 	@ManyToOne
 	private Prestador prestador;
 	
@@ -128,13 +128,13 @@ public class Turno {
 	}
 
 	public Turno(TurnoDTO turno) {
-		this.practica = turno.getPractica();
+	//	this.practica = turno.getPractica();
 		this.disponible = true;
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada = turno.getFechaLlegada();
 		this.observaciones = turno.getObservaciones();
-		this.afiliado = turno.getAfiliado();
-		this.prestador = turno.getPrestador();
+		//this.afiliado = turno.getAfiliado();
+	//	this.prestador = turno.getPrestador();
 		this.importe = turno.getImporte();
 		
 		
