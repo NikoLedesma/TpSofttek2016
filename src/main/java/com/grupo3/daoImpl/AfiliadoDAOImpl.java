@@ -44,7 +44,7 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 	@SuppressWarnings("unchecked")
 	public List<Afiliado> getAfiliado(Afiliado afiliado) {
 		Session s = sessionFactory.openSession();
-		List<Afiliado> afiliados = null;
+//		List<Afiliado> afiliados = null;
 		try {
 			Criteria c = s.createCriteria(Afiliado.class);
 			c.add(Restrictions.isNull("fechaBaja"));
@@ -62,7 +62,7 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 //				c.add(Restrictions.like("plan",afiliado.getPlan()));
 //			}
 			
-			 afiliados = c.list();
+			List<Afiliado> afiliados =  c.list();
 			 return afiliados;
 		} catch (HibernateException e) {
 			logger.error("Sucedio una excepción:", e);

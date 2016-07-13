@@ -27,7 +27,7 @@ public class AfiliadoDTO {
 
 	private String estadoCivil;
 
-	private Plan plan;
+	private Integer plan;
 
 	private Afiliado personaResponsable;
 
@@ -47,7 +47,7 @@ public class AfiliadoDTO {
 		this.nombreApellido=afiliado.getNombreApellido();
 		this.personaResponsable=afiliado.getPersonaResponsable();
 		this.telefono=afiliado.getTelefono();
-		//this.plan=afiliado.getPlan();
+		this.plan=(Integer)afiliado.getIdPlan();
 		this.sexo=afiliado.getSexo();
 		this.tipoDoc=afiliado.getTipoDoc();
 	}
@@ -143,11 +143,11 @@ public class AfiliadoDTO {
 		this.estadoCivil = estadoCivil;
 	}
 
-	public Plan getPlan() {
+	public Integer getPlan() {
 		return plan;
 	}
 
-	public void setPlan(Plan plan) {
+	public void setPlan(Integer plan) {
 		this.plan = plan;
 	}
 

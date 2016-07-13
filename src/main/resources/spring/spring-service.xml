@@ -19,7 +19,8 @@
 
 
 	<beans:bean id="afiliadoService" class="com.grupo3.serviceImpl.AfiliadoServiceImpl">
-		<beans:property name="afiliadoDAO" ref="afiliadoDAO"></beans:property>
+		<beans:property name="afiliadoDAO" ref="afiliadoDAO"/>
+		<beans:property name="planDAO" ref="planDAO" />
 	</beans:bean>
 
 </beans:beans> 

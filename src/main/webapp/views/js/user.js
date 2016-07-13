@@ -152,8 +152,6 @@ $("#btnEdit").click(function() {
 	var url = 'user/editPatient';
 	console.log(arr.length + 'row(s) selected');
 	if (arr.length > 0) {
-		//alert("name:" + arr[0][0] + "  position:" + arr[0][1]);
-		//window.location.href = url;
 		alert(arr[0][0]+arr[0][1]+arr[0][2]+arr[0][3]);
 		$("#id").val(arr[0][0]);
 		$("#nombreApellido").val(arr[0][1]);
@@ -189,7 +187,7 @@ $("#btnAjax").click(
 				data : {
 					'afiliadoDTO.nombreApellido' : $('#txtNombreYApp').val(),
 					'afiliadoDTO.numeroDoc' : $('#txtNumeroDoc').val(),
-//					'afiliadoDTO.txtPlan' : $('#txtPlan').val(),
+					'afiliadoDTO.txtPlan' : $('#txtPlan').val(),
 					'afiliadoDTO.id' : $('#txtNumeroUsuario').val()
 				},
 				success : function(data) {

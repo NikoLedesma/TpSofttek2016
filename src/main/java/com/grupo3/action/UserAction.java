@@ -12,10 +12,9 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UserAction extends ActionSupport {
 
 	private static final long serialVersionUID = -5476308048996680762L;
-	private ArrayList<Plan> planesCombo = new ArrayList<Plan>();
+	private ArrayList<Integer> planesCombo = new ArrayList<Integer>();
 	private PatientService patientService;
 	private AfiliadoService afiliadoService;
-	private PlanDAO planDAO;
 
 	public AfiliadoService getAfiliadoService() {
 		return afiliadoService;
@@ -36,12 +35,11 @@ public class UserAction extends ActionSupport {
 	}
 
 	public String addPatientAction() {
-		Plan a=new Plan();
-		a.setDescripcion("forro");
-		Plan b=new Plan();
-		b.setDescripcion("kpo");
-		planesCombo.add(a);
-		planesCombo.add(b);
+		planesCombo.add(210);
+		planesCombo.add(310);
+		planesCombo.add(410);
+		planesCombo.add(510);
+		
 		return "addPatient";
 	}
 
@@ -70,20 +68,14 @@ public class UserAction extends ActionSupport {
 		this.patientService = patientService;
 	}
 
-	public ArrayList<Plan> getPlanesCombo() {
+	public ArrayList<Integer> getPlanesCombo() {
 		return planesCombo;
 	}
 
-	public void setPlanesCombo(ArrayList<Plan> planesCombo) {
+	public void setPlanesCombo(ArrayList<Integer> planesCombo) {
 		this.planesCombo = planesCombo;
 	}
 
-	public PlanDAO getPlanDAO() {
-		return planDAO;
-	}
 
-	public void setPlanDAO(PlanDAO planDAO) {
-		this.planDAO = planDAO;
-	}
 
 }

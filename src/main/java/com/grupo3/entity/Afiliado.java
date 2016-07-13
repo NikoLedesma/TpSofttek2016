@@ -53,9 +53,9 @@ public class Afiliado {
 	@Column(name = "Estado_Civil")
 	private String estadoCivil;
 	
-//	@JoinColumn(name = "ID_Plan")
-//	@ManyToOne
-//	private Plan plan;
+	@JoinColumn(name = "ID_Plan")
+	@ManyToOne
+	private Plan plan;
 	@ManyToOne
 	@JoinColumn(name = "Id_Persona_ACargo")
 	private Afiliado personaResponsable;
@@ -100,7 +100,6 @@ public class Afiliado {
 		this.fechaNacimiento = afiliadoDTO.getFechaNacimiento();
 		this.sexo = afiliadoDTO.getSexo();
 		this.estadoCivil = afiliadoDTO.getEstadoCivil();
-//		this.plan = afiliadoDTO.getPlan();
 		this.personaResponsable = afiliadoDTO.getPersonaResponsable();
 		this.fechaBaja = afiliadoDTO.getFechaBaja();
 	}
@@ -114,6 +113,10 @@ public class Afiliado {
 	}
 
 	/*Getters y setters*/	
+	public int getIdPlan() {
+		return plan.getId();
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -194,13 +197,13 @@ public class Afiliado {
 		this.estadoCivil = estadoCivil;
 	}
 
-//	public Plan getPlan() {
-//		return plan;
-//	}
-//
-//	public void setPlan(Plan plan) {
-//		this.plan = plan;
-//	}
+	public Plan getPlan() {
+		return plan;
+	}
+
+	public void setPlan(Plan plan) {
+		this.plan = plan;
+	}
 
 	
 	public Date getFechaBaja() {

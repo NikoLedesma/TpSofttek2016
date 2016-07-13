@@ -14,7 +14,6 @@
 
 	<beans:bean id="userAction" class="com.grupo3.action.UserAction">
 		<beans:property name="patientService" ref="patientService" />
-		<beans:property name="planDAO" ref="planDAO" />
 	</beans:bean>
 
 	<beans:bean id="turnoAction" class="com.grupo3.action.TurnoAction">

@@ -1,13 +1,12 @@
 package com.grupo3.daoImpl;
 
-import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.grupo3.dao.PlanDAO;
+import com.grupo3.dtos.AfiliadoDTO;
 import com.grupo3.entity.Plan;
 
 public class PlanDAOImpl implements PlanDAO {
@@ -18,12 +17,12 @@ public class PlanDAOImpl implements PlanDAO {
 
 	
 	@SuppressWarnings("unchecked")
-	public List<Plan> getPlanes() {
+	public Plan getPlan(AfiliadoDTO afiliadoDTO) {
 		Session s = null;
 		try {
 			s = sessionFactory.openSession();
-			
-			return s.createCriteria(Plan.class).list();
+			Plan plan = (Plan)s.get(Plan.class, (int) afiliadoDTO.getPlan() );
+			return plan;
 		} catch (HibernateException e) {
 			logger.error("Sucedio una excepción:", e);
 			return null;
