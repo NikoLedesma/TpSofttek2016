@@ -58,9 +58,9 @@ public class AfiliadoDAOImpl implements AfiliadoDAO{
 				c.add(Restrictions.eq("id",afiliado.getId()));
 			}
 			
-//			if(!afiliado.getPlan().equals(null)){
-//				c.add(Restrictions.like("plan",afiliado.getPlan()));
-//			}
+			if(!afiliado.getPlan().equals(null)){
+				c.add(Restrictions.eq("plan",afiliado.getPlan()));
+			}
 			
 			List<Afiliado> afiliados =  c.list();
 			 return afiliados;

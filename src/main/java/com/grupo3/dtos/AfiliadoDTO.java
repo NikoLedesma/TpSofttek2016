@@ -1,37 +1,23 @@
 package com.grupo3.dtos;
 
 import java.util.Date;
-import java.util.List;
 
 import com.grupo3.entity.Afiliado;
-import com.grupo3.entity.Plan;
 
 public class AfiliadoDTO {
 
 	private int id;
-
 	private String nombreApellido;
-
 	private String tipoDoc;
-
 	private String numeroDoc;
-
 	private String direccion;
 	private String telefono;
-
 	private String mail;
-
 	private Date fechaNacimiento;
-
 	private char sexo;
-
 	private String estadoCivil;
-
-
 	private Afiliado personaResponsable;
-
 	private Date fechaBaja;
-	
 	private Integer plan;
 
 	

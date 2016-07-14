@@ -152,11 +152,7 @@
 </form>
 
 <form id="targetEditarTurnos" action="user/editTurno"  style="display:none" method="post">
-	<input id="editTurnoNro" type="hidden"   name="turnoDTO.idAfiliado" value="">
-	<input id="editTurnoFechaInicio" type="hidden"   name="turnoDTO.idAfiliado" value="">
-	<input id="editTurnoFechaLlegada" type="hidden"   name="turnoDTO.idAfiliado" value="">
-	<input id="editTurnoObservaciones" type="hidden"   name="turnoDTO.idAfiliado" value="">
-	<input id="editTurnoImporte" type="hidden"   name="turnoDTO.idAfiliado" value="">
+	<input id="editTurnoNro" type="hidden"   name="turnoDTO.nroTurn" value="">
 </form>	
 	
 <form id="targetGenerarReporteTurnos" action="user/generateReport" style="display:none" method="post">	
