@@ -41,17 +41,15 @@ public class TurnoDAOImpl implements TurnoDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public void updateTurno(TurnoDTO turno) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void deleteTurno(Turno turno) {
+	public void updateTurno(Turno turno) {
 		Session s = sessionFactory.openSession();
 		try {
-		sessionFactory.getCurrentSession().update(turno);
+		s.beginTransaction();
+		s.update(turno);
+		s.getTransaction().commit();
 		} catch (HibernateException e) {
-			logger.error("Sucedio una excepción:", e);
+			s.getTransaction().rollback();
+			System.out.println("Sucedio una excepción:"+e);
 		}
 		finally{
 			if(s.isOpen()){
@@ -59,6 +57,10 @@ public class TurnoDAOImpl implements TurnoDAO {
 			}
 		}
 
+	}
+
+	public void deleteTurno(Turno turno) {
+		//No se implementa
 	}
 
 	public List<Turno> findAllTurns(int idAfiliado) {
@@ -80,9 +82,6 @@ public class TurnoDAOImpl implements TurnoDAO {
 
 	}
 
-	public void updateTurno(Turno turno) {
-		// TODO Auto-generated method stub
 
-	}
 
 }

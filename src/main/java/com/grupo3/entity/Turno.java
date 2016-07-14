@@ -134,9 +134,6 @@ public class Turno {
 		this.observaciones = turno.getObservaciones();
 		this.afiliado = turno.getAfiliado();
 		this.importe = turno.getImporte();
-		
-		
-		
 	}
 
 	public int getPlan() {

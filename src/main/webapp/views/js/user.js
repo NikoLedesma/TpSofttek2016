@@ -96,28 +96,6 @@ $(document)
 												.data().toArray();
 										$("#contentTurnos").hide();
 									});
-
-					$('#btnMostrarSeleccionado')
-							.click(
-									function() {
-										var x = table.rows('.selected').data();// me
-																				// devuelve
-																				// el
-																				// array
-																				// con
-										// todos los seleccionados
-										console.log(x.length
-												+ 'row(s) selected');
-										if (x.length > 0) {
-											alert("id:" + x[0][0]
-													+ "  nombre y apellido:"
-													+ x[0][1]);
-										} else {
-											alert("se necesita seleccionar algun afiliado");
-										}
-
-									});
-
 				});
 
 $("#btnMinus").click(function() {
@@ -235,8 +213,7 @@ $("#btnMinusTurno").click(function() {
 //});
 
 $("#btnPlusTurno").click(function() {
-	var arr = table.rows('.selected').data();// me devuelve el array con
-alert(arr[0][0]);						// todos los seleccionado	
+	var arr = table.rows('.selected').data();// me devuelve el array con todos los seleccionado
 	$('#idAfiliadoTurno').val(arr[0][0]);
 	$("#targetTurnos").submit();	
 	return false;

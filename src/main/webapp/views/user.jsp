@@ -174,7 +174,14 @@
 <form id="targetTurnos" action="user/addTurno"  style="display:none" method="post">
 	<input id="idAfiliadoTurno" type="hidden"   name="turnoDTO.idAfiliado" value="">
 </form>
-	
+
+<form id="targetEditarTurnos" action="user/editTurno"  style="display:none" method="post">
+	<input id="editTurnoNro" type="hidden"   name="turnoDTO.idAfiliado" value="">
+	<input id="editTurnoFechaInicio" type="hidden"   name="turnoDTO.idAfiliado" value="">
+	<input id="editTurnoFechaLlegada" type="hidden"   name="turnoDTO.idAfiliado" value="">
+	<input id="editTurnoObservaciones" type="hidden"   name="turnoDTO.idAfiliado" value="">
+	<input id="editTurnoImporte" type="hidden"   name="turnoDTO.idAfiliado" value="">
+</form>	
 	
 
 	<script type="text/javascript" src="views/js/user.js"></script>
