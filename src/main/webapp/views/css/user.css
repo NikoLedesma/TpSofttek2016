@@ -1,7 +1,6 @@
 .content {
 	margin-left: 10%;
 	width: 80%;
-	/*  border-radius: 25px;*/
 	border-color: black;
 	border: 0.2vw solid;
 	float: left
@@ -80,14 +79,17 @@ button:hover, button:focus {
 	color: #FFF;
 }
 
-/* .header{
-	
-	box-sizing: border-box;
-	border-color: Grey;
-	padding: px;
-	border-width: thick;
-	border-style: double
-} */
+select {
+    background-color: #ffffff;
+      width: 100px;
+	height: 30px;
+	font: 300 24px "Open Sans", Arial, sans-serif;
+	margin: 2px;
+	border-color: Cornsilk;
+	border-width: thin;
+	border-style: outset;
+	 border-radius: 12px;
+}
 
 h2{
 	padding: 2;
@@ -142,7 +144,7 @@ input {
 }
 
 .header {
-	/*  background-color: #4CAF50; */
+
 	font-size: 60px;
 	color: black;
 	text-shadow: 2px 2px #222;

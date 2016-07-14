@@ -48,10 +48,10 @@
 			<!-- <input id="txtPlan" placeholder="Ej:210" value = "0" />  -->
 			
 			<select id="txtPlan" value="210" >
-				  <option value="210">210</option>
-    				<option value="310">310</option>
-    				<option value="410">410</option>
-   					 <option value="510">510</option>
+				  <option value="210"> 210 </option>
+    				<option value="310"> 310 </option>
+    				<option value="410"> 410 </option>
+   					 <option value="510"> 510 </option>
 			
 			</select>
 			
