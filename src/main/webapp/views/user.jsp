@@ -45,7 +45,17 @@
 	<br> 	<span>Complete los campos para efectuar una Busqueda</span><br>
 			<input id="txtNombreYApp" placeholder="Ej:Juan Perez" />
 			<input id="txtNumeroDoc" placeholder="Ej:11111111" />
-			<input id="txtPlan" placeholder="Ej:210" value = "0" />
+			<!-- <input id="txtPlan" placeholder="Ej:210" value = "0" />  -->
+			
+			<select id="txtPlan" value="210" >
+				  <option value="210">210</option>
+    				<option value="310">310</option>
+    				<option value="410">410</option>
+   					 <option value="510">510</option>
+			
+			</select>
+			
+			
 			<input id="txtNumeroUsuario" placeholder="Ej:1" />
 		<input id="btnAjax" type="button" value="Buscar">
 	<br>
