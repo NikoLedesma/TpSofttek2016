@@ -22,18 +22,30 @@ import net.sf.jasperreports.engine.util.JRLoader;
 
 import com.grupo3.dtos.AfiliadoDTO;
 import com.grupo3.entity.Afiliado;
+import com.grupo3.entity.Turno;
 import com.grupo3.service.AfiliadoService;
+import com.grupo3.service.TurnoService;
 import com.grupo3.util.DataPerson;
 import com.opensymphony.xwork2.Action;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 public class ReporteAction {
 
 	AfiliadoDTO afiliadoDTO;
 	AfiliadoService afiliadoService;
+	TurnoService turnoService;
 
+	public TurnoService getTurnoService() {
+		return turnoService;
+	}
+
+	public void setTurnoService(TurnoService turnoService) {
+		this.turnoService = turnoService;
+	}
 
 	public AfiliadoDTO getAfiliadoDTO() {
 		return afiliadoDTO;
@@ -43,59 +55,50 @@ public class ReporteAction {
 		this.afiliadoDTO = afiliadoDTO;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public String retrievePdf() throws JRException, IOException{
 		String fileName= "elReportePosta";
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpServletResponse response= ServletActionContext.getResponse();
 		JasperReport jasperReport = this.getCompiledFile(fileName, request);
-
-		Afiliado afiliado= afiliadoService.getAfiliadoById(afiliadoDTO.getId());
+		///LLenamos los parametros
+		int idAfiliado=afiliadoDTO.getId();
+		Afiliado afiliado= afiliadoService.getAfiliadoById(idAfiliado);
 		Map parameters = new HashMap();
 		parameters.put("nombreAfiliado", afiliado.getNombreApellido());
 		parameters.put("dniAfiliado",afiliado.getNumeroDoc());
 		parameters.put("nroAfiliado",Integer.toString( afiliado.getId()));
-		
-		
-		
-		//////////////aca hago para pasar mi lista como un dataSource y mis parametros con un hash
-		
+		//Taemos los turnos
+
+		List<Turno> turnos= turnoService.findAllTurnosByIdAfiliado(idAfiliado);
 		ArrayList<DataPerson> dataPersons= new ArrayList<DataPerson>();
-		DataPerson dt1= new DataPerson();
-		dt1.setId(1);
-		dt1.setName("niko");
-		dt1.setCountry("argentina");
+		//////////////aca hago para pasar mi lista como un dataSource y mis parametros con un hash
+		DataPerson d=null;
+		for(Turno t:turnos){
+			d=new DataPerson();
+			d.setNombrePractica(t.getPractica().getPractica());
+			d.setImporte(t.getImporte());
+			d.setHorarioAtencion(null);
+			d.setHorarioLlegada(null);
+			d.setNroTurno(t.getId());
+			d.setObservaciones(t.getObservaciones());
+			d.setPlanMedico(Integer.toString(t.getPlan()));
+			d.setNombrePrestador(t.getPrestador().getApellidoYNombre());
+			
+			dataPersons.add(d);
+		}
 		
-		DataPerson dt2= new DataPerson();
-		dt2.setId(2);
-		dt2.setName("ivan");
-		dt2.setCountry("argentina");
 		
-		DataPerson dt3= new DataPerson();
-		dt3.setId(3);
-		dt3.setName("betoben");
-		dt3.setCountry("haiti");
 		
-		DataPerson dt4= new DataPerson();
-		dt4.setId(4);
-		dt4.setName("carlos");
-		dt4.setCountry("argentina");
-		
-		DataPerson dt5= new DataPerson();
-		dt5.setId(5);
-		dt5.setName("luis");
-		dt5.setCountry("villasoldate");
-		
-		DataPerson dt6= new DataPerson();
-		dt6.setId(6);
-		dt6.setName("nacho");
-		dt6.setCountry("isla de pascuas");
-		
-		dataPersons.add(dt1);
-		dataPersons.add(dt2);
-		dataPersons.add(dt3);
-		dataPersons.add(dt4);
-		dataPersons.add(dt5);
-		dataPersons.add(dt6);
+//		DataPerson dt1= new DataPerson();
+//		dt1.setNombrePractica("traumato");
+//		dt1.setImporte(13.2f);
+//		dt1.setHorarioAtencion(null);
+//		dt1.setHorarioLlegada(null);
+//		dt1.setNroTurno(234);
+//		dt1.setObservaciones("sdsds");
+//		dt1.setPlanMedico("maa");
+//		dataPersons.add(dt1);
 		
 		//XXX:tengo que llenar la lista de objetos...	
 		

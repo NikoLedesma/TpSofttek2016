@@ -28,7 +28,8 @@
 
 
 	<beans:bean id="reporteAction" class="com.grupo3.action.ReporteAction">
-			<beans:property name="afiliadoService" ref="afiliadoService" />			
+			<beans:property name="afiliadoService" ref="afiliadoService" />
+			<beans:property name="turnoService" ref="turnoService" />					
 	</beans:bean>
 
 

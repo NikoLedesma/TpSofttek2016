@@ -98,5 +98,9 @@ public class TurnoServiceImpl implements TurnoService {
 		TurnoDTO turnoDTO =new TurnoDTO(turnoDAO.getTurnoById(nroTurn));
 		return turnoDTO;
 	}
+	public List<Turno> findAllTurnosByIdAfiliado(int idAfiliado) {
+		
+		return turnoDAO.findAllTurns(idAfiliado);
+	}
 
 }
