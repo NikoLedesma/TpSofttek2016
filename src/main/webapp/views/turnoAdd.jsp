@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Alta Turno</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/TpGrupo3Softtek/views/css/turnoAdd.css ">
+
 </head>
 <body>
 	<h1>Crear Turno</h1>
