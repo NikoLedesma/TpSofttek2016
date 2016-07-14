@@ -16,6 +16,10 @@ public class Plan {
 	@Column(name = "descripcion")
 	private String descripcion;
 
+
+	public Plan(){}
+
+	
 	/*Accessors*/
 	
 	public int getId() {

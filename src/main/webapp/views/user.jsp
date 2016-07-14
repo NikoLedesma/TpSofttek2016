@@ -45,7 +45,7 @@
 	<br> 	<span>Complete los campos para efectuar una Busqueda</span><br>
 			<input id="txtNombreYApp" placeholder="Ej:Juan Perez" />
 			<input id="txtNumeroDoc" placeholder="Ej:11111111" />
-			<input id="txtPlan" placeholder="Ej:210" />
+			<input id="txtPlan" placeholder="Ej:210" value = "0" />
 			<input id="txtNumeroUsuario" placeholder="Ej:1" />
 		<input id="btnAjax" type="button" value="Buscar">
 	<br>
