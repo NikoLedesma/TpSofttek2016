@@ -228,6 +228,15 @@
 			<version>2.3.16.3</version>
 		</dependency>
 		
+	<!-- jasper  -->	
+	<dependency>
+    	<groupId>net.sf.jasperreports</groupId>
+    	<artifactId>jasperreports</artifactId>
+    	<version>4.5.1</version>
+	</dependency>
+
+		
+		
 		
 	</dependencies>
 
