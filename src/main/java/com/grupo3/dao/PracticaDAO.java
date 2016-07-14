@@ -10,7 +10,7 @@ public interface PracticaDAO {
 	
 	public List<Practica> getPracticas();
 
-	public Practica getPrestadorByID(PracticaDTO practicaDTO);
+	public Practica getPrestadorByID(int codigo);
 
 
 

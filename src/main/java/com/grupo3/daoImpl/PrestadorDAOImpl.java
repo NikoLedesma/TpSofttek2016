@@ -63,11 +63,11 @@ public class PrestadorDAOImpl implements PrestadorDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public Prestador getPrestadorByID(PrestadorDTO prestadorDTO) {
+	public Prestador getPrestadorByID(int prestadorDTO) {
 		Session s = sessionFactory.openSession();
 
 		try {
-			Prestador prestador = (Prestador) s.get(Prestador.class,prestadorDTO.getId());
+			Prestador prestador = (Prestador) s.get(Prestador.class,prestadorDTO);
 			return prestador;
 		} catch (HibernateException e) {
 			// logger.debug("Sucedio una excepción:", e);

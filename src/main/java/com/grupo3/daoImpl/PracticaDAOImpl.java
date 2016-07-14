@@ -47,11 +47,11 @@ public class PracticaDAOImpl implements PracticaDAO {
 
 
 
-	public Practica getPrestadorByID(PracticaDTO practicaDTO) {
+	public Practica getPrestadorByID(int practicaDTO) {
 		Session s = sessionFactory.openSession();
 
 		try {
-			Practica practica = (Practica) s.get(Practica.class,practicaDTO.getCodigo());
+			Practica practica = (Practica) s.get(Practica.class,practicaDTO);
 			return practica;
 		} catch (HibernateException e) {
 			// logger.debug("Sucedio una excepción:", e);

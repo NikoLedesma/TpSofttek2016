@@ -13,37 +13,32 @@ public class TurnoDTO  {
 	
 	private Afiliado afiliado;
 	private int idAfiliado;
-	private PrestadorDTO prestador;
+	private int prestador;
 	private Date  fechaInicio;
 	private Date fechaLlegada;
 	private int nroTurn; 
 	private String observaciones;
 	private int plan;
 	private float importe;
-	private PracticaDTO practica;
+	private int practica;
 
 	public TurnoDTO(){}
 	
 	public TurnoDTO(Turno turno){
 		this.afiliado = turno.getAfiliado();
-//		this.prestador = turno.getPrestador();
+		this.prestador = turno.getPrestador().getId();
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada= turno.getFechaLlegada();
 		this.nroTurn = turno.getId();
 		this.observaciones = turno.getObservaciones();
 		this.plan=turno.getPlan();
 		this.importe=turno.getImporte();
-//		this.practica=turno.getPractica();
+		this.practica=turno.getPractica().getCodigo();
 	}
 	
 	/* Accessors*/
 
-	public PrestadorDTO getPrestador() {
-		return prestador;
-	}
-	public void setPrestador(PrestadorDTO prestadorDTO) {
-		this.prestador =prestadorDTO;
-	}
+
 	public Date getFechaInicio() {
 		return fechaInicio ;
 	}
@@ -80,12 +75,7 @@ public class TurnoDTO  {
 	public void setImporte(float importe) {
 		this.importe = importe;
 	}
-	public PracticaDTO getPractica() {
-		return practica;
-	}
-	public void setCodigoPractica(PracticaDTO practicaDTO) {
-		this.practica = practicaDTO;
-	}
+
 
 	public int getIdAfiliado() {
 		return idAfiliado;
@@ -102,5 +92,22 @@ public class TurnoDTO  {
 	public void setAfiliado(Afiliado afiliado) {
 		this.afiliado = afiliado;
 	}
+
+	public int getPrestador() {
+		return prestador;
+	}
+
+	public void setPrestador(int prestador) {
+		this.prestador = prestador;
+	}
+
+	public int getPractica() {
+		return practica;
+	}
+
+	public void setPractica(int practica) {
+		this.practica = practica;
+	}
+	
 
 }
