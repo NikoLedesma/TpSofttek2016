@@ -66,7 +66,7 @@ public class TurnoAction extends ActionSupport{
 	
 	public String addTurno(){
 		
-		turnoDTO.setAfiliado(afiliadoService.getAfiliadoById(turnoDTO));
+		turnoDTO.setAfiliado(afiliadoService.getAfiliadoById(turnoDTO.getIdAfiliado()));
 		this.turnoService.addTurno(turnoDTO);
 		return "SUCCESS";
 	}

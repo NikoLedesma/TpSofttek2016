@@ -19,7 +19,7 @@ public interface AfiliadoService {
 		
 		public List<AfiliadoDTO> AfiliadoADTO(List<Afiliado> afiliados);
 
-		public Afiliado getAfiliadoById(TurnoDTO turnoDTO);
+		public Afiliado getAfiliadoById(int afiliadoId);
 	
 
 }

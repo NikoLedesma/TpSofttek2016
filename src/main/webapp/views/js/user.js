@@ -159,8 +159,15 @@ $("#btnEdit").click(function() {
 // se define el evento para el btnFile
 
 $("#btnFile").click(function() {
-
-	alert("download an pdf");
+	var arr = table.rows('.selected').data();
+		if(arr.length>0){
+			var id=arr[0][0];
+			$('#afiliadoIdReporte').val(id);
+			$("#targetGenerarReporteTurnos").submit();	
+		}
+		else{
+			alert("Debe seleccionar un afiliado");
+		}
 });
 
 $("#btnAjax").click(

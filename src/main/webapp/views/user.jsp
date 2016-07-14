@@ -183,7 +183,10 @@
 	<input id="editTurnoImporte" type="hidden"   name="turnoDTO.idAfiliado" value="">
 </form>	
 	
-
+<form id="targetGenerarReporteTurnos" action="user/generateReport" style="display:none" method="post">	
+	<input id = "afiliadoIdReporte" name="afiliadoDTO.id" type="hidden">
+</form>
+	
 	<script type="text/javascript" src="views/js/user.js"></script>
 
 </body>

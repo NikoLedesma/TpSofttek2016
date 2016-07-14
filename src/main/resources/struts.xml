@@ -66,6 +66,12 @@
 		
 		
 		
+		<action name="generateReport" class="com.grupo3.action.ReporteAction" method="retrievePdf">
+		
+		</action>
+		
+		
+		
 <!-- ******************** -->
 		<action name="addTurno" class="com.grupo3.action.UserAction"
 			method="addTurnoAction">

@@ -76,7 +76,7 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 		return afiliadosDTOS;
 	}
 
-	public Afiliado getAfiliadoById(TurnoDTO turnoDTO) {
-		return	afiliadoDAO.getAfiliadoById(turnoDTO.getIdAfiliado());
+	public Afiliado getAfiliadoById(int id) {
+		return	afiliadoDAO.getAfiliadoById(id);
 	}
 }

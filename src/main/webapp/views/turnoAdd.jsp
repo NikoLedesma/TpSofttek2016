@@ -12,7 +12,7 @@
 <body>
 	<h1>Crear Turno</h1>
 	<form action="addTurno/saveTurno" >
-		<input id="userIdHidden" name="turnoDTO.idAfiliado" type="text" value='<s:property value="turnoDTO.idAfiliado" />'>
+		<input id="userIdHidden" name="turnoDTO.idAfiliado" type="hidden" value='<s:property value="turnoDTO.idAfiliado" />'>
 		Fecha de Inicio:<input type="text" name="turnoDTO.fechaInicio"><br>
 		Fecha de llegada:<input type="text" name="turnoDTO.fechaLlegada"><br>
 		Prestador:
