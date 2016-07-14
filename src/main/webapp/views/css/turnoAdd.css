@@ -1,0 +1,71 @@
+
+body {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 350;
+	color: #333;
+		background-color: #F5F5DC;
+}
+
+input {
+	width: 98%;
+	height: 40px;
+	font: 300 24px "Open Sans", Arial, sans-serif;
+	margin: 5px 0 10px 0;
+}
+
+input[type=submit] {
+	background-color: #FF9900;
+	height: 50px;
+	width: 98%; //
+	border: none;
+	font-weight: 400;
+	letter-spacing: 2px;
+	color: #FFFFFF;
+}
+
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+.roundedTwo label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity = 30);
+	opacity: 0.3;
+}
+
+h1 {
+	 background-color: #4CAF50;
+	font-size: 60px;
+	color: white;
+	text-shadow: 2px 2px #222;
+	font-family: "Open Sans";
+	border-bottom: 2px solid #FFF;
+	text-align: center;
+	left: 50%;
+    margin-right: -50%;
+	margin: 0 0 5px 0;
+}
+
+form {
+	width: 470px;
+	height: auto;
+	backgroud-image: url(aquí la ruta de la imagen de fondo);
+	margin: 0 auto;
+	padding: 0 1%;
+	box-shadow: 5px 5px 0 #AAA;
+	border-radius: 5px;
+}
+
+button {
+   background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	}

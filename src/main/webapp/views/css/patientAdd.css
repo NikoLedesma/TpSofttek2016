@@ -5,6 +5,7 @@ body {
 	font-size: 14px;
 	font-weight: 350;
 	color: #333;
+		background-color: #F5F5DC;
 }
 
 input {
@@ -14,6 +15,7 @@ input {
 	margin: 5px 0 10px 0;
 }
 
+
 input[type=submit] {
 	background-color: #FF9900;
 	height: 50px;
@@ -22,6 +24,12 @@ input[type=submit] {
 	font-weight: 400;
 	letter-spacing: 2px;
 	color: #FFFFFF;
+}
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
 }
 
 input[type=checkbox] {
@@ -100,12 +108,15 @@ input[type=checkbox] {
 
 }
 h1 {
-	font-size: 80px;
-	color: #FF9900;
+	 background-color: #4CAF50;
+	font-size: 60px;
+	color: white;
 	text-shadow: 2px 2px #222;
 	font-family: "Open Sans";
 	border-bottom: 2px solid #FFF;
 	text-align: center;
+	left: 50%;
+    margin-right: -50%;
 	margin: 0 0 5px 0;
 }
 
@@ -118,3 +129,14 @@ form {
 	box-shadow: 5px 5px 0 #AAA;
 	border-radius: 5px;
 }
+
+button {
+   background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	}
