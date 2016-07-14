@@ -137,8 +137,15 @@ public class Turno {
 	}
 
 	public int getPlan() {
-		// TODO Auto-generated method stub
+		
 		return 0;
+	}
+
+	public void update(TurnoDTO turnoDTO) {
+		fechaInicio=turnoDTO.getFechaInicio();
+		fechaLlegada=turnoDTO.getFechaLlegada();
+		importe=turnoDTO.getImporte();
+		observaciones=turnoDTO.getObservaciones();
 	}
 	
 

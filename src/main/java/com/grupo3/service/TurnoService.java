@@ -15,6 +15,7 @@ public interface TurnoService {
 	public void addTurno(TurnoDTO turno);
 	public ArrayList<PracticaDTO> getPracticas();
 	public ArrayList<PrestadorDTO> getPrestadores();
+	public TurnoDTO getTurnoById(int nroTurn);
 	
 	
 }

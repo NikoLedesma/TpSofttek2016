@@ -14,4 +14,6 @@ public interface TurnoDAO {
 	
 	public List<Turno> findAllTurns(int idAfiliado);
 
+	public Turno getTurnoById(int nroTurno);
+
 }

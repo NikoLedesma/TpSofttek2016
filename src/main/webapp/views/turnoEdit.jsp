@@ -11,8 +11,10 @@
 </head>
 <body>
 	<h1>Editar Turno</h1>
-	<form action="addTurno/saveTurno" >
-		<input id="userIdHidden" name="turnoDTO.nroTurno" type="text" value='<s:property value="turnoDTO.nroTurno" />'>
+	<form action="editTurno/updateTurno" >
+		<input id="userIdHidden" name="turnoDTO.nroTurn" type="hidden" value='<s:property value="turnoDTO.nroTurn" />'>
+		<input name="turnoDTO.prestador" type="hidden" value='<s:property value="turnoDTO.prestador" />'>
+		<input name="turnoDTO.practica" type="hidden" value='<s:property value="turnoDTO.practica" />'>
 		Fecha de Inicio:<input type="text" name="turnoDTO.fechaInicio" value='<s:property value="turnoDTO.fechaInicio" />'><br>
 		Fecha de llegada:<input type="text" name="turnoDTO.fechaLlegada" value='<s:property value="turnoDTO.fechaLlegada" />'><br>
 		Importe:<input type="text" name="turnoDTO.importe" value='<s:property value="turnoDTO.importe" />'><br>

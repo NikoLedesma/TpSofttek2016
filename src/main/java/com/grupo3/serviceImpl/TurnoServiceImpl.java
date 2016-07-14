@@ -31,20 +31,21 @@ public class TurnoServiceImpl implements TurnoService {
 		for(Turno t: turnos){
 			turnosDTOS.add(new TurnoDTO(t));
 		}
-		return turnosDTOS;
-		
+		return turnosDTOS;	
 	}
 	@Transactional
 	public void updateTurno(TurnoDTO turnoDTO) {
 		
-		Turno turno = new Turno(turnoDTO);
+		Turno turno = turnoDAO.getTurnoById(turnoDTO.getNroTurn());
+		turno.update(turnoDTO);
 		turnoDAO.updateTurno(turno);
 	}
 	
 	@Transactional
 	public void deleteTurno(TurnoDTO turnoDTO) {
-		Turno turno = new Turno(turnoDTO);
-		turnoDAO.deleteTurno(turno);
+		Turno turno = turnoDAO.getTurnoById(turnoDTO.getNroTurn());
+		turno.setDisponible(false);
+		turnoDAO.updateTurno(turno);
 		
 	}
 	@Transactional
@@ -92,6 +93,10 @@ public class TurnoServiceImpl implements TurnoService {
 	}
 	public void setPrestadorDAO(PrestadorDAO prestadorDAO) {
 		this.prestadorDAO = prestadorDAO;
+	}
+	public TurnoDTO getTurnoById(int nroTurn) {
+		TurnoDTO turnoDTO =new TurnoDTO(turnoDAO.getTurnoById(nroTurn));
+		return turnoDTO;
 	}
 
 }

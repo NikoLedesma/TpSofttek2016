@@ -46,11 +46,23 @@ public class UserAction extends ActionSupport {
 		return "success";
 	}
 
+	public String bajaTurnoAction() {
+
+		turnoService.deleteTurno(turnoDTO);
+		return "success";
+	}
+	
 	public String addTurnoAction() {
 		practicasCombo= turnoService.getPracticas();
 		prestadoresCombo= turnoService.getPrestadores();
 		return "addTurno";
 	}
+	
+	public String editTurnoAction() {
+		turnoDTO = turnoService.getTurnoById(turnoDTO.getNroTurn());		
+		return "editTurno";
+	}
+
 
 	public PatientService getPatientService() {
 		return patientService;
