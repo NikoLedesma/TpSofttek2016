@@ -10,23 +10,26 @@
 <body>
 	<h1>Crear Turno</h1>
 	<form action="addTurno/saveTurno" >
-		<input id="userIdHidden" name="turnoDTO.idAfiliado" type="hidden" value='<s:property value="turnoDTO.idAfiliado" />'>
+		<input id="userIdHidden" name="turnoDTO.idAfiliado" type="text" value='<s:property value="turnoDTO.idAfiliado" />'>
 		Fecha de Inicio:<input type="text" name="turnoDTO.fechaInicio"><br>
 		Fecha de llegada:<input type="text" name="turnoDTO.fechaLlegada"><br>
 		Prestador:
 		
 		<s:select label="Elija el plan del usuario" 
- 				headerKey="-1" headerValue="Elijan Presador" 
+ 				headerKey="-1" headerValue="Elijan Prestador" 
  				list="prestadoresCombo"  
-				name="turnoDTO.prestador"  
+				name="turnoDTO.prestador"
+				listKey="id"
+ 				listValue="apellidoYNombre"    
  				/><br> 
 				
 		Practica:				
-		
 		<s:select label="Elija el plan del usuario" 
 				headerKey="-1" headerValue="Elijan Practica" 
 				list="practicasCombo"  
- 				name="turnoDTO.practica"  
+ 				name="turnoDTO.practica"
+ 				listKey="codigo"
+ 				listValue="practica"  
 				/><br> 
 		Importe:<input type="text" name="turnoDTO.importe"><br>
 		Comentarios:<input type="text" name="turnoDTO.observaciones"><br>

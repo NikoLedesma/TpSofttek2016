@@ -66,7 +66,7 @@
 		
 		
 		
-
+<!-- ******************** -->
 		<action name="addTurno" class="com.grupo3.action.UserAction"
 			method="addTurnoAction">
 			<result name="addTurno">/views/turnoAdd.jsp</result>
@@ -87,10 +87,10 @@
 		</action>
 		
 		
-		<action name="saveTurno" class="com.grupo3.action.TurnoAction"
-			method="addTurno">
-			<result name="SUCCESS">/views/turnoAdd.jsp</result>
-		</action>
+<!-- 		<action name="saveTurno" class="com.grupo3.action.TurnoAction" -->
+<!-- 			method="addTurno"> -->
+<!-- 			<result name="SUCCESS">/views/turnoAdd.jsp</result> -->
+<!-- 		</action> -->
 		
 		
 			<action name="traerTurnos" class="com.grupo3.action.TurnoAction" method="findAllTurnos">
@@ -129,12 +129,7 @@
 		<action name="saveTurno" class="com.grupo3.action.TurnoAction" method="addTurno">
 			<result name="SUCCESS" type="redirect">/user</result>
 		</action>
-
 	</package>
-
-
-
-
 
 
 

@@ -6,6 +6,7 @@ import java.util.List;
 import com.grupo3.dtos.AfiliadoDTO;
 import com.grupo3.dtos.PracticaDTO;
 import com.grupo3.dtos.PrestadorDTO;
+import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.entity.Practica;
 import com.grupo3.entity.Prestador;
 import com.grupo3.service.AfiliadoService;
@@ -22,24 +23,8 @@ public class UserAction extends ActionSupport {
 	private TurnoService turnoService;
 	private List<PracticaDTO> practicasCombo;
 	private List<PrestadorDTO> prestadoresCombo;
-
-	public AfiliadoService getAfiliadoService() {
-		return afiliadoService;
-	}
-
-	public void setAfiliadoService(AfiliadoService afiliadoService) {
-		this.afiliadoService = afiliadoService;
-	}
-
-	AfiliadoDTO afiliadoDTO;
-
-	public AfiliadoDTO getAfiliadoDTO() {
-		return afiliadoDTO;
-	}
-
-	public void setAfiliadoDTO(AfiliadoDTO afiliadoDTO) {
-		this.afiliadoDTO = afiliadoDTO;
-	}
+	private AfiliadoDTO afiliadoDTO;
+	private TurnoDTO turnoDTO;
 
 	public String addPatientAction() {
 		planesCombo.add(210);
@@ -114,5 +99,30 @@ public class UserAction extends ActionSupport {
 		this.turnoService = turnoService;
 	}
 
+	
+	public AfiliadoService getAfiliadoService() {
+		return afiliadoService;
+	}
+
+	public void setAfiliadoService(AfiliadoService afiliadoService) {
+		this.afiliadoService = afiliadoService;
+	}
+
+
+	public AfiliadoDTO getAfiliadoDTO() {
+		return afiliadoDTO;
+	}
+
+	public void setAfiliadoDTO(AfiliadoDTO afiliadoDTO) {
+		this.afiliadoDTO = afiliadoDTO;
+	}
+
+	public TurnoDTO getTurnoDTO() {
+		return turnoDTO;
+	}
+
+	public void setTurnoDTO(TurnoDTO turnoDTO) {
+		this.turnoDTO = turnoDTO;
+	}
 
 }

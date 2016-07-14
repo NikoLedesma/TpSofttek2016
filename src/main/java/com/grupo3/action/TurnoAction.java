@@ -12,7 +12,9 @@ import com.grupo3.dtos.AfiliadoDTO;
 import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.entity.Afiliado;
 import com.grupo3.entity.Turno;
+import com.grupo3.service.AfiliadoService;
 import com.grupo3.service.TurnoService;
+import com.grupo3.serviceImpl.AfiliadoServiceImpl;
 import com.grupo3.serviceImpl.TurnoServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -23,6 +25,7 @@ public class TurnoAction extends ActionSupport{
 	/**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 5419318238961534643L;
 	private TurnoDTO turnoDTO;
 	private TurnoService turnoService;
@@ -62,8 +65,8 @@ public class TurnoAction extends ActionSupport{
 					       }
 	
 	public String addTurno(){
+		///////////
 		this.turnoService.addTurno(turnoDTO);
-		
 		return "SUCCESS";
 	}
 	

@@ -227,22 +227,18 @@ $("#btnMinusTurno").click(function() {
 });
 // se define el evento para el btnPlus
 
-$("#botonCrearTurno").click(function() {
-	var arr = table.rows('.selected').data();// me devuelve el array con
-	var url = 'addTurno/saveTurno';
-	window.location.href = url;
-	return false;
-	// alert("clickeaste +");
-});
+//$("#botonCrearTurno").click(function() {
+//	var arr = table.rows('.selected').data();// me devuelve el array con
+//	var url = 'addTurno/saveTurno';
+//	window.location.href = url;
+//	return false;
+//});
 
 $("#btnPlusTurno").click(function() {
 	var arr = table.rows('.selected').data();// me devuelve el array con
-												// todos los seleccionados
-	alert(""+ arr[0][0])
-	$('#userIdHidden').val(arr[0][0]);
-	var url = 'user/addTurno';
-	window.location.href = url;
-	
+alert(arr[0][0]);						// todos los seleccionado	
+	$('#idAfiliadoTurno').val(arr[0][0]);
+	$("#targetTurnos").submit();	
 	return false;
 });
 // se define el evento para el btnEdit

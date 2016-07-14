@@ -172,13 +172,7 @@
 </form>
 
 <form id="targetTurnos" action="user/addTurno"  style="display:none" method="post">
-	<input id="id" 				type="hidden" name="turnoDTO.fechaInicio" value="">
-	<input id="nombreApellido"	type="hidden" name="turnoDTO.fechaLlegada" value="">
-	<input id="tipoDoc"			type="hidden" name="turnoDTO.prestador" value="">
-	<input id="numeroDoc"		type="hidden" name="turnoDTO.practica" value="">
-	<input id="direccion"		type="hidden" name="turnoDTO.importe" value="">
-	<input id="telefono"		type="hidden" name="turnoDTO.observaciones" value="">
-	
+	<input id="idAfiliadoTurno" type="hidden"   name="turnoDTO.idAfiliado" value="">
 </form>
 	
 	
