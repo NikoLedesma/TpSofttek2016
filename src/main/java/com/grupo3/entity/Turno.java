@@ -87,7 +87,7 @@ public class Turno {
 		return prestador;
 	}
 
-	public void setPrestador(Prestador Prestador) {
+	public void setPrestador(Prestador prestador) {
 		this.prestador = prestador;
 	}
 
@@ -132,7 +132,7 @@ public class Turno {
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada = turno.getFechaLlegada();
 		this.observaciones = turno.getObservaciones();
-		//this.afiliado = turno.getAfiliado();
+		this.afiliado = turno.getAfiliado();
 		this.importe = turno.getImporte();
 		
 		

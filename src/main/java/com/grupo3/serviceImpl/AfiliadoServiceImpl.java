@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.grupo3.dao.AfiliadoDAO;
 import com.grupo3.dao.PlanDAO;
 import com.grupo3.dtos.AfiliadoDTO;
+import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.entity.Afiliado;
 import com.grupo3.service.AfiliadoService;
 
@@ -73,5 +74,9 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 			afiliadosDTOS.add(new AfiliadoDTO(a));
 		}
 		return afiliadosDTOS;
+	}
+
+	public Afiliado getAfiliadoById(TurnoDTO turnoDTO) {
+		return	afiliadoDAO.getAfiliadoById(turnoDTO.getIdAfiliado());
 	}
 }

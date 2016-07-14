@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.grupo3.dtos.AfiliadoDTO;
+import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.entity.Afiliado;
 public interface AfiliadoService {
 	
@@ -17,6 +18,8 @@ public interface AfiliadoService {
 		public ArrayList<AfiliadoDTO> getAfiliados(AfiliadoDTO afiliadoDTO);
 		
 		public List<AfiliadoDTO> AfiliadoADTO(List<Afiliado> afiliados);
+
+		public Afiliado getAfiliadoById(TurnoDTO turnoDTO);
 	
 
 }

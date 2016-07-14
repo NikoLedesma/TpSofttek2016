@@ -30,7 +30,7 @@ public class TurnoAction extends ActionSupport{
 	private TurnoDTO turnoDTO;
 	private TurnoService turnoService;
 	private ArrayList<TurnoDTO> turnosDTO=new ArrayList<TurnoDTO>();
-	
+	private AfiliadoService afiliadoService;
 	
 	public ArrayList<TurnoDTO> getTurnosDTO() {
 		return turnosDTO;
@@ -65,7 +65,8 @@ public class TurnoAction extends ActionSupport{
 					       }
 	
 	public String addTurno(){
-		///////////
+		
+		turnoDTO.setAfiliado(afiliadoService.getAfiliadoById(turnoDTO));
 		this.turnoService.addTurno(turnoDTO);
 		return "SUCCESS";
 	}
@@ -78,6 +79,14 @@ public class TurnoAction extends ActionSupport{
 	public String updateTurn(){
 		turnoService.updateTurno(turnoDTO);
 		return "SUCCESS";
+	}
+
+	public AfiliadoService getAfiliadoService() {
+		return afiliadoService;
+	}
+
+	public void setAfiliadoService(AfiliadoService afiliadoService) {
+		this.afiliadoService = afiliadoService;
 	}
 	
 }
