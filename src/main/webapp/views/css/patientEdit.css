@@ -1,1 +1,57 @@
 @CHARSET "ISO-8859-1";
+form {
+	width: 500px;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 1%; */
+	box-shadow: 5px 5px 0 #AAA;
+	border-radius: 5px;
+	background: transparent;
+	border-width: thick;
+	border-style: double; Bisque
+} 
+
+h1 {
+	 background-color: #4CAF50;
+	font-size: 60px;
+	color: white;
+	text-shadow: 2px 2px #222;
+	font-family: "Open Sans";
+	border-bottom: 2px solid #FFF;
+	text-align: center;
+    margin-right: -50%;
+	margin: 0 0 5px 0;
+}
+body {
+	font-family: Verdana, Tahoma, Times New Roman;
+	 font-size: 20px;
+	font-weight: 350;
+	color: #333;
+	background-color: #F5F5DC;
+	text-decoration: blink;
+	font-style: normal; 
+}
+input {
+	width: 98%;
+	height: 40px;
+	font: 300 24px "Open Sans", Arial, sans-serif;
+	margin: 2px;
+	border-color: Cornsilk;
+	border-width: thin;
+	border-style: outset;
+	 border-radius: 12px;
+	
+}
+ 
+
+input[type=submit] {
+	background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	border-radius: 12px;
+}

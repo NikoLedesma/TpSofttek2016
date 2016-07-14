@@ -64,7 +64,9 @@ public class AfiliadoServiceImpl implements AfiliadoService {
 	@Transactional
 	public ArrayList<AfiliadoDTO> getAfiliados(AfiliadoDTO afiliadoDTO) {
 		Afiliado afiliado = new Afiliado (afiliadoDTO);
-		return this.AfiliadoADTO(this.afiliadoDAO.getAfiliado(afiliado));
+		if( afiliadoDTO.getPlan().equals(210)|| afiliadoDTO.getPlan().equals(310)|| afiliadoDTO.getPlan().equals(410) || afiliadoDTO.getPlan().equals(510) ){
+		afiliado.setPlan(planDAO.getPlan(afiliadoDTO));}
+		return this.AfiliadoADTO(this.afiliadoDAO.getAfiliado(afiliado));			
 	}
 
 	public ArrayList<AfiliadoDTO> AfiliadoADTO(List<Afiliado> afiliados) {

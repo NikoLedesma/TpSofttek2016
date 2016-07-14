@@ -20,12 +20,6 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class TurnoAction extends ActionSupport{
 
-
-	
-	/**
-	 * 
-	 */
-	
 	private static final long serialVersionUID = 5419318238961534643L;
 	private TurnoDTO turnoDTO;
 	private TurnoService turnoService;
@@ -71,12 +65,12 @@ public class TurnoAction extends ActionSupport{
 		return "SUCCESS";
 	}
 	
-	public String deleteTurn(){
+	public String deleteTurno(){
 		turnoService.deleteTurno(turnoDTO);
 		return "SUCCESS";
 	}
 	
-	public String updateTurn(){
+	public String updateTurno(){
 		turnoService.updateTurno(turnoDTO);
 		return "SUCCESS";
 	}

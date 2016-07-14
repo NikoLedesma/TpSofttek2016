@@ -57,8 +57,8 @@ $(document)
 										$("#contentTurnos").show();
 										// ACA va la consulta ajax
 										var y = table.rows('.selected').data();
-										$
-												.ajax({
+										tableTurnos.clear().draw();
+										$.ajax({
 													url : "http://localhost:8080/TpGrupo3Softtek/user/traerTurnos",
 													dataType : 'JSON',
 													type : "POST",
@@ -67,10 +67,9 @@ $(document)
 													},
 													success : function(data) {
 
-														$
-																.each(
-																		data,
-																		function(
+														$.each(
+																data,
+																	function(
 																				index) {
 																			var xx = [
 																					data[index].nroTurn,
@@ -204,20 +203,30 @@ $("#btnAjax").click(
 		});
 
 $("#btnMinusTurno").click(function() {
-	// TODO: cambiar a borrar
-	alert("Delete el turno");
-	// var url= 'user/addTurno';
-	// window.location.href =url;
-	// return false;
+	var arr = tableTurnos.rows('.selected').data();
+	var r = confirm("Esta seguro que desea dar de baja el turno?");
+	if (r == true) {
+
+		$.ajax({
+			url : "http://localhost:8080/TpGrupo3Softtek/user/bajaTurno",
+			dataType : 'JSON',
+			type : "POST",
+			data : {
+				'turnoDTO.nroTurn' : arr[0][0]
+			},
+			success : function(data) {
+				alert("ok");
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+		tableTurnos.row('.selected').remove().draw(false);
+	}
+	return false;
 });
 // se define el evento para el btnPlus
 
-//$("#botonCrearTurno").click(function() {
-//	var arr = table.rows('.selected').data();// me devuelve el array con
-//	var url = 'addTurno/saveTurno';
-//	window.location.href = url;
-//	return false;
-//});
 
 $("#btnPlusTurno").click(function() {
 	var arr = table.rows('.selected').data();// me devuelve el array con todos los seleccionado
@@ -228,18 +237,9 @@ $("#btnPlusTurno").click(function() {
 // se define el evento para el btnEdit
 
 $("#btnEditTurno").click(function() {
-
-	var arr = tableTurnos.rows('.selected').data();// me devuelve el array con
-													// todos los seleccionados
-	var url = 'user/editTurno?id=';
-	console.log(arr.length + 'row(s) selected');
-	if (arr.length > 0) {
-		url = url + arr[0][0];
-		window.location.href = url;
-	}
-
-	else {
-		alert("se necesita seleccionar algun turno para modificar");
-	}
+	
+	var arr = tableTurnos.rows('.selected').data();// me devuelve el array con todos los seleccionados
+	$('#editTurnoNro').val(arr[0][0]);
+	$("#targetEditarTurnos").submit();	
 	return false;
 });

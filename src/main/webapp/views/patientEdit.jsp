@@ -6,10 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Editar Paciente</title>
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/TpGrupo3Softtek/views/css/patientEdit.css"">
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 <script
@@ -22,8 +23,8 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Edit patient</h1>
-	<br>	
+		<h1>Edit Paciente</h1>
+			<br>	
 	<form action="editPatient/update">
 	id de afiliado:<input type="text" name="afiliadoDTO.id" value="<s:property value="afiliadoDTO.id" />"  style="background-color: #E0E0E0 " readonly ><br>
 	Nombre y apellido:<input type="text" name="afiliadoDTO.nombreApellido" value="<s:property value="afiliadoDTO.nombreApellido" />"  style="background-color: #E0E0E0 "  readonly><br>

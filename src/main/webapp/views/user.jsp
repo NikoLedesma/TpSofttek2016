@@ -7,16 +7,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Home Page</title>
 
-<link rel="stylesheet"
+ <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/	3.3.6/css/bootstrap.min.css">
-
+ 
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 
 <link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css">
+	href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css"> 
 
 
 <script
@@ -38,58 +38,55 @@
 
 <body>
 
-
-
-
-
-
-
-	<h1>Pacientes</h1>
-
-	<h1 class="loginUser">Hello
-		${pageContext.request.userPrincipal.name}</h1>
-	<a href="j_spring_security_logout">Logout</a>
-	<br> Nombre y apellido:
-	<input id="txtNombreYApp" placeholder="Ej:Juan Perez" />
-	<input id="txtNumeroDoc" placeholder="Ej:11111111" />
-	<input id="txtPlan" placeholder="Ej:210" />
-	<input id="txtNumeroUsuario" placeholder="Ej:1" />
+	<h1 class="head">Pacientes</h1>
+		<h2 align="right" lass="loginUser">Hello
+		${pageContext.request.userPrincipal.name}
+		<a href="j_spring_security_logout">Logout</a></h2>
+	<br> 	<span>Complete los campos para efectuar una Busqueda</span><br>
+			<input id="txtNombreYApp" placeholder="Ej:Juan Perez" />
+			<input id="txtNumeroDoc" placeholder="Ej:11111111" />
+			<!-- <input id="txtPlan" placeholder="Ej:210" value = "0" />  -->
+			
+			<select id="txtPlan" value="210" >
+				  <option value="210">210</option>
+    				<option value="310">310</option>
+    				<option value="410">410</option>
+   					 <option value="510">510</option>
+			
+			</select>
+			
+			
+			<input id="txtNumeroUsuario" placeholder="Ej:1" />
+		<input id="btnAjax" type="button" value="Buscar">
 	<br>
-	<input id="btnMostrarSeleccionado" type="button"
-		value="mostrarSeleccionado" />
-	<br>
-	<input id="btnAjax" type="button" value="ajaxBuscarPorNombre">
-
-
-	<div class="content">
-
-		<div class="contentTable">
-			<table id="example" class="display" cellspacing="0" width="100%">
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>Nombre y Apellido</th>
-						<th>Tipo</th>
-						<th>Nro Documento</th>
-						<th>Direccion</th>
-						<th>Telèfono</th>
-						<th>Mail</th>
-						<th>Fecha de nacimiento</th>
-					</tr>
-				</thead>
-				<tfoot>
-					<tr>
-						<th>Id</th>
-						<th>Nombre y Apellido</th>
-						<th>Tipo</th>
-						<th>Nro Documento</th>
-						<th>Direccion</th>
-						<th>Telèfono</th>
-						<th>Mail</th>
-						<th>Fecha de nacimiento</th>
-					</tr>
-				</tfoot>
-				<tbody>
+          <div class="content">
+				<div class="contentTable">
+					<table id="example" class="display" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nombre y Apellido</th>
+								<th>Tipo</th>
+								<th>Nro Documento</th>
+								<th>Direccion</th>
+								<th>Telèfono</th>
+								<th>Mail</th>
+								<th>Fecha de nacimiento</th>
+							</tr>
+					</thead>
+						<tfoot>
+							<tr>
+								<th>Id</th>
+								<th>Nombre y Apellido</th>
+								<th>Tipo</th>
+								<th>Nro Documento</th>
+								<th>Direccion</th>
+								<th>Telèfono</th>
+								<th>Mail</th>
+								<th>Fecha de nacimiento</th>
+							</tr>
+						</tfoot>
+					<tbody>
 				</tbody>
 			</table>
 		</div>
@@ -108,37 +105,30 @@
 		</div>
 	</div>
 	
-	
-	
-	
-	
-	
 	<div id="contentTurnos">
-	<h1 align="center">Turnos</h1>
-
-	<div  class="content">
-
-		<div class="contentTable">
-			<table id="exampleTurnos" class="display" cellspacing="0" width="100%">
-				        <thead>
-            <tr>
-                <th>Numero de turno</th>
-                <th>NombreDelAfiliado</th>
-                <th>Numero de afiliado</th>
-                <th>Plan</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>Numero de turno</th>
-                <th>NombreDelAfiliado</th>
-                <th>Numero de afiliado</th>
-                <th>Plan</th>
-            </tr>
-        </tfoot>
+		<h1 class="header" align="center">Turnos</h1>
+			<div  class="content">
+				<div class="contentTable">
+					<table id="exampleTurnos" class="display" cellspacing="0" width="100%">
+				      <thead>
+            			<tr>
+               				<th>Numero de turno</th>
+               				<th>NombreDelAfiliado</th>
+                			<th>Numero de afiliado</th>
+               				<th>Plan</th>
+           				 </tr>
+       				 </thead>
+       				 <tfoot>
+           				 <tr>
+               				 <th>Numero de turno</th>
+               				 <th>NombreDelAfiliado</th>
+               				 <th>Numero de afiliado</th>
+               				 <th>Plan</th>
+           				 </tr>
+       				 </tfoot>
       
-			</table>
-		</div>
+					</table>
+				</div>
 
 		<div class="contentIcon">
 			<ul class="list-group">
@@ -154,11 +144,7 @@
 	</div>
 </div>
 
-
-	
-	
-	
-<form id="target" action="user/editPatient"  style="display:none" method="post">
+<form class="fprimero" id="target" action="user/editPatient"  style="display:none;" method="post">
 	<input id="id" 				type="hidden" name="afiliadoDTO.id" value="21185">
 	<input id="nombreApellido"	type="hidden" name="afiliadoDTO.nombreApellido" value="Nicolás Ledesma">
 	<input id="tipoDoc"			type="hidden" name="afiliadoDTO.tipoDoc" value="DNI">
@@ -176,11 +162,7 @@
 </form>
 
 <form id="targetEditarTurnos" action="user/editTurno"  style="display:none" method="post">
-	<input id="editTurnoNro" type="hidden"   name="turnoDTO.idAfiliado" value="">
-	<input id="editTurnoFechaInicio" type="hidden"   name="turnoDTO.idAfiliado" value="">
-	<input id="editTurnoFechaLlegada" type="hidden"   name="turnoDTO.idAfiliado" value="">
-	<input id="editTurnoObservaciones" type="hidden"   name="turnoDTO.idAfiliado" value="">
-	<input id="editTurnoImporte" type="hidden"   name="turnoDTO.idAfiliado" value="">
+	<input id="editTurnoNro" type="hidden"   name="turnoDTO.nroTurn" value="">
 </form>	
 	
 <form id="targetGenerarReporteTurnos" action="user/generateReport" style="display:none" method="post">	

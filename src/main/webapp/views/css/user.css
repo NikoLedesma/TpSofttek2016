@@ -5,6 +5,11 @@
 	border-color: black;
 	border: 0.2vw solid;
 	float: left
+	
+}
+.display{
+	background-color: Bisque;
+	font-family: Lucida Sans, Lucida Console, Tahoma, Verdana
 }
 
 .contentTable {
@@ -13,22 +18,141 @@
 	height: 100%;
 	float: left;
 	margin-bottom: 2%;
+	color: Black;
+	font-weight: normal;
+	text-decoration: none;
+	font-size: 14;
+	border-color: Grey;
+	font-style: normal;
+	background-color: Cornsilk;
+	font-family: Verdana, Tahoma, Times New Roman;
+	border-width: medium;
+	border-style: inset
+	
 }
 
 .contentIcon {
 	margin-top: 92px;
 	width: 10%;
-	height: 10px;
+	height: 15px;
 	float: left;
-	background-color: pink;
+	/* background-color: Bisque; */
+	border-color: BurlyWood;
 }
 
 li:hover {
-	background-color: lightgrey;
+	background-color: BlanchedAlmond;
 }
 
 loginUser {
 	float: right;
 	position: fixed;
 	clear: right;
+}
+
+input[type=button] {
+   font: bold 0.8em sans-serif;
+	border: 5px solid #333;
+	border-radius: 5px;
+	background: none;
+	cursor: move;
+	width: 200px;
+	margin: 0px;
+	-webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-color: Silver;
+	padding: px;
+	border-width: thick;
+	border-style: double;
+	color: Green;
+	font-family: Verdana;
+	height: 40
+}
+
+button:after {
+	content: " >>>";
+}
+
+button:hover, button:focus {
+	outline: none;
+	background: #000;
+	color: #FFF;
+}
+
+/* .header{
+	
+	box-sizing: border-box;
+	border-color: Grey;
+	padding: px;
+	border-width: thick;
+	border-style: double
+} */
+
+h2{
+	padding: 2;
+	margin: 0px;
+	color: Black;
+	font-weight: normal;
+	text-decoration: blink;
+	border-color: Green;
+	font-style: normal;
+	background-color: HoneyDew;
+	width: px;
+	border-width: thin;
+	font-family: Verdana, Times New Roman, Tahoma;
+	border-style: none;
+	text-align: right;
+	font-size: 15px
+}
+body{
+	
+	font-family: Verdana, Tahoma, Times New Roman;
+	 font-size: 15px;
+	font-weight: 350;
+	color: #333;
+	background-color: #F5F5DC;
+	text-decoration: blink;
+	font-style: normal; 
+}
+
+input {
+    width: 50;
+	height: 30px;
+	font: 300 24px "Open Sans", Arial, sans-serif;
+	margin: 2px;
+	border-color: Cornsilk;
+	border-width: thin;
+	border-style: outset;
+	 border-radius: 12px;
+	
+}
+.head {
+	 background-color: #4CAF50;
+	font-size: 60px;
+	color: white;
+	text-shadow: 2px 2px #222;
+	font-family: "Open Sans";
+	border-bottom: 2px solid #FFF;
+	text-align: center;
+    margin-right: -50%;
+	margin: 0 0 5px 0;
+   font-family: Verdana, Times New Roman, Tahoma;
+
+}
+
+.header {
+	/*  background-color: #4CAF50; */
+	font-size: 60px;
+	color: black;
+	text-shadow: 2px 2px #222;
+	font-family: "Open Sans";
+	border-bottom: 2px solid #FFF;
+	text-align: center;
+    margin-right: -50%;
+	margin: 0 0 5px 0; 
+   font-family: Verdana, Times New Roman, Tahoma;
+	background-repeat: no-repeat;
+	
+
 }

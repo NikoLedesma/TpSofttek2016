@@ -64,6 +64,19 @@
 			</result>
 		</action>
 		
+		<action name="bajaTurno" class="com.grupo3.action.UserAction"
+			method="bajaTurnoAction">
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="root">turnoDTO</param>
+			</result>
+		</action>
+		
+		<action name="editTurno" class="com.grupo3.action.UserAction"
+			method="editTurnoAction">
+			<result name="editTurno">/views/turnoEdit.jsp</result>
+		</action>
 		
 		
 		<action name="generateReport" class="com.grupo3.action.ReporteAction" method="retrievePdf">
@@ -92,11 +105,6 @@
 			</result>
 		</action>
 		
-		
-<!-- 		<action name="saveTurno" class="com.grupo3.action.TurnoAction" -->
-<!-- 			method="addTurno"> -->
-<!-- 			<result name="SUCCESS">/views/turnoAdd.jsp</result> -->
-<!-- 		</action> -->
 		
 		
 			<action name="traerTurnos" class="com.grupo3.action.TurnoAction" method="findAllTurnos">
@@ -129,7 +137,13 @@
 
 	</package>
 
+	<package name="turnoA" extends="struts-default" namespace="/user/editTurno">
+		<action name="updateTurno" class="com.grupo3.action.TurnoAction"
+			method="updateTurno">
+			<result name="SUCCESS" type="redirect">/user</result><!-- Me redirecciona -->
+		</action>
 
+	</package>
 
 	<package name="userB" extends="struts-default" namespace="/user/addTurno">
 		<action name="saveTurno" class="com.grupo3.action.TurnoAction" method="addTurno">

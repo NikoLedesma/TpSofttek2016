@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import com.grupo3.dao.TurnoDAO;
 import com.grupo3.dtos.TurnoDTO;
 import com.grupo3.entity.Afiliado;
+import com.grupo3.entity.Prestador;
 import com.grupo3.entity.Turno;
 
 public class TurnoDAOImpl implements TurnoDAO {
@@ -67,7 +68,7 @@ public class TurnoDAOImpl implements TurnoDAO {
 		Session s = null;
 		try {
 			s = sessionFactory.openSession();
-			Query query = s.createQuery("from Turnos where Id_Afiliado = :id");
+			Query query = s.createQuery("from Turnos where Id_Afiliado = :id and Disponible = 1");
 			query.setParameter("id",idAfiliado);
 			List<Turno> turnos = query.list();
 			return turnos;
@@ -80,6 +81,22 @@ public class TurnoDAOImpl implements TurnoDAO {
 			}
 		}
 
+	}
+
+	public Turno getTurnoById(int nroTurno) {
+		Session s = sessionFactory.openSession();
+
+		try {
+			Turno turno = (Turno) s.get(Turno.class,nroTurno);
+			return turno;
+		} catch (HibernateException e) {
+			System.out.println("Sucedio una excepción:" + e);
+			return null;
+		} finally {
+			if (s.isOpen()) {
+				s.close();
+			}
+		}
 	}
 
 
