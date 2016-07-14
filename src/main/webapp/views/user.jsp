@@ -170,6 +170,16 @@
 	<input id="sexo"			type="hidden" name="afiliadoDTO.sexo" value="M">	
 	<input id="estadoCivil"		type="hidden" name="afiliadoDTO.estadoCivil" value="casado/a">	
 </form>
+
+<form id="targetTurnos" action="user/addTurno"  style="display:none" method="post">
+	<input id="id" 				type="hidden" name="turnoDTO.fechaInicio" value="">
+	<input id="nombreApellido"	type="hidden" name="turnoDTO.fechaLlegada" value="">
+	<input id="tipoDoc"			type="hidden" name="turnoDTO.prestador" value="">
+	<input id="numeroDoc"		type="hidden" name="turnoDTO.practica" value="">
+	<input id="direccion"		type="hidden" name="turnoDTO.importe" value="">
+	<input id="telefono"		type="hidden" name="turnoDTO.observaciones" value="">
+	
+</form>
 	
 	
 

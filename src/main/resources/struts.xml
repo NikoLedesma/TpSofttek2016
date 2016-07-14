@@ -87,7 +87,7 @@
 		</action>
 		
 		
-			<action name="saveTurno" class="com.grupo3.action.TurnoAction"
+		<action name="saveTurno" class="com.grupo3.action.TurnoAction"
 			method="addTurno">
 			<result name="SUCCESS">/views/turnoAdd.jsp</result>
 		</action>
@@ -126,9 +126,8 @@
 
 
 	<package name="userB" extends="struts-default" namespace="/user/addTurno">
-		<action name="saveTurno" class="com.grupo3.action.TurnoAction"
-			method="addTurno">
-			<result name="SUCCESS">/views/turnoAdd.jsp</result>
+		<action name="saveTurno" class="com.grupo3.action.TurnoAction" method="addTurno">
+			<result name="SUCCESS" type="redirect">/user</result>
 		</action>
 
 	</package>

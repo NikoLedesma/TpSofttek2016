@@ -14,6 +14,8 @@
 
 	<beans:bean id="turnoService" class="com.grupo3.serviceImpl.TurnoServiceImpl">
 		<beans:property name="turnoDAO" ref="turnoDAO"></beans:property>
+		<beans:property name="practicaDAO" ref="practicaDAO"></beans:property>
+		<beans:property name="prestadorDAO" ref="prestadorDAO"></beans:property>
 
 	</beans:bean>
 

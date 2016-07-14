@@ -7,8 +7,17 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-
 	<beans:bean id="patientDAO" class="com.grupo3.daoImpl.PatientDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory"></beans:property>
+	</beans:bean>
+	
+	<beans:bean id="practicaDAO" class="com.grupo3.daoImpl.PracticaDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory"></beans:property>
+	</beans:bean>
+	
+		<beans:bean id="prestadorDAO" class="com.grupo3.daoImpl.PrestadorDAOImpl">
 		<beans:property name="sessionFactory"
 			ref="hibernate4AnnotatedSessionFactory"></beans:property>
 	</beans:bean>

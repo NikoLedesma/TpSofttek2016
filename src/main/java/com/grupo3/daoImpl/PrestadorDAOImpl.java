@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.grupo3.dao.PrestadorDAO;
+import com.grupo3.dtos.PrestadorDTO;
+import com.grupo3.entity.Prestador;
 import com.grupo3.entity.Prestador;
 
 public class PrestadorDAOImpl implements PrestadorDAO {
@@ -19,22 +21,64 @@ public class PrestadorDAOImpl implements PrestadorDAO {
 	public List<Prestador> getPrestador(String prestador) {
 		Session s = sessionFactory.openSession();
 		try {
-			Query query = s.createSQLQuery(
-					"CALL traerPrestadores(:prestador)")
+			Query query = s.createSQLQuery("CALL traerPrestadores(:prestador)")
 					.addEntity(Prestador.class)
 					.setParameter("prestador", prestador);
 			List result = query.list();
 			return result;
 		} catch (HibernateException e) {
 			logger.error("Sucedio una excepción:", e);
-		}
-		finally{
-			if(s.isOpen()){
+		} finally {
+			if (s.isOpen()) {
 				s.close();
 			}
 			return null;
-		}	
+		}
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Prestador> getPrestadores() {
+		Session s = null;
+		try {
+			s = sessionFactory.openSession();
+			List<Prestador> prestadores = (List<Prestador>) s.createCriteria(
+					Prestador.class).list();
+			return prestadores;
+		} catch (HibernateException e) {
+			logger.error("Sucedio una excepción:", e);
+			return null;
+		} finally {
+			if (s.isOpen()) {
+				s.close();
+			}
+		}
+
+	}
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public Prestador getPrestadorByID(PrestadorDTO prestadorDTO) {
+		Session s = sessionFactory.openSession();
+
+		try {
+			Prestador prestador = (Prestador) s.get(Prestador.class,prestadorDTO.getId());
+			return prestador;
+		} catch (HibernateException e) {
+			// logger.debug("Sucedio una excepción:", e);
+			System.out.println("Sucedio una excepción:" + e);
+
+			return null;
+		} finally {
+			if (s.isOpen()) {
+				s.close();
+			}
+		}
+	}
 
 }

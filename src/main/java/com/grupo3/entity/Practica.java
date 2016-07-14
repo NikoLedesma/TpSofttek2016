@@ -32,4 +32,11 @@ public class Practica {
 	public void setPractica(String practica) {
 		this.practica = practica;
 	}
+
+	@Override
+	public String toString() {
+		return  practica ;
+	}
+	
+	
 }

@@ -47,7 +47,6 @@
 				placeholder="juanAlbertoPerez@mail.com" required> <label>Fecha
 				De Nacimiento</label> 
 				
-<!-- 				<input id="fechaAux" type="date" placeholder="02/04/2014" required> <label>Sexo</label>  -->
 				
 				<input id="fecha" type="text" name="afiliadoDTO.fechaNacimiento" placeholder="02/04/2014">
 

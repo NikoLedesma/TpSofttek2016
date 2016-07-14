@@ -1,40 +1,36 @@
-package com.grupo3.entity;
+package com.grupo3.dtos;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.grupo3.entity.Prestador;
 
-@Entity(name = "Prestadores")
-public class Prestador {
-	@Id
-	@Column(name = "Id_Prestador")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+
+public class PrestadorDTO {
 	private int id;
 
-	@Column(name = "ApellidoYNombre")
 	private String apellidoYNombre;
-	
-	@Column(name = "Filial")
+
 	private String filial;
-	
-	@Column(name = "Especialidad")
+
 	private String especialidad;
-	
-	@Column(name = "Domicilio")
+
 	private String domicilio;
-	
-	@Column(name = "Localiad")
+
 	private String localidad;
-	
-	@Column(name = "Telefono")
+
 	private String telefono;
-
-	/* Constructor default*/
-	public Prestador() {}
-
-	/* Accessors */
+	
+	public PrestadorDTO(){};
+	
+	public PrestadorDTO(Prestador prestador){
+		id = prestador.getId();
+		apellidoYNombre = prestador.getApellidoYNombre();
+		filial = prestador.getFilial();
+		especialidad = prestador.getEspecialidad();
+		domicilio = prestador.getDomicilio();
+		localidad = prestador.getLocalidad();
+		telefono = prestador.getTelefono();
+	};
+	
+	/*Accessors*/
 	public int getId() {
 		return id;
 	}
@@ -91,10 +87,4 @@ public class Prestador {
 		this.telefono = telefono;
 	}
 
-	@Override
-	public String toString() {
-		return apellidoYNombre;
-	}
-	
-	
 }

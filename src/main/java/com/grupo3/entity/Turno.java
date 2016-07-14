@@ -128,13 +128,11 @@ public class Turno {
 	}
 
 	public Turno(TurnoDTO turno) {
-	//	this.practica = turno.getPractica();
 		this.disponible = true;
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada = turno.getFechaLlegada();
 		this.observaciones = turno.getObservaciones();
 		//this.afiliado = turno.getAfiliado();
-	//	this.prestador = turno.getPrestador();
 		this.importe = turno.getImporte();
 		
 		

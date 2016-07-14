@@ -1,12 +1,16 @@
 package com.grupo3.action;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import com.grupo3.dao.PlanDAO;
 import com.grupo3.dtos.AfiliadoDTO;
-import com.grupo3.entity.Plan;
+import com.grupo3.dtos.PracticaDTO;
+import com.grupo3.dtos.PrestadorDTO;
+import com.grupo3.entity.Practica;
+import com.grupo3.entity.Prestador;
 import com.grupo3.service.AfiliadoService;
 import com.grupo3.service.PatientService;
+import com.grupo3.service.TurnoService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
@@ -15,6 +19,9 @@ public class UserAction extends ActionSupport {
 	private ArrayList<Integer> planesCombo = new ArrayList<Integer>();
 	private PatientService patientService;
 	private AfiliadoService afiliadoService;
+	private TurnoService turnoService;
+	private List<PracticaDTO> practicasCombo;
+	private List<PrestadorDTO> prestadoresCombo;
 
 	public AfiliadoService getAfiliadoService() {
 		return afiliadoService;
@@ -45,7 +52,6 @@ public class UserAction extends ActionSupport {
 
 	public String editPatientAction() {
 
-		// patientService.savePatient(Patient);
 		return "editPatient";
 	}
 
@@ -56,7 +62,8 @@ public class UserAction extends ActionSupport {
 	}
 
 	public String addTurnoAction() {
-
+		practicasCombo= turnoService.getPracticas();
+		prestadoresCombo= turnoService.getPrestadores();
 		return "addTurno";
 	}
 
@@ -75,7 +82,37 @@ public class UserAction extends ActionSupport {
 	public void setPlanesCombo(ArrayList<Integer> planesCombo) {
 		this.planesCombo = planesCombo;
 	}
+	public TurnoService getTurnosService() {
+		return turnoService;
+	}
 
+	public void setTurnosService(TurnoService turnoService) {
+		this.turnoService = turnoService;
+	}
+
+	public List<PracticaDTO> getPracticasCombo() {
+		return practicasCombo;
+	}
+
+	public void setPracticasCombo(List<PracticaDTO> practicasCombo) {
+		this.practicasCombo = practicasCombo;
+	}
+
+	public List<PrestadorDTO> getPrestadoresCombo() {
+		return prestadoresCombo;
+	}
+
+	public void setPrestadoresCombo(List<PrestadorDTO> prestadoresCombo) {
+		this.prestadoresCombo = prestadoresCombo;
+	}
+	
+	public TurnoService getTurnoService() {
+		return turnoService;
+	}
+
+	public void setTurnoService(TurnoService turnoService) {
+		this.turnoService = turnoService;
+	}
 
 
 }

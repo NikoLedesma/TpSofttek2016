@@ -13,50 +13,37 @@ public class TurnoDTO  {
 	
 	private Afiliado afiliado;
 	private int idAfiliado;
-	public Afiliado getAfiliado() {
-		return afiliado;
-	}
-
-	public void setAfiliado(Afiliado afiliado) {
-		this.afiliado = afiliado;
-	}
-
-	//private Prestador prestador;
+	private PrestadorDTO prestador;
 	private Date  fechaInicio;
 	private Date fechaLlegada;
 	private int nroTurn; 
 	private String observaciones;
 	private int plan;
 	private float importe;
-	//private Practica practica;
+	private PracticaDTO practica;
 
 	public TurnoDTO(){}
 	
 	public TurnoDTO(Turno turno){
 		this.afiliado = turno.getAfiliado();
-		//this.prestador = turno.getPrestador();
+//		this.prestador = turno.getPrestador();
 		this.fechaInicio = turno.getFechaInicio();
 		this.fechaLlegada= turno.getFechaLlegada();
 		this.nroTurn = turno.getId();
 		this.observaciones = turno.getObservaciones();
 		this.plan=turno.getPlan();
 		this.importe=turno.getImporte();
-		//this.practica=turno.getPractica();
+//		this.practica=turno.getPractica();
 	}
 	
 	/* Accessors*/
-//	public Afiliado getAfiliado() {
-//		return afiliado;
-//	}
-//	public void setAfiliado(Afiliado afiliado) {
-//		this.afiliado = afiliado;
-//	}
-	/*public Prestador getPrestador() {
+
+	public PrestadorDTO getPrestador() {
 		return prestador;
 	}
-	public void setPrestador(Prestador prestador) {
-		this.prestador =prestador;
-	}*/
+	public void setPrestador(PrestadorDTO prestadorDTO) {
+		this.prestador =prestadorDTO;
+	}
 	public Date getFechaInicio() {
 		return fechaInicio ;
 	}
@@ -93,12 +80,12 @@ public class TurnoDTO  {
 	public void setImporte(float importe) {
 		this.importe = importe;
 	}
-	/*public Practica getPractica() {
+	public PracticaDTO getPractica() {
 		return practica;
 	}
-	public void setCodigoPractica(Practica practica) {
-		this.practica = practica;
-	}*/
+	public void setCodigoPractica(PracticaDTO practicaDTO) {
+		this.practica = practicaDTO;
+	}
 
 	public int getIdAfiliado() {
 		return idAfiliado;
@@ -108,5 +95,12 @@ public class TurnoDTO  {
 		this.idAfiliado = idAfiliado;
 	}
 	
+	public Afiliado getAfiliado() {
+		return afiliado;
+	}
+	
+	public void setAfiliado(Afiliado afiliado) {
+		this.afiliado = afiliado;
+	}
 
 }

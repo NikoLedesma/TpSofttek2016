@@ -12,11 +12,10 @@ import com.grupo3.entity.Plan;
 public class PlanDAOImpl implements PlanDAO {
 
 	private static Logger logger = Logger.getLogger(PlanDAOImpl.class);
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 	
 
 	
-	@SuppressWarnings("unchecked")
 	public Plan getPlan(AfiliadoDTO afiliadoDTO) {
 		Session s = null;
 		try {
