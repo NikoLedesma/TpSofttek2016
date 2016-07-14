@@ -127,7 +127,7 @@ input {
 	 border-radius: 12px;
 	
 }
-h1 {
+.head {
 	 background-color: #4CAF50;
 	font-size: 60px;
 	color: white;
@@ -141,7 +141,18 @@ h1 {
 
 }
 
-.fprimero{
-	background-color: DarkSalmon;
-	font-family: Lucida Sans, Tahoma, Verdana
+.header {
+	/*  background-color: #4CAF50; */
+	font-size: 60px;
+	color: black;
+	text-shadow: 2px 2px #222;
+	font-family: "Open Sans";
+	border-bottom: 2px solid #FFF;
+	text-align: center;
+    margin-right: -50%;
+	margin: 0 0 5px 0; 
+   font-family: Verdana, Times New Roman, Tahoma;
+	background-repeat: no-repeat;
+	
+
 }

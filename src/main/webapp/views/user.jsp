@@ -38,7 +38,7 @@
 
 <body>
 
-	<h1>Pacientes</h1>
+	<h1 class="head">Pacientes</h1>
 		<h2 align="right" lass="loginUser">Hello
 		${pageContext.request.userPrincipal.name}
 		<a href="j_spring_security_logout">Logout</a></h2>
@@ -96,7 +96,7 @@
 	</div>
 	
 	<div id="contentTurnos">
-		<h1 align="center">Turnos</h1>
+		<h1 class="header" align="center">Turnos</h1>
 			<div  class="content">
 				<div class="contentTable">
 					<table id="exampleTurnos" class="display" cellspacing="0" width="100%">
