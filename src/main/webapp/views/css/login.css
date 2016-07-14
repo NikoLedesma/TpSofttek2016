@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 
-div {center fixed;
+/* div {center fixed;
 	font-family: "Roboto";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -39,4 +39,60 @@ h1 {
 body {
 	background-color: #e1e1e1;
 	background-attachment: scroll;
+}
+ */
+
+
+
+div {center fixed;
+	font-family: "Roboto";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+form {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background: #D6D6D6;
+	width: 285px;
+	margin: -140px 0 0 -182px;
+	padding: 40px;
+	box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+	font-weight: normal;
+	text-decoration: blink;
+	border-color: DarkGray;
+	font-style: normal;
+	border-width: thick;
+	border-style: double
+}
+
+h2 {
+	line-height: 1;
+	color: #07cc00;
+	font-size: 24px;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: cursive;
+}
+
+h1 {
+	font-size: 50px;
+	font-family: serif;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: blink;
+	border-width: thick
+}
+
+body {
+	background-color: #e1e1e1;
+	background-attachment: scroll;
+	border-color: DarkGray;
+	border-width: medium;
+	border-style: double;
+	background-repeat: no-repeat;
+
 }
