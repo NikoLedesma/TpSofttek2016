@@ -33,6 +33,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import java.sql.Timestamp ;
 public class ReporteAction {
 
 	AfiliadoDTO afiliadoDTO;
@@ -68,6 +70,7 @@ public class ReporteAction {
 		parameters.put("nombreAfiliado", afiliado.getNombreApellido());
 		parameters.put("dniAfiliado",afiliado.getNumeroDoc());
 		parameters.put("nroAfiliado",Integer.toString( afiliado.getId()));
+		parameters.put("tipoDocumento", afiliado.getTipoDoc());
 		//Taemos los turnos
 
 		List<Turno> turnos= turnoService.findAllTurnosByIdAfiliado(idAfiliado);
@@ -75,11 +78,12 @@ public class ReporteAction {
 		//////////////aca hago para pasar mi lista como un dataSource y mis parametros con un hash
 		DataPerson d=null;
 		for(Turno t:turnos){
-			d=new DataPerson();
+		
+			d = new DataPerson() ;
 			d.setNombrePractica(t.getPractica().getPractica());
 			d.setImporte(t.getImporte());
-			d.setHorarioAtencion(null);
-			d.setHorarioLlegada(null);
+			d.setHorarioAtencion(new Date(t.getFechaInicio().getTime()));
+			d.setHorarioLlegada(new Date(t.getFechaLlegada().getTime()));
 			d.setNroTurno(t.getId());
 			d.setObservaciones(t.getObservaciones());
 			d.setPlanMedico(Integer.toString(t.getPlan()));

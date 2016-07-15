@@ -7,7 +7,8 @@ $(document).ready(function() {
 	tableTurnos = $('#exampleTurnos').DataTable({
 		"lengthChange" : false,
 		select : true,
-		keys : true
+		keys : true,
+		"bFilter": false
 	});
 	$("#contentTurnos").hide();
 });
@@ -20,7 +21,8 @@ $(document)
 					table = $('#example').DataTable({
 						"lengthChange" : false,
 						select : true,
-						keys : true
+						keys : true,
+						"bFilter": false
 					});
 
 					table

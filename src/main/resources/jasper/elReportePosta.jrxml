@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-07-14T03:03:07 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="miPrimerReporte" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<!-- 2016-07-15T12:34:43 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="miPrimerReporte" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3549a0e1-ae17-4134-95be-4478e6c6b3bf">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="nombreAfiliado" class="java.lang.String"/>
 	<parameter name="nroAfiliado" class="java.lang.String"/>
 	<parameter name="dniAfiliado" class="java.lang.String"/>
+	<parameter name="tipoDocumento" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="id" class="java.lang.Long">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="nroTurno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[nroTurno]]></fieldDescription>
 	</field>
-	<field name="name" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="planMedico" class="java.lang.String">
+		<fieldDescription><![CDATA[planMedico]]></fieldDescription>
 	</field>
-	<field name="country" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="horarioLlegada" class="java.util.Date">
+		<fieldDescription><![CDATA[horarioLlegada]]></fieldDescription>
+	</field>
+	<field name="horarioAtencion" class="java.util.Date">
+		<fieldDescription><![CDATA[horarioAtencion]]></fieldDescription>
+	</field>
+	<field name="nombrePractica" class="java.lang.String">
+		<fieldDescription><![CDATA[nombrePractica]]></fieldDescription>
+	</field>
+	<field name="importe" class="java.lang.Float">
+		<fieldDescription><![CDATA[importe]]></fieldDescription>
+	</field>
+	<field name="observaciones" class="java.lang.String">
+		<fieldDescription><![CDATA[observaciones]]></fieldDescription>
+	</field>
+	<field name="nombrePrestador" class="java.lang.String">
+		<fieldDescription><![CDATA[nombrePrestador]]></fieldDescription>
 	</field>
 	<group name="id">
-		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		<groupExpression><![CDATA[$F{nroTurno}]]></groupExpression>
 	</group>
 	<group name="name">
-		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+		<groupExpression><![CDATA[$F{planMedico}]]></groupExpression>
 	</group>
 	<group name="country">
-		<groupExpression><![CDATA[$F{country}]]></groupExpression>
+		<groupExpression><![CDATA[$F{horarioLlegada}]]></groupExpression>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="57" splitType="Stretch">
-			<textField>
-				<reportElement x="-11" y="20" width="240" height="30" />
-				<textElement>
-					<font size="20"/>
+			<textField evaluationTime="Report">
+				<reportElement x="-11" y="20" width="240" height="30" uuid="de829674-f424-434b-92af-cc1b172078bd"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="20"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Reporte de turnos"]]></textFieldExpression>
 			</textField>
@@ -43,25 +60,25 @@
 	<pageHeader>
 		<band height="80" splitType="Stretch">
 			<textField>
-				<reportElement x="-11" y="0" width="211" height="30" />
+				<reportElement x="-11" y="0" width="211" height="30" uuid="002f54a8-1966-419c-95ae-958b9a8b2c28"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Paciente:"+$P{nombreAfiliado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="-11" y="30" width="211" height="30" />
+				<reportElement x="-11" y="30" width="211" height="30" uuid="b1627114-f84f-4cd6-90b3-e491df070680"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Nro. Afiliado:"+$P{nroAfiliado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="-11" y="60" width="211" height="20" />
+				<reportElement x="-11" y="60" width="291" height="20" uuid="b59c76c8-0fac-49a1-a5a6-ea5b1abe7900"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
-				<textFieldExpression><![CDATA["DNI:"+$P{dniAfiliado}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{tipoDocumento}+":"+$P{dniAfiliado}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -71,7 +88,7 @@
 	<detail>
 		<band height="81" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="62" width="70" height="18" />
+				<reportElement x="0" y="62" width="70" height="18" uuid="9732969c-b73b-43ef-a06d-3e0ad5a0a554"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -79,10 +96,10 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nroTurno}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="70" y="62" width="60" height="18" />
+				<reportElement x="70" y="62" width="60" height="18" uuid="c33a7818-7705-450f-b7b8-564df04605a3"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -90,10 +107,10 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{planMedico}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="130" y="62" width="90" height="18" />
+				<reportElement x="130" y="62" width="90" height="18" uuid="f56ca613-3a82-4dc3-b0c3-ef32ac8710d1"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -101,17 +118,17 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{country}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{horarioLlegada}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="20" width="100" height="20" />
+				<reportElement x="0" y="20" width="200" height="20" uuid="3ba82611-db06-4c5c-b020-06b343ed0dff"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Prestador:xxxxxx"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Prestador:"+$F{nombrePrestador}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="130" y="40" width="90" height="22" />
+				<reportElement x="130" y="40" width="90" height="22" uuid="49ee5aeb-ba13-497e-9097-3bb268410260"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -122,7 +139,7 @@
 				<text><![CDATA[Horario de llegada]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="70" y="40" width="60" height="22" >
+				<reportElement x="70" y="40" width="60" height="22" uuid="e9f817a2-79a7-476b-acbe-c7f1a97b176d">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 				</reportElement>
 				<box>
@@ -135,7 +152,7 @@
 				<text><![CDATA[Plan médico]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="40" width="70" height="22" />
+				<reportElement x="0" y="40" width="70" height="22" uuid="3d19d7a1-6624-481e-a330-13b4e6559c58"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -146,7 +163,7 @@
 				<text><![CDATA[Nro.Turno]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="310" y="40" width="90" height="22" />
+				<reportElement x="310" y="40" width="90" height="22" uuid="5c842c40-5a51-4263-8bf8-1fcb642a5031"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -157,7 +174,7 @@
 				<text><![CDATA[Nombre de Practica]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="400" y="40" width="80" height="22" />
+				<reportElement x="400" y="40" width="80" height="22" uuid="e5deaeae-4909-48fd-8259-cce13f5a6563"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -168,7 +185,7 @@
 				<text><![CDATA[Importe del turno]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="480" y="40" width="74" height="22" />
+				<reportElement x="480" y="40" width="74" height="22" uuid="bee9994b-8450-40af-afd5-74b1c6f8d510"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -179,7 +196,7 @@
 				<text><![CDATA[Observaciones]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="310" y="62" width="90" height="18" />
+				<reportElement x="310" y="62" width="90" height="18" uuid="8cc29c2b-0c06-41b3-9549-04adbaa42e5d"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -187,10 +204,10 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA["xxxxxx"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nombrePractica}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="400" y="62" width="80" height="18" />
+				<reportElement x="400" y="62" width="80" height="18" uuid="90918e74-0d51-4fa5-a6b1-4384d66cf847"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -198,10 +215,10 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA["xxxxxx"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{importe}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="480" y="62" width="74" height="18" />
+				<reportElement x="480" y="62" width="74" height="18" uuid="8d74b307-9c7c-488e-a7fe-9c96ee21b242"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -209,10 +226,10 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA["xxxxxx"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{observaciones}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="220" y="40" width="90" height="22" />
+				<reportElement x="220" y="40" width="90" height="22" uuid="49498343-68d8-4095-aa4a-5539ffd13114"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -223,7 +240,7 @@
 				<text><![CDATA[Horario de atencion]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="220" y="62" width="90" height="18" />
+				<reportElement x="220" y="62" width="90" height="18" uuid="ec3cfbdf-dad8-4139-aa13-60e3007b56c8"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Solid"/>
 					<leftPen lineWidth="0.5" lineStyle="Solid"/>
@@ -231,7 +248,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA["xxxxxx"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{horarioAtencion}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
